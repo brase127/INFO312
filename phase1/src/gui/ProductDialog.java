@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package gui;
 
 import dao.ProductDAO;
@@ -18,7 +17,9 @@ import java.util.Set;
  * @author Kendall Lauren Chin
  */
 public class ProductDialog extends javax.swing.JDialog {
+
     ProductDAO dao = new ProductListDAO();
+
     /**
      * Creates new form ProductDialog
      */
@@ -26,8 +27,9 @@ public class ProductDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         Set categories = new HashSet();
-        cmbCategory.setModel((new SimpleListModel(categories)));
-        
+        cmbCategory.setModel(new SimpleListModel(dao.getCategory()));
+        cmbCategory.setEditable(true);
+
     }
 
     /**
@@ -185,7 +187,7 @@ public class ProductDialog extends javax.swing.JDialog {
         String description = txtDescription.getText();
         String category = (String) cmbCategory.getSelectedItem();
         Double price = Double.parseDouble(txtPrice.getText());
-        Integer quantityInStock = Integer.parseInt(txtQuantity.getText());     
+        Integer quantityInStock = Integer.parseInt(txtQuantity.getText());
         Product newProduct = new Product(id, name, description, category, price, quantityInStock);
         System.out.println(newProduct);
         dao.save(newProduct);
