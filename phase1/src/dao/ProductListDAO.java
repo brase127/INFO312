@@ -5,6 +5,7 @@
  */
 package dao;
 
+import domain.Category;
 import domain.Product;
 import java.util.ArrayList;
 import java.util.HashSet;

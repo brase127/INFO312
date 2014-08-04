@@ -17,6 +17,7 @@ public class Product implements Comparable<Product>{
     private String category;
     private Double price;
     private Integer quantityInStock;
+    
 
     public Product(Integer id, String name, String description, String category, Double price, Integer quantityInStock) {
         this.id = id;
@@ -27,6 +28,8 @@ public class Product implements Comparable<Product>{
         this.quantityInStock = quantityInStock;
     }
 
+
+    
     public Integer getId() {
         return id;
     }

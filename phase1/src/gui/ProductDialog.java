@@ -9,6 +9,9 @@ package gui;
 import dao.ProductDAO;
 import dao.ProductListDAO;
 import domain.Product;
+import gui.helpers.SimpleListModel;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -22,6 +25,9 @@ public class ProductDialog extends javax.swing.JDialog {
     public ProductDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        Set categories = new HashSet();
+        cmbCategory.setModel((new SimpleListModel(categories)));
+        
     }
 
     /**
