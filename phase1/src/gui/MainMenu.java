@@ -48,6 +48,11 @@ public class MainMenu extends javax.swing.JFrame {
         btnViewProducts.setText("View Products");
 
         btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,6 +89,10 @@ public class MainMenu extends javax.swing.JFrame {
         frame.setLocationRelativeTo(this);
         frame.setVisible(true);
     }//GEN-LAST:event_btnNewProductActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
