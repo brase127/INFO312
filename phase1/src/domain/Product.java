@@ -10,7 +10,7 @@ package domain;
  *
  * @author Kendall Lauren Chin
  */
-public class Product {
+public class Product implements Comparable<Product>{
     private Integer id;
     private String name;
     private String description;
@@ -77,7 +77,13 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" + "id=" + id + ", name=" + name + ", description=" + description + ", category=" + category + ", price=" + price + ", quantityInStock=" + quantityInStock + '}';
+        return  id + ", " + name + ", " + description + ", " + category + ", " + price + ", " + quantityInStock;
+    }
+
+    public int compareTo(Product aProduct) {
+        Integer cid = this.getId();
+        Integer tid = aProduct.getId();
+        return cid.compareTo(tid);
     }
     
     

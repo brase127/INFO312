@@ -8,6 +8,8 @@ package dao;
 
 import domain.Product;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  *
@@ -15,5 +17,7 @@ import java.util.List;
  */
 public interface ProductDAO {
     void save(Product aProduct);
-    List<Product> getProducts();
+    TreeSet getProducts();
+    Set getCategory();   
+   void delete(Product aProduct);
 }

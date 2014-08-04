@@ -6,18 +6,24 @@
 
 package gui;
 
+import dao.ProductDAO;
+import dao.ProductListDAO;
+import gui.helpers.SimpleListModel;
+
 /**
  *
  * @author Kendall Lauren Chin
  */
 public class ProductReportDialog extends javax.swing.JDialog {
-
+    private final ProductDAO dao = new ProductListDAO(); 
+    private SimpleListModel productModel = new SimpleListModel(dao.getProducts());
     /**
      * Creates new form ProductReportDialog
      */
     public ProductReportDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        lstProducts.setModel(productModel);
     }
 
     /**
@@ -136,8 +142,8 @@ public class ProductReportDialog extends javax.swing.JDialog {
                     .addComponent(jLabel4))
                 .addGap(10, 10, 10)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(btnDelete)
