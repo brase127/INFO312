@@ -5,10 +5,11 @@
  */
 package gui;
 
+import dao.ProductCollectionDAO;
 import dao.ProductDAO;
-import dao.ProductListDAO;
 import domain.Product;
 import gui.helpers.SimpleListModel;
+import java.awt.Window;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,19 +18,37 @@ import java.util.Set;
  * @author Kendall Lauren Chin
  */
 public class ProductDialog extends javax.swing.JDialog {
-
-    ProductDAO dao = new ProductListDAO();
+    
+    ProductDAO dao = new ProductCollectionDAO();
+    Product product = new Product();
 
     /**
      * Creates new form ProductDialog
      */
-    public ProductDialog(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public ProductDialog(Window parent, boolean modal) {
+        super(parent);
+        setModal(modal);
         initComponents();
-        Set categories = new HashSet();
-        cmbCategory.setModel(new SimpleListModel(dao.getCategory()));
+// make combo box editable
         cmbCategory.setEditable(true);
-
+// put existing majors into the combo box
+        cmbCategory.setModel(new SimpleListModel(dao.getCategory()));
+    }
+    
+    public ProductDialog(Window parent, boolean modal, Product productToEdit) {
+// call other constructor
+        this(parent, modal);
+// assign the student we are editing to the student eld
+        this.product = productToEdit;
+        
+        txtId.setText(String.valueOf(productToEdit.getId()));
+        txtName.setText(productToEdit.getName());
+        txtDescription.setText(productToEdit.getDescription());
+        cmbCategory.setSelectedItem(productToEdit.getCategory());
+        txtPrice.setText(String.valueOf(productToEdit.getPrice()));
+        txtQuantity.setText((String.valueOf(productToEdit.getQuantityInStock())));
+        txtId.setEditable(false);
+        
     }
 
     /**

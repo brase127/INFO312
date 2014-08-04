@@ -28,6 +28,10 @@ public class Product implements Comparable<Product>{
         this.quantityInStock = quantityInStock;
     }
 
+    public Product() {
+        
+    }
+
 
     
     public Integer getId() {

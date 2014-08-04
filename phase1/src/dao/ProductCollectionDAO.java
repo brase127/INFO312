@@ -17,7 +17,7 @@ import java.util.TreeSet;
  *
  * @author Kendall Lauren Chin
  */
-public class ProductListDAO implements ProductDAO {
+public class ProductCollectionDAO implements ProductDAO {
 
     private static final TreeSet<Product> products = new TreeSet<Product>();
     private static final Set categories = new HashSet();
@@ -41,6 +41,6 @@ public class ProductListDAO implements ProductDAO {
 
     @Override
     public void delete(Product aProduct) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        products.remove(aProduct);
     }
 }

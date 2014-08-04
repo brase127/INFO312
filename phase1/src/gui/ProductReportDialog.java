@@ -6,16 +6,18 @@
 
 package gui;
 
+import dao.ProductCollectionDAO;
 import dao.ProductDAO;
-import dao.ProductListDAO;
+import domain.Product;
 import gui.helpers.SimpleListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Kendall Lauren Chin
  */
 public class ProductReportDialog extends javax.swing.JDialog {
-    private final ProductDAO dao = new ProductListDAO(); 
+    private final ProductDAO dao = new ProductCollectionDAO(); 
     private SimpleListModel productModel = new SimpleListModel(dao.getProducts());
     /**
      * Creates new form ProductReportDialog
@@ -84,8 +86,18 @@ public class ProductReportDialog extends javax.swing.JDialog {
         jScrollPane1.setViewportView(lstProducts);
 
         btnEdit.setText("Edit");
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         btnClose.setText("Close");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
@@ -162,6 +174,32 @@ public class ProductReportDialog extends javax.swing.JDialog {
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCloseActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // show a conrmation dialog
+        if (lstProducts.isSelectionEmpty() == false) {
+            int result = JOptionPane.showConfirmDialog(
+                    this, "Are you sure you want to delete this product?");
+        // did the user click the yes button?
+            if (result == JOptionPane.YES_OPTION) {
+        // user clicked yes so delete the student
+                Product a = (Product) lstProducts.getSelectedValue();
+                dao.delete(a);
+                productModel.updateItems(dao.getProducts());
+
+            }
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        if (lstProducts.isSelectionEmpty() == false) {
+            Product a = (Product) lstProducts.getSelectedValue();
+            ProductDialog dialog = new ProductDialog(this, true, a);
+            dialog.setLocationRelativeTo(this);
+            dialog.setVisible(true);
+            productModel.updateItems(dao.getProducts());
+        }
+    }//GEN-LAST:event_btnEditActionPerformed
 
     /**
      * @param args the command line arguments
