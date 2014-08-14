@@ -55,12 +55,12 @@
     <Component class="javax.swing.JLabel" name="lblMainMenu">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Main Menu"/>
+        <Property name="text" type="java.lang.String" value="Product Administration"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnAddProduct">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Add New Product"/>
+        <Property name="text" type="java.lang.String" value="Add a New Product"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddProductActionPerformed"/>

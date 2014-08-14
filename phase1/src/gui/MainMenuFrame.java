@@ -36,9 +36,9 @@ public class MainMenuFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblMainMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMainMenu.setText("Main Menu");
+        lblMainMenu.setText("Product Administration");
 
-        btnAddProduct.setText("Add New Product");
+        btnAddProduct.setText("Add a New Product");
         btnAddProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddProductActionPerformed(evt);
@@ -103,12 +103,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnViewProductsActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        
-    }
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddProduct;
