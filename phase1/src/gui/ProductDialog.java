@@ -6,6 +6,8 @@
 
 package gui;
 
+import dao.ProductCollectionDAO;
+import dao.ProductDAO;
 import domain.Product;
 
 /**
@@ -13,6 +15,7 @@ import domain.Product;
  * @author Kendall Lauren Chin
  */
 public class ProductDialog extends javax.swing.JDialog {
+    ProductDAO dao = new ProductCollectionDAO();
 
     /**
      * Creates new form ProductDialog
@@ -175,6 +178,7 @@ public class ProductDialog extends javax.swing.JDialog {
         Double price = Double.parseDouble(txtPrice.getText());
         Integer quantity = Integer.parseInt(txtQuantity.getText());
         Product product = new Product(id, name, description, category, price, quantity);
+        dao.save(product);
         System.out.println(product);
     }//GEN-LAST:event_btnSaveActionPerformed
 
