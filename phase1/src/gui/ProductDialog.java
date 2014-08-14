@@ -9,6 +9,7 @@ package gui;
 import dao.ProductCollectionDAO;
 import dao.ProductDAO;
 import domain.Product;
+import gui.helpers.SimpleListModel;
 
 /**
  *
@@ -16,13 +17,16 @@ import domain.Product;
  */
 public class ProductDialog extends javax.swing.JDialog {
     ProductDAO dao = new ProductCollectionDAO();
-
+Product product = new Product();
     /**
      * Creates new form ProductDialog
      */
     public ProductDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        cmbCategory.setEditable(true);
+// put existing majors into the combo box
+        cmbCategory.setModel(new SimpleListModel(dao.getCategories()));
     }
 
     /**
@@ -51,7 +55,7 @@ public class ProductDialog extends javax.swing.JDialog {
         txtPrice = new javax.swing.JTextField();
         txtQuantity = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
-        btnSave1 = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -88,7 +92,12 @@ public class ProductDialog extends javax.swing.JDialog {
             }
         });
 
-        btnSave1.setText("Cancel");
+        btnCancel.setText("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,7 +114,7 @@ public class ProductDialog extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSave1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblQuantity)
@@ -158,7 +167,7 @@ public class ProductDialog extends javax.swing.JDialog {
                     .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnSave1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSave))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -171,16 +180,20 @@ public class ProductDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_txtIdActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        Integer id = Integer.parseInt(txtId.getText());
-        String name = txtName.getText();
-        String description = txtDescription.getText();
-        String category = (String) cmbCategory.getSelectedItem();
-        Double price = Double.parseDouble(txtPrice.getText());
-        Integer quantity = Integer.parseInt(txtQuantity.getText());
-        Product product = new Product(id, name, description, category, price, quantity);
+        product.setId(Integer.parseInt(txtId.getText()));
+        product.setName(txtName.getText());
+        product.setDescription(txtDescription.getText());
+        product.setCategory((String) cmbCategory.getSelectedItem());
+        product.setPrice(Double.parseDouble(txtPrice.getText()));
+        product.setQuantity(Integer.parseInt(txtQuantity.getText()));
         dao.save(product);
         System.out.println(product);
+        dispose();
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,8 +238,8 @@ public class ProductDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnSave;
-    private javax.swing.JButton btnSave1;
     private javax.swing.JComboBox cmbCategory;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

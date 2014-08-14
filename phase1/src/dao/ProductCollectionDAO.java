@@ -7,6 +7,8 @@ package dao;
 
 import domain.Product;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.TreeSet;
 
 /**
@@ -16,15 +18,22 @@ import java.util.TreeSet;
 public class ProductCollectionDAO implements ProductDAO {
 
     private static final TreeSet<Product> products = new TreeSet<>();
+    private static final Set categories = new HashSet();
 
     @Override
     public void save(Product aProduct) {
         products.add(aProduct);
+        categories.add(aProduct.getCategory());
     }
 
     @Override
     public Collection<Product> getAll() {
         return products;
+    }
+
+    @Override
+    public Collection<Product> getCategories() {
+        return categories;
     }
 
 }

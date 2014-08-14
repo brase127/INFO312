@@ -6,18 +6,25 @@
 
 package gui;
 
+import dao.ProductCollectionDAO;
+import dao.ProductDAO;
+import gui.helpers.SimpleListModel;
+
 /**
  *
  * @author Kendall Lauren Chin
  */
 public class ProductReportDialog extends javax.swing.JDialog {
 
-    /**
-     * Creates new form ProductReportDialog
-     */
+    ProductDAO dao = new ProductCollectionDAO();
+    private SimpleListModel studentModel = new SimpleListModel(dao.getAll());
+    
     public ProductReportDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        lstProducts.setModel(studentModel);
+                cmbCategories.setModel(new SimpleListModel(dao.getCategories()));
+
     }
 
     /**
@@ -64,6 +71,11 @@ public class ProductReportDialog extends javax.swing.JDialog {
         btnDelete.setText("Delete");
 
         btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCloseActionPerformed(evt);
+            }
+        });
 
         btnSearch.setText("Search");
 
@@ -110,7 +122,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
                     .addComponent(lblCategoryFilter)
                     .addComponent(cmbCategories, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -121,6 +133,10 @@ public class ProductReportDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     /**
      * @param args the command line arguments

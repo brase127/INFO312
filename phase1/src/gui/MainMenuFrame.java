@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package gui;
 
 /**
@@ -100,10 +99,8 @@ public class MainMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddProductActionPerformed
 
     private void btnViewProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProductsActionPerformed
-        dispose();
-    }//GEN-LAST:event_btnViewProductsActionPerformed
+        new ProductReportDialog(this, true).setVisible(true);    }//GEN-LAST:event_btnViewProductsActionPerformed
 
- 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddProduct;
