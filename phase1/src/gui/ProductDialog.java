@@ -6,6 +6,8 @@
 
 package gui;
 
+import domain.Product;
+
 /**
  *
  * @author Kendall Lauren Chin
@@ -77,6 +79,11 @@ public class ProductDialog extends javax.swing.JDialog {
         cmbCategory.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         btnSave1.setText("Cancel");
 
@@ -159,6 +166,17 @@ public class ProductDialog extends javax.swing.JDialog {
     private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        Integer id = Integer.parseInt(txtId.getText());
+        String name = txtName.getText();
+        String description = txtDescription.getText();
+        String category = (String) cmbCategory.getSelectedItem();
+        Double price = Double.parseDouble(txtPrice.getText());
+        Integer quantity = Integer.parseInt(txtQuantity.getText());
+        Product product = new Product(id, name, description, category, price, quantity);
+        System.out.println(product);
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
      * @param args the command line arguments
