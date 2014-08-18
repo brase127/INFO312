@@ -158,4 +158,36 @@ public class ProductJdbcDAO implements ProductDAO {
         }
     }
 
+    @Override
+    public Collection<Product> getByCategories(String aCategory) {
+        String sql = "select * from products where category = '" + aCategory + "' order by id;";
+        try (
+                // get a connection to the database
+                Connection dbCon = JdbcConnection.getConnection();
+                // create the statement
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+// execute the query
+            ResultSet rs = stmt.executeQuery();
+
+            Set products = new HashSet();
+            // iterate through the query results
+            while (rs.next()) {
+// get the data out of the query
+                Integer id = rs.getInt("id");
+                String name = rs.getString("name");
+                String description = rs.getString("description");
+                String category = rs.getString("category");
+                Double price = rs.getDouble("price");
+                Integer quantity = rs.getInt("quantity");
+// use the data to create a student object
+                Product s = new Product(id, name, description, category, price, quantity);
+// and put it in the collection
+                products.add(s);
+            }
+            return products;
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
 }

@@ -57,6 +57,11 @@ public class ProductReportDialog extends javax.swing.JDialog {
         lblCategoryFilter.setText("Category Filter:");
 
         cmbCategories.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbCategories.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbCategoriesActionPerformed(evt);
+            }
+        });
 
         lstProducts.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -176,10 +181,14 @@ public class ProductReportDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        
+
         productModel.updateItems(dao.getById(Integer.parseInt(txtSearchById.getText())));
-        
+
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void cmbCategoriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCategoriesActionPerformed
+        productModel.updateItems(dao.getByCategories((String) cmbCategories.getSelectedItem()));
+    }//GEN-LAST:event_cmbCategoriesActionPerformed
 
     /**
      * @param args the command line arguments
