@@ -36,4 +36,10 @@ public class ProductCollectionDAO implements ProductDAO {
         return categories;
     }
 
+    @Override
+    public void delete(Product aProduct) {
+        products.remove(aProduct);
+        categories.remove(aProduct.getCategory());
+    }
+
 }

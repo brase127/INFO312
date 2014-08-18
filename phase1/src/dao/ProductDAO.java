@@ -15,6 +15,7 @@ import java.util.Collection;
  */
 public interface ProductDAO {
     void save(Product aProduct);
+    void delete(Product aProduct);
     Collection<Product> getAll();
     Collection<Product> getCategories();
 }
