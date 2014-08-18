@@ -87,6 +87,11 @@ public class ProductReportDialog extends javax.swing.JDialog {
         });
 
         btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -169,6 +174,12 @@ public class ProductReportDialog extends javax.swing.JDialog {
         dialog.setVisible(true);
         productModel.updateItems(dao.getAll());
     }//GEN-LAST:event_btnEditActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        
+        productModel.updateItems(dao.getById(Integer.parseInt(txtSearchById.getText())));
+        
+    }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
      * @param args the command line arguments
