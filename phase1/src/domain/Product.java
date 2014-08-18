@@ -80,7 +80,7 @@ public class Product implements Comparable<Product>{
 
     @Override
     public String toString() {
-        return id + ", " + name + ", " + category;
+        return "ID: " + id + ", Name: " + name ;
     }
 
     @Override
