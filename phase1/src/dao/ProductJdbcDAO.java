@@ -127,4 +127,35 @@ public class ProductJdbcDAO implements ProductDAO {
         }
     }
 
+    @Override
+    public Product getById(Integer aId) {
+        String sql = "select * from products where id = " + aId + ";";
+        try (
+                // get a connection to the database
+                Connection dbCon = JdbcConnection.getConnection();
+                // create the statement
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+// execute the query
+            ResultSet rs = stmt.executeQuery();
+            
+            // iterate through the query results
+            while (rs.next()) {
+// get the data out of the query
+                Integer id = rs.getInt("id");
+                String name = rs.getString("name");
+                String description = rs.getString("description");
+                String category = rs.getString("category");
+                Double price = rs.getDouble("price");
+                Integer quantity = rs.getInt("quantity");
+// use the data to create a student object
+                Product s = new Product(id, name, description, category, price, quantity);
+// and put it in the collection
+                return s;
+            }
+            return null;
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
 }

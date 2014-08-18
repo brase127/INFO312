@@ -18,4 +18,8 @@ public interface ProductDAO {
     void delete(Product aProduct);
     Collection<Product> getAll();
     Collection<Product> getCategories();
+        Product getById(Integer aId);
+
+        //Collection<Product> getByCategories();
+
 }
