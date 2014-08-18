@@ -10,6 +10,7 @@ import dao.ProductCollectionDAO;
 import dao.ProductDAO;
 import domain.Product;
 import gui.helpers.SimpleListModel;
+import java.awt.Window;
 
 /**
  *
@@ -21,14 +22,29 @@ Product product = new Product();
     /**
      * Creates new form ProductDialog
      */
-    public ProductDialog(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public ProductDialog(Window parent, boolean modal) {
+        super(parent);
+        setModal(modal);
         initComponents();
         cmbCategory.setEditable(true);
-// put existing majors into the combo box
         cmbCategory.setModel(new SimpleListModel(dao.getCategories()));
     }
 
+    
+
+    public ProductDialog(Window parent, boolean modal, Product productToEdit) {
+// call other constructor
+        this(parent, modal);
+// assign the student we are editing to the student eld
+        this.product = productToEdit;
+        txtId.setText(String.valueOf(productToEdit.getId()));
+        txtName.setText(productToEdit.getName());
+        txtDescription.setText(productToEdit.getDescription());
+        cmbCategory.setSelectedItem(productToEdit.getCategory());
+        txtPrice.setText(String.valueOf(productToEdit.getPrice()));
+        txtQuantity.setText(String.valueOf(productToEdit.getQuantity()));
+        txtId.setEditable(false);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

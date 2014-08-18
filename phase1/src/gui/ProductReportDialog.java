@@ -66,6 +66,11 @@ public class ProductReportDialog extends javax.swing.JDialog {
         jScrollPane1.setViewportView(lstProducts);
 
         btnEdit.setText("Edit");
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -151,9 +156,17 @@ public class ProductReportDialog extends javax.swing.JDialog {
             if (result == JOptionPane.YES_OPTION) {
                 dao.delete((Product) lstProducts.getSelectedValue());
                 productModel.updateItems(dao.getAll());
-    }//GEN-LAST:event_btnDeleteActionPerformed
+            }
         }
-    }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        Product editProduct = (Product) lstProducts.getSelectedValue();
+        ProductDialog dialog = new ProductDialog(this, true, editProduct);
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
+        productModel.updateItems(dao.getAll());
+    }//GEN-LAST:event_btnEditActionPerformed
 
     /**
      * @param args the command line arguments
