@@ -40,6 +40,7 @@ public class Order {
         this.date = date;
     }
 // GET HELP WITH THIS
+
     public Integer getTotal() {
         return null;
     }

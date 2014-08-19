@@ -137,7 +137,7 @@ public class ProductJdbcDAO implements ProductDAO {
                 PreparedStatement stmt = dbCon.prepareStatement(sql);) {
 // execute the query
             ResultSet rs = stmt.executeQuery();
-            
+
             // iterate through the query results
             while (rs.next()) {
 // get the data out of the query

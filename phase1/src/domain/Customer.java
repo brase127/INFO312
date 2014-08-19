@@ -54,5 +54,5 @@ public class Customer {
     public void setCreditCardDetails(String creditCardDetails) {
         this.creditCardDetails = creditCardDetails;
     }
-    
+
 }

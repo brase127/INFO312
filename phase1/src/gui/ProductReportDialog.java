@@ -192,8 +192,6 @@ public class ProductReportDialog extends javax.swing.JDialog {
         productModel.updateItems(dao.getByCategories((String) cmbCategories.getSelectedItem()));
     }//GEN-LAST:event_cmbCategoriesActionPerformed
 
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClose;
     private javax.swing.JButton btnDelete;
