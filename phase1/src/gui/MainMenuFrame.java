@@ -51,7 +51,12 @@ public class MainMenuFrame extends javax.swing.JFrame {
         btnAddProduct.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
         btnAddProduct.setForeground(new java.awt.Color(255, 255, 255));
         btnAddProduct.setText("Add a New Product");
+        btnAddProduct.setBorderPainted(false);
         btnAddProduct.setContentAreaFilled(false);
+        btnAddProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAddProduct.setFocusPainted(false);
+        btnAddProduct.setFocusable(false);
+        btnAddProduct.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAddProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddProductActionPerformed(evt);
@@ -62,7 +67,12 @@ public class MainMenuFrame extends javax.swing.JFrame {
         btnViewProducts.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
         btnViewProducts.setForeground(new java.awt.Color(255, 255, 255));
         btnViewProducts.setText("View Products");
+        btnViewProducts.setBorderPainted(false);
         btnViewProducts.setContentAreaFilled(false);
+        btnViewProducts.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnViewProducts.setFocusPainted(false);
+        btnViewProducts.setFocusable(false);
+        btnViewProducts.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnViewProducts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewProductsActionPerformed(evt);
@@ -73,7 +83,12 @@ public class MainMenuFrame extends javax.swing.JFrame {
         btnExit.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
+        btnExit.setBorderPainted(false);
         btnExit.setContentAreaFilled(false);
+        btnExit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnExit.setFocusPainted(false);
+        btnExit.setFocusable(false);
+        btnExit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);

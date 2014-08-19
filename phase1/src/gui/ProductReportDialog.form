@@ -56,19 +56,19 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="cmbCategories" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtSearchById" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="txtSearchById" min="-2" pref="83" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="btnEdit" pref="83" max="32767" attributes="0"/>
+                          <Component id="btnEdit" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="btnDelete" pref="95" max="32767" attributes="0"/>
+                          <Component id="btnDelete" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="btnClose" pref="90" max="32767" attributes="0"/>
+                          <Component id="btnClose" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
