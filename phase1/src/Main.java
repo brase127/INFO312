@@ -1,4 +1,5 @@
 
+import dao.ProductCollectionDAO;
 import dao.ProductJdbcDAO;
 import gui.MainMenuFrame;
 

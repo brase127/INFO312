@@ -112,9 +112,10 @@ public class ProductJdbcDAO implements ProductDAO {
 // Create a collection for holding the student we get from the query.
 // We are using a List in order to preserve the order in which
 // the data was returned from the query.
-            Set categories = new HashSet();
+            Set categories = null;
             // iterate through the query results
             while (rs.next()) {
+                categories = new HashSet();
 // get the data out of the query
                 String category = rs.getString("category");
 // use the data to create a student object
