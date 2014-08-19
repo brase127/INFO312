@@ -50,6 +50,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         btnAddProduct.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
         btnAddProduct.setForeground(new java.awt.Color(255, 255, 255));
         btnAddProduct.setText("Add a New Product");
+        btnAddProduct.setContentAreaFilled(false);
         btnAddProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddProductActionPerformed(evt);
@@ -60,6 +61,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         btnViewProducts.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
         btnViewProducts.setForeground(new java.awt.Color(255, 255, 255));
         btnViewProducts.setText("View Products");
+        btnViewProducts.setContentAreaFilled(false);
         btnViewProducts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewProductsActionPerformed(evt);
@@ -70,6 +72,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         btnExit.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
+        btnExit.setContentAreaFilled(false);
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
