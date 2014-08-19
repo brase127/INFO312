@@ -23,8 +23,7 @@ public class ProductCollectionDAO implements ProductDAO {
     private static final TreeSet<Product> products = new TreeSet<>();
     private static final Set categories = new HashSet();
     private static final SortedMap<Integer, Product> byId = new TreeMap<>();
-        private static final MultiMap<String, Product> map = new MultiMap<>();
-
+    private static final MultiMap<String, Product> map = new MultiMap<>();
 
     @Override
     public void save(Product aProduct) {
@@ -60,6 +59,6 @@ public class ProductCollectionDAO implements ProductDAO {
     @Override
     public Collection<Product> getByCategories(String aCategory) {
         return map.get(aCategory);
-        }
+    }
 
 }

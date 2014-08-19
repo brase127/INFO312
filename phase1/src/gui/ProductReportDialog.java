@@ -17,11 +17,13 @@ import javax.swing.JOptionPane;
  */
 public class ProductReportDialog extends javax.swing.JDialog {
 
-    ProductDAO dao = new ProductCollectionDAO();
-    private SimpleListModel productModel = new SimpleListModel(dao.getAll());
+    ProductDAO dao;
+    private SimpleListModel productModel;
 
-    public ProductReportDialog(java.awt.Frame parent, boolean modal) {
+    public ProductReportDialog(java.awt.Frame parent, boolean modal, ProductDAO aDao) {
         super(parent, modal);
+        dao = aDao;
+        this.productModel = new SimpleListModel(dao.getAll());
         initComponents();
         lstProducts.setModel(productModel);
         cmbCategories.setModel(new SimpleListModel(dao.getCategories()));
@@ -174,7 +176,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         Product editProduct = (Product) lstProducts.getSelectedValue();
-        ProductDialog dialog = new ProductDialog(this, true, editProduct);
+        ProductDialog dialog = new ProductDialog(this, true, editProduct, dao);
         dialog.setLocationRelativeTo(this);
         dialog.setVisible(true);
         productModel.updateItems(dao.getAll());
@@ -190,47 +192,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
         productModel.updateItems(dao.getByCategories((String) cmbCategories.getSelectedItem()));
     }//GEN-LAST:event_cmbCategoriesActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProductReportDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProductReportDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProductReportDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProductReportDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                ProductReportDialog dialog = new ProductReportDialog(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClose;
