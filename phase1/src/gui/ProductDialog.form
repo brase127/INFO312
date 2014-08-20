@@ -312,6 +312,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="txtId">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="txtId" noResource="true"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
