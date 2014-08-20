@@ -2,19 +2,26 @@
 import dao.ProductCollectionDAO;
 import dao.ProductJdbcDAO;
 import gui.MainMenuFrame;
+import java.awt.EventQueue;
 
-/**
- *
- * @author Kendall Lauren Chin
- */
 public class Main {
 
     public static void main(String[] args) {
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(MainMenuFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new MainMenuFrame(new ProductJdbcDAO()).setVisible(true);
+                new MainMenuFrame(new ProductCollectionDAO()).setVisible(true);
             }
         });
     }
