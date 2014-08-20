@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 public class ProductDialog extends javax.swing.JDialog {
 
     ProductDAO dao;
-    ValidationHelper validHelp;
+    ValidationHelper validHelp = new ValidationHelper();
     Product product = new Product();
 
     public ProductDialog(Window parent, boolean modal, ProductDAO aDao) {
