@@ -8,6 +8,7 @@ package gui;
 import dao.ProductDAO;
 import domain.Product;
 import gui.helpers.SimpleListModel;
+import gui.helpers.ValidationHelper;
 import java.awt.Window;
 import javax.swing.JOptionPane;
 
@@ -16,9 +17,12 @@ import javax.swing.JOptionPane;
  * @author Kendall Lauren Chin
  */
 public class ProductDialog extends javax.swing.JDialog {
-ProductDAO dao;
+
+    ProductDAO dao;
+    ValidationHelper validHelp;
     Product product = new Product();
-        public ProductDialog(Window parent, boolean modal, ProductDAO aDao) {
+
+    public ProductDialog(Window parent, boolean modal, ProductDAO aDao) {
         super(parent);
         setModal(modal);
         dao = aDao;
@@ -290,12 +294,11 @@ ProductDAO dao;
     private void txtDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescriptionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDescriptionActionPerformed
-                                       
 
     /**
      * @param args the command line arguments
      */
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnSave;
