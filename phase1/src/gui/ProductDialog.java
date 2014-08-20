@@ -30,6 +30,9 @@ public class ProductDialog extends javax.swing.JDialog {
         cmbCategory.setEditable(true);
         cmbCategory.setModel(new SimpleListModel(dao.getCategories()));
         validHelp.addTypeFormatter(txtId, "#0", Integer.class);
+        validHelp.addTypeFormatter(txtPrice, "#.00", Double.class);
+        validHelp.addTypeFormatter(txtQuantity, "#0", Integer.class);
+        
     }
 
     public ProductDialog(Window parent, boolean modal, Product productToEdit, ProductDAO aDao) {
@@ -40,8 +43,8 @@ public class ProductDialog extends javax.swing.JDialog {
         txtName.setText(productToEdit.getName());
         txtDescription.setText(productToEdit.getDescription());
         cmbCategory.setSelectedItem(productToEdit.getCategory());
-        txtPrice.setText(String.valueOf(productToEdit.getPrice()));
-        txtQuantity.setText(String.valueOf(productToEdit.getQuantity()));
+        txtPrice.setValue(productToEdit.getPrice());
+        txtQuantity.setValue(productToEdit.getQuantity());
         txtId.setEditable(false);
     }
 
@@ -67,10 +70,10 @@ public class ProductDialog extends javax.swing.JDialog {
         lblCategory = new javax.swing.JLabel();
         cmbCategory = new javax.swing.JComboBox();
         lblPrice = new javax.swing.JLabel();
-        txtPrice = new javax.swing.JTextField();
         lblQuantity = new javax.swing.JLabel();
-        txtQuantity = new javax.swing.JTextField();
         txtId = new javax.swing.JFormattedTextField();
+        txtPrice = new javax.swing.JFormattedTextField();
+        txtQuantity = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setName("productDialog"); // NOI18N
@@ -155,17 +158,17 @@ public class ProductDialog extends javax.swing.JDialog {
         lblPrice.setText("Price:");
         lblPrice.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        txtPrice.setName("txtPrice"); // NOI18N
-
         lblQuantity.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         lblQuantity.setForeground(new java.awt.Color(255, 255, 255));
         lblQuantity.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblQuantity.setText("Quantity:");
         lblQuantity.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        txtQuantity.setName("txtQuantity"); // NOI18N
-
         txtId.setName("txtId"); // NOI18N
+
+        txtPrice.setName("txtPrice"); // NOI18N
+
+        txtQuantity.setName("txtQuantity"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -188,9 +191,9 @@ public class ProductDialog extends javax.swing.JDialog {
                             .addComponent(txtName)
                             .addComponent(jScrollPane1)
                             .addComponent(cmbCategory, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtId)
                             .addComponent(txtPrice)
-                            .addComponent(txtQuantity)
-                            .addComponent(txtId)))
+                            .addComponent(txtQuantity)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -223,17 +226,13 @@ public class ProductDialog extends javax.swing.JDialog {
                         .addGap(4, 4, 4)
                         .addComponent(lblCategory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(cmbCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(lblPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(lblQuantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblQuantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -263,8 +262,8 @@ public class ProductDialog extends javax.swing.JDialog {
                 product.setName(txtName.getText());
                 product.setDescription(txtDescription.getText());
                 product.setCategory((String) cmbCategory.getSelectedItem());
-                product.setPrice(Double.parseDouble(txtPrice.getText()));
-                product.setQuantity(Integer.parseInt(txtQuantity.getText()));
+                product.setPrice((Double) txtPrice.getValue());
+                product.setQuantity((Integer) txtQuantity.getValue());
                 dao.save(product);
                 System.out.println(product);
                 this.dispose();
@@ -315,7 +314,7 @@ public class ProductDialog extends javax.swing.JDialog {
     private javax.swing.JTextField txtDescription;
     private javax.swing.JFormattedTextField txtId;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPrice;
-    private javax.swing.JTextField txtQuantity;
+    private javax.swing.JFormattedTextField txtPrice;
+    private javax.swing.JFormattedTextField txtQuantity;
     // End of variables declaration//GEN-END:variables
 }
