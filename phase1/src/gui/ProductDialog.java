@@ -81,6 +81,7 @@ ProductDAO dao;
         btnSave.setForeground(new java.awt.Color(255, 255, 255));
         btnSave.setText("Save");
         btnSave.setContentAreaFilled(false);
+        btnSave.setName("btnSave"); // NOI18N
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
@@ -91,6 +92,7 @@ ProductDAO dao;
         btnCancel.setForeground(new java.awt.Color(255, 255, 255));
         btnCancel.setText("Cancel");
         btnCancel.setContentAreaFilled(false);
+        btnCancel.setName("btnCancel"); // NOI18N
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
@@ -103,6 +105,7 @@ ProductDAO dao;
         lblId.setText("ID:");
         lblId.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        txtId.setName("txtId"); // NOI18N
         txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdActionPerformed(evt);
@@ -115,6 +118,7 @@ ProductDAO dao;
         lblName.setText("Name:");
         lblName.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        txtName.setName("txtName"); // NOI18N
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
@@ -127,6 +131,7 @@ ProductDAO dao;
         lblDescription.setText("Description:");
         lblDescription.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        txtDescription.setName("txtDescription"); // NOI18N
         txtDescription.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDescriptionActionPerformed(evt);
@@ -143,6 +148,7 @@ ProductDAO dao;
         cmbCategory.setBackground(new java.awt.Color(0, 169, 255));
         cmbCategory.setEditable(true);
         cmbCategory.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbCategory.setName("cmbCategory"); // NOI18N
 
         lblPrice.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         lblPrice.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,11 +156,15 @@ ProductDAO dao;
         lblPrice.setText("Price:");
         lblPrice.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        txtPrice.setName("txtPrice"); // NOI18N
+
         lblQuantity.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         lblQuantity.setForeground(new java.awt.Color(255, 255, 255));
         lblQuantity.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblQuantity.setText("Quantity:");
         lblQuantity.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        txtQuantity.setName("txtQuantity"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
