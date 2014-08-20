@@ -29,21 +29,21 @@ public class ProductDialog extends javax.swing.JDialog {
         initComponents();
         cmbCategory.setEditable(true);
         cmbCategory.setModel(new SimpleListModel(dao.getCategories()));
-        // add a formatter to the ID text eld
-        validHelp.addTypeFormatter(txtId, "#0", Integer.class);
     }
 
     public ProductDialog(Window parent, boolean modal, Product productToEdit, ProductDAO aDao) {
 
         this(parent, modal, aDao);
         this.product = productToEdit;
-        txtId.setValue(String.valueOf(productToEdit.getId()));
+        txtId.setValue(productToEdit.getId());
         txtName.setText(productToEdit.getName());
         txtDescription.setText(productToEdit.getDescription());
         cmbCategory.setSelectedItem(productToEdit.getCategory());
         txtPrice.setText(String.valueOf(productToEdit.getPrice()));
         txtQuantity.setText(String.valueOf(productToEdit.getQuantity()));
         txtId.setEditable(false);
+        // add a formatter to the ID text eld
+        validHelp.addTypeFormatter(txtId, "#0", Integer.class);
     }
 
     /**
@@ -261,7 +261,7 @@ public class ProductDialog extends javax.swing.JDialog {
         if (txtId.isEditable()) {
             Integer id = (Integer) txtId.getValue();
             if (dao.getById(id) == null) {
-                product.setId(id);
+                product.setId((Integer) txtId.getValue());
                 product.setName(txtName.getText());
                 product.setDescription(txtDescription.getText());
                 product.setCategory((String) cmbCategory.getSelectedItem());

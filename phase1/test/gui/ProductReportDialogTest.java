@@ -152,7 +152,7 @@ public class ProductReportDialogTest {
         fest = new DialogFixture(dialog);
         fest.show();
 // slow down the FEST robot a bit − default is 30 millis
-        fest.robot.settings().delayBetweenEvents(75);
+        fest.robot.settings().delayBetweenEvents(100);
 // TODO: select Jill in the list
         fest.list().clickItem(doll.toString());
 // TODO: click the edit button
@@ -161,7 +161,7 @@ public class ProductReportDialogTest {
         DialogFixture editDialog = fest.dialog("productDialog").requireVisible();
 // TODO: ensure the StudentDialog contains the correct student
         editDialog.textBox("txtId").requireText(String.valueOf(doll.getId()));
-// (make sure the ID text eld has Jill's ID in it)
-      //  assertEquals("The ID text held has Jill's ID in it", jill.getId(), new Integer("4321"));
+// (make sure the ID text eld has Doll's ID in it)
+        assertEquals("The ID text held has Doll's ID in it", doll.getId(), new Integer("456789"));
     }
  }
