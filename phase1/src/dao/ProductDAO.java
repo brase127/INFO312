@@ -20,7 +20,7 @@ public interface ProductDAO {
 
     Collection<Product> getAll();
 
-    Collection<Product> getCategories();
+    Collection<String> getCategories();
 
     Product getById(Integer aId);
 

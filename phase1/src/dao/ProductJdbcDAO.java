@@ -100,7 +100,7 @@ public class ProductJdbcDAO implements ProductDAO {
     }
 
     @Override
-    public Collection<Product> getCategories() {
+    public Collection<String> getCategories() {
         String sql = "select category from products order by category";
         try (
                 // get a connection to the database
@@ -112,13 +112,14 @@ public class ProductJdbcDAO implements ProductDAO {
 // Create a collection for holding the student we get from the query.
 // We are using a List in order to preserve the order in which
 // the data was returned from the query.
-            Set categories = null;
+            Set categories = new HashSet();
             // iterate through the query results
             while (rs.next()) {
-                categories = new HashSet();
 // get the data out of the query
+
                 String category = rs.getString("category");
 // use the data to create a student object
+
 // and put it in the collection
                 categories.add(category);
             }

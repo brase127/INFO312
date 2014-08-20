@@ -39,7 +39,7 @@ public class ProductCollectionDAO implements ProductDAO {
     }
 
     @Override
-    public Collection<Product> getCategories() {
+    public Collection<String> getCategories() {
         return categories;
     }
 
