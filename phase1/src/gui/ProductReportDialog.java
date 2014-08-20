@@ -59,11 +59,11 @@ public class ProductReportDialog extends javax.swing.JDialog {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("View Products");
 
-        lblSearchById.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        lblSearchById.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         lblSearchById.setForeground(new java.awt.Color(255, 255, 255));
         lblSearchById.setText("Search by ID:");
 
-        btnSearch.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        btnSearch.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
         btnSearch.setBorderPainted(false);
@@ -85,7 +85,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
             }
         });
 
-        lblCategoryFilter.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        lblCategoryFilter.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         lblCategoryFilter.setForeground(new java.awt.Color(255, 255, 255));
         lblCategoryFilter.setText("Category Filter:");
 
@@ -98,7 +98,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(lstProducts);
 
-        btnEdit.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        btnEdit.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         btnEdit.setForeground(new java.awt.Color(255, 255, 255));
         btnEdit.setText("Edit");
         btnEdit.setBorderPainted(false);
@@ -109,7 +109,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
             }
         });
 
-        btnDelete.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        btnDelete.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
         btnDelete.setBorderPainted(false);
@@ -120,7 +120,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
             }
         });
 
-        btnClose.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        btnClose.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         btnClose.setForeground(new java.awt.Color(255, 255, 255));
         btnClose.setText("Close");
         btnClose.setBorderPainted(false);

@@ -77,7 +77,7 @@ ProductDAO dao;
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Product Editor");
 
-        btnSave.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        btnSave.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         btnSave.setForeground(new java.awt.Color(255, 255, 255));
         btnSave.setText("Save");
         btnSave.setContentAreaFilled(false);
@@ -87,7 +87,7 @@ ProductDAO dao;
             }
         });
 
-        btnCancel.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        btnCancel.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(255, 255, 255));
         btnCancel.setText("Cancel");
         btnCancel.setContentAreaFilled(false);
@@ -97,7 +97,7 @@ ProductDAO dao;
             }
         });
 
-        lblId.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        lblId.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         lblId.setForeground(new java.awt.Color(255, 255, 255));
         lblId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblId.setText("ID:");
@@ -109,7 +109,7 @@ ProductDAO dao;
             }
         });
 
-        lblName.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        lblName.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblName.setText("Name:");
@@ -121,7 +121,7 @@ ProductDAO dao;
             }
         });
 
-        lblDescription.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        lblDescription.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         lblDescription.setForeground(new java.awt.Color(255, 255, 255));
         lblDescription.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDescription.setText("Description:");
@@ -134,7 +134,7 @@ ProductDAO dao;
         });
         jScrollPane1.setViewportView(txtDescription);
 
-        lblCategory.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        lblCategory.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         lblCategory.setForeground(new java.awt.Color(255, 255, 255));
         lblCategory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCategory.setText("Category:");
@@ -144,13 +144,13 @@ ProductDAO dao;
         cmbCategory.setEditable(true);
         cmbCategory.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        lblPrice.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        lblPrice.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         lblPrice.setForeground(new java.awt.Color(255, 255, 255));
         lblPrice.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPrice.setText("Price:");
         lblPrice.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        lblQuantity.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        lblQuantity.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         lblQuantity.setForeground(new java.awt.Color(255, 255, 255));
         lblQuantity.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblQuantity.setText("Quantity:");
