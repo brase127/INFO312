@@ -68,6 +68,7 @@ ProductDAO dao;
         txtQuantity = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setName("productDialog"); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(153, 220, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));

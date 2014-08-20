@@ -63,11 +63,14 @@ public class ProductReportDialog extends javax.swing.JDialog {
         lblSearchById.setForeground(new java.awt.Color(255, 255, 255));
         lblSearchById.setText("Search by ID:");
 
+        txtSearchById.setName("txtSearchById"); // NOI18N
+
         btnSearch.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
         btnSearch.setBorderPainted(false);
         btnSearch.setContentAreaFilled(false);
+        btnSearch.setName("btnSearch"); // NOI18N
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
@@ -79,6 +82,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
         cmbCategories.setForeground(new java.awt.Color(255, 255, 255));
         cmbCategories.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbCategories.setBorder(null);
+        cmbCategories.setName("cmbCategories"); // NOI18N
         cmbCategories.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbCategoriesActionPerformed(evt);
@@ -103,6 +107,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
         btnEdit.setText("Edit");
         btnEdit.setBorderPainted(false);
         btnEdit.setContentAreaFilled(false);
+        btnEdit.setName("btnEdit"); // NOI18N
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditActionPerformed(evt);
@@ -114,6 +119,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
         btnDelete.setText("Delete");
         btnDelete.setBorderPainted(false);
         btnDelete.setContentAreaFilled(false);
+        btnDelete.setName("btnDelete"); // NOI18N
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -125,6 +131,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
         btnClose.setText("Close");
         btnClose.setBorderPainted(false);
         btnClose.setContentAreaFilled(false);
+        btnClose.setName("btnClose"); // NOI18N
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCloseActionPerformed(evt);
