@@ -29,6 +29,8 @@ public class ProductDialog extends javax.swing.JDialog {
         initComponents();
         cmbCategory.setEditable(true);
         cmbCategory.setModel(new SimpleListModel(dao.getCategories()));
+        // add a formatter to the ID text eld
+        validHelp.addTypeFormatter(txtId, "#0", Integer.class);
     }
 
     public ProductDialog(Window parent, boolean modal, Product productToEdit, ProductDAO aDao) {
