@@ -6,6 +6,10 @@
 package domain;
 
 import java.util.Objects;
+import net.sf.oval.constraint.Length;
+import net.sf.oval.constraint.NotBlank;
+import net.sf.oval.constraint.NotNegative;
+import net.sf.oval.constraint.NotNull;
 
 /**
  *
@@ -13,11 +17,33 @@ import java.util.Objects;
  */
 public class Product implements Comparable<Product> {
 
+    @NotNull(message = "ID must be provided.")
+    @NotNegative(message = "ID must be a postive number.")
+    @Length(min = 3, max = 7,
+            message = "ID must contain between 3 and 7 digits (inclusive).")
     private Integer id;
+    @NotNull(message = "Name must be provided.")
+    @NotBlank(message = "Name must be provided.")
+    @Length(min = 2, message = "Name must contain at least two characters.")
     private String name;
+    @NotNull(message = "Description must be provided.")
+    @NotBlank(message = "Description must be provided.")
     private String description;
+    @NotNull(message = "Category must be provided.")
+    @NotBlank(message = "Category must be provided.")
+    @Length(min = 2, max = 20, message = "Category must be between 2 and 20 (inclusive.)")
     private String category;
+    @NotNull(message = "Price must be provided.")
+    @NotBlank(message = "Price must be provided.")
+    @NotNegative(message = "Price must be a postive number.")
+    @Length(min = 1, max = 7,
+            message = "Price must contain between 1 and 7 digits (inclusive).")
     private Double price;
+    @NotNull(message = "Quantity must be provided.")
+    @NotBlank(message = "Quantity must be provided.")
+    @NotNegative(message = "Quantity must be a postive number.")
+    @Length(min = 1, max = 7,
+            message = "Quantity must contain between 1 and 7 digits (inclusive).")
     private Integer Quantity;
 
     public Product(Integer id, String name, String description, String category, Double price, Integer Quantity) {
