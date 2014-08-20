@@ -74,11 +74,11 @@ public class ProductReportDialog extends javax.swing.JDialog {
             }
         });
 
-        cmbCategories.setBackground(new java.awt.Color(0, 0, 204));
+        cmbCategories.setBackground(new java.awt.Color(0, 169, 255));
         cmbCategories.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        cmbCategories.setForeground(new java.awt.Color(255, 255, 255));
         cmbCategories.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbCategories.setBorder(null);
-        cmbCategories.setOpaque(false);
         cmbCategories.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbCategoriesActionPerformed(evt);
