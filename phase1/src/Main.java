@@ -26,3 +26,4 @@ public class Main {
         });
     }
 }
+//1:06am Finished lab06 but couldn't do any testing on JDBC stuff..
