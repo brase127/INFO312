@@ -37,7 +37,7 @@ public class ProductDialog extends javax.swing.JDialog {
 
         this(parent, modal, aDao);
         this.product = productToEdit;
-        txtId.setText(String.valueOf(productToEdit.getId()));
+        txtId.setValue(String.valueOf(productToEdit.getId()));
         txtName.setText(productToEdit.getName());
         txtDescription.setText(productToEdit.getDescription());
         cmbCategory.setSelectedItem(productToEdit.getCategory());
@@ -259,7 +259,7 @@ public class ProductDialog extends javax.swing.JDialog {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         if (txtId.isEditable()) {
-            Integer id = Integer.parseInt(txtId.getText());
+            Integer id = (Integer) txtId.getValue();
             if (dao.getById(id) == null) {
                 product.setId(id);
                 product.setName(txtName.getText());
