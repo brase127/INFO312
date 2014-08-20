@@ -61,16 +61,16 @@ public class ProductReportDialog extends javax.swing.JDialog {
 
         jPanel1.setBackground(new java.awt.Color(67, 38, 127));
 
-        jLabel1.setFont(new java.awt.Font("Dancing in the Minefields", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Corbert", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("View Products");
 
-        lblSearchById.setFont(new java.awt.Font("Dancing in the Minefields", 0, 14)); // NOI18N
+        lblSearchById.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         lblSearchById.setForeground(new java.awt.Color(255, 255, 255));
         lblSearchById.setText("Search by ID:");
 
-        btnSearch.setFont(new java.awt.Font("Dancing in the Minefields", 0, 14)); // NOI18N
+        btnSearch.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
         btnSearch.setBorderPainted(false);
@@ -82,7 +82,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
             }
         });
 
-        cmbCategories.setFont(new java.awt.Font("Dancing in the Minefields", 0, 14)); // NOI18N
+        cmbCategories.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         cmbCategories.setForeground(new java.awt.Color(67, 38, 127));
         cmbCategories.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbCategories.setBorder(null);
@@ -93,13 +93,13 @@ public class ProductReportDialog extends javax.swing.JDialog {
             }
         });
 
-        lblCategoryFilter.setFont(new java.awt.Font("Dancing in the Minefields", 0, 14)); // NOI18N
+        lblCategoryFilter.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         lblCategoryFilter.setForeground(new java.awt.Color(255, 255, 255));
         lblCategoryFilter.setText("Category Filter:");
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
-        lstProducts.setFont(new java.awt.Font("Dancing in the Minefields", 0, 14)); // NOI18N
+        lstProducts.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         lstProducts.setForeground(new java.awt.Color(67, 38, 127));
         lstProducts.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -108,7 +108,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(lstProducts);
 
-        btnEdit.setFont(new java.awt.Font("Dancing in the Minefields", 0, 14)); // NOI18N
+        btnEdit.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         btnEdit.setForeground(new java.awt.Color(255, 255, 255));
         btnEdit.setText("Edit");
         btnEdit.setBorderPainted(false);
@@ -120,7 +120,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
             }
         });
 
-        btnDelete.setFont(new java.awt.Font("Dancing in the Minefields", 0, 14)); // NOI18N
+        btnDelete.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
         btnDelete.setBorderPainted(false);
@@ -132,7 +132,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
             }
         });
 
-        btnClose.setFont(new java.awt.Font("Dancing in the Minefields", 0, 14)); // NOI18N
+        btnClose.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         btnClose.setForeground(new java.awt.Color(255, 255, 255));
         btnClose.setText("Close");
         btnClose.setBorderPainted(false);
@@ -144,7 +144,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
             }
         });
 
-        txtSearchById.setFont(new java.awt.Font("Dancing in the Minefields", 0, 12)); // NOI18N
+        txtSearchById.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         txtSearchById.setName("txtSearchById"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -168,11 +168,11 @@ public class ProductReportDialog extends javax.swing.JDialog {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnSearch))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                        .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnClose, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)))
+                        .addComponent(btnClose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -190,7 +190,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
                     .addComponent(lblCategoryFilter)
                     .addComponent(cmbCategories, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)

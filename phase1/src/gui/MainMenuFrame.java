@@ -42,13 +42,13 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(67, 38, 127));
 
-        lblMainMenu.setFont(new java.awt.Font("DialogInput", 0, 24)); // NOI18N
+        lblMainMenu.setFont(new java.awt.Font("Corbert", 0, 24)); // NOI18N
         lblMainMenu.setForeground(new java.awt.Color(255, 255, 255));
         lblMainMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMainMenu.setText("Administration");
 
         btnAddProduct.setBackground(new java.awt.Color(153, 220, 255));
-        btnAddProduct.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        btnAddProduct.setFont(new java.awt.Font("Corbert", 0, 14)); // NOI18N
         btnAddProduct.setForeground(new java.awt.Color(255, 255, 255));
         btnAddProduct.setText("Add a New Product");
         btnAddProduct.setBorderPainted(false);
@@ -64,7 +64,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         });
 
         btnViewProducts.setBackground(new java.awt.Color(153, 220, 255));
-        btnViewProducts.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        btnViewProducts.setFont(new java.awt.Font("Corbert", 0, 14)); // NOI18N
         btnViewProducts.setForeground(new java.awt.Color(255, 255, 255));
         btnViewProducts.setText("View Products");
         btnViewProducts.setBorderPainted(false);
@@ -80,7 +80,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         });
 
         btnExit.setBackground(new java.awt.Color(153, 220, 255));
-        btnExit.setFont(new java.awt.Font("DialogInput", 0, 11)); // NOI18N
+        btnExit.setFont(new java.awt.Font("Corbert", 0, 14)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
         btnExit.setBorderPainted(false);
@@ -95,10 +95,11 @@ public class MainMenuFrame extends javax.swing.JFrame {
             }
         });
 
-        lblMainMenu1.setFont(new java.awt.Font("DialogInput", 0, 24)); // NOI18N
+        lblMainMenu1.setFont(new java.awt.Font("Corbert", 0, 24)); // NOI18N
         lblMainMenu1.setForeground(new java.awt.Color(255, 255, 255));
         lblMainMenu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMainMenu1.setText("Product");
+        lblMainMenu1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -107,12 +108,18 @@ public class MainMenuFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(lblMainMenu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnAddProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnViewProducts, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, jPanel1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(lblMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(10, 10, 10))
+            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, jPanel1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(lblMainMenu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(10, 10, 10))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

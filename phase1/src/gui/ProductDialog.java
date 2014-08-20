@@ -81,12 +81,12 @@ public class ProductDialog extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(67, 38, 127));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("DialogInput", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Corbert", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Product Editor");
 
-        btnSave.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        btnSave.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         btnSave.setForeground(new java.awt.Color(255, 255, 255));
         btnSave.setText("Save");
         btnSave.setContentAreaFilled(false);
@@ -97,7 +97,7 @@ public class ProductDialog extends javax.swing.JDialog {
             }
         });
 
-        btnCancel.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        btnCancel.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(255, 255, 255));
         btnCancel.setText("Cancel");
         btnCancel.setContentAreaFilled(false);
@@ -108,13 +108,13 @@ public class ProductDialog extends javax.swing.JDialog {
             }
         });
 
-        lblId.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        lblId.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         lblId.setForeground(new java.awt.Color(255, 255, 255));
         lblId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblId.setText("ID:");
         lblId.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        lblName.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        lblName.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblName.setText("Name:");
@@ -128,12 +128,13 @@ public class ProductDialog extends javax.swing.JDialog {
             }
         });
 
-        lblDescription.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        lblDescription.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         lblDescription.setForeground(new java.awt.Color(255, 255, 255));
         lblDescription.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDescription.setText("Description:");
         lblDescription.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        txtDescription.setFont(new java.awt.Font("Corbert", 0, 11)); // NOI18N
         txtDescription.setForeground(new java.awt.Color(67, 38, 127));
         txtDescription.setName("txtDescription"); // NOI18N
         txtDescription.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +144,7 @@ public class ProductDialog extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(txtDescription);
 
-        lblCategory.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        lblCategory.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         lblCategory.setForeground(new java.awt.Color(255, 255, 255));
         lblCategory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCategory.setText("Category:");
@@ -151,17 +152,18 @@ public class ProductDialog extends javax.swing.JDialog {
 
         cmbCategory.setBackground(new java.awt.Color(0, 169, 255));
         cmbCategory.setEditable(true);
+        cmbCategory.setFont(new java.awt.Font("Corbert", 0, 11)); // NOI18N
         cmbCategory.setForeground(new java.awt.Color(67, 38, 127));
         cmbCategory.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbCategory.setName("cmbCategory"); // NOI18N
 
-        lblPrice.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        lblPrice.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         lblPrice.setForeground(new java.awt.Color(255, 255, 255));
         lblPrice.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPrice.setText("Price:");
         lblPrice.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        lblQuantity.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        lblQuantity.setFont(new java.awt.Font("Corbert", 0, 12)); // NOI18N
         lblQuantity.setForeground(new java.awt.Color(255, 255, 255));
         lblQuantity.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblQuantity.setText("Quantity:");
@@ -183,7 +185,7 @@ public class ProductDialog extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblName)
@@ -196,7 +198,7 @@ public class ProductDialog extends javax.swing.JDialog {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtName)
                             .addComponent(jScrollPane1)
-                            .addComponent(cmbCategory, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmbCategory, 0, 204, Short.MAX_VALUE)
                             .addComponent(txtId)
                             .addComponent(txtPrice)
                             .addComponent(txtQuantity)))
@@ -209,8 +211,9 @@ public class ProductDialog extends javax.swing.JDialog {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addComponent(jLabel2)
-                .addGap(21, 21, 21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -224,23 +227,24 @@ public class ProductDialog extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lblDescription, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(26, 26, 26))
-                    .addComponent(jScrollPane1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addComponent(lblCategory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(cmbCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblQuantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
