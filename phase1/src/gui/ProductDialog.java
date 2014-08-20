@@ -78,7 +78,7 @@ public class ProductDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setName("productDialog"); // NOI18N
 
-        jPanel1.setBackground(new java.awt.Color(153, 220, 255));
+        jPanel1.setBackground(new java.awt.Color(67, 38, 127));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("DialogInput", 0, 24)); // NOI18N
@@ -120,6 +120,7 @@ public class ProductDialog extends javax.swing.JDialog {
         lblName.setText("Name:");
         lblName.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        txtName.setForeground(new java.awt.Color(67, 38, 127));
         txtName.setName("txtName"); // NOI18N
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,6 +134,7 @@ public class ProductDialog extends javax.swing.JDialog {
         lblDescription.setText("Description:");
         lblDescription.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        txtDescription.setForeground(new java.awt.Color(67, 38, 127));
         txtDescription.setName("txtDescription"); // NOI18N
         txtDescription.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,6 +151,7 @@ public class ProductDialog extends javax.swing.JDialog {
 
         cmbCategory.setBackground(new java.awt.Color(0, 169, 255));
         cmbCategory.setEditable(true);
+        cmbCategory.setForeground(new java.awt.Color(67, 38, 127));
         cmbCategory.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbCategory.setName("cmbCategory"); // NOI18N
 
@@ -164,10 +167,13 @@ public class ProductDialog extends javax.swing.JDialog {
         lblQuantity.setText("Quantity:");
         lblQuantity.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        txtId.setForeground(new java.awt.Color(67, 38, 127));
         txtId.setName("txtId"); // NOI18N
 
+        txtPrice.setForeground(new java.awt.Color(67, 38, 127));
         txtPrice.setName("txtPrice"); // NOI18N
 
+        txtQuantity.setForeground(new java.awt.Color(67, 38, 127));
         txtQuantity.setName("txtQuantity"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

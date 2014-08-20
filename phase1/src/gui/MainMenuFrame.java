@@ -40,7 +40,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 220, 255));
+        jPanel1.setBackground(new java.awt.Color(67, 38, 127));
 
         lblMainMenu.setFont(new java.awt.Font("DialogInput", 0, 24)); // NOI18N
         lblMainMenu.setForeground(new java.awt.Color(255, 255, 255));

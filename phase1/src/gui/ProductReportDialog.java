@@ -59,7 +59,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 220, 255));
+        jPanel1.setBackground(new java.awt.Color(67, 38, 127));
 
         jLabel1.setFont(new java.awt.Font("Dancing in the Minefields", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -83,7 +83,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
         });
 
         cmbCategories.setFont(new java.awt.Font("Dancing in the Minefields", 0, 14)); // NOI18N
-        cmbCategories.setForeground(new java.awt.Color(255, 255, 255));
+        cmbCategories.setForeground(new java.awt.Color(67, 38, 127));
         cmbCategories.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbCategories.setBorder(null);
         cmbCategories.setName("cmbCategories"); // NOI18N
@@ -100,7 +100,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         lstProducts.setFont(new java.awt.Font("Dancing in the Minefields", 0, 14)); // NOI18N
-        lstProducts.setForeground(new java.awt.Color(255, 255, 255));
+        lstProducts.setForeground(new java.awt.Color(67, 38, 127));
         lstProducts.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
