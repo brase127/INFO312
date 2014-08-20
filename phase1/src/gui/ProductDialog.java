@@ -29,6 +29,7 @@ public class ProductDialog extends javax.swing.JDialog {
         initComponents();
         cmbCategory.setEditable(true);
         cmbCategory.setModel(new SimpleListModel(dao.getCategories()));
+        validHelp.addTypeFormatter(txtId, "#0", Integer.class);
     }
 
     public ProductDialog(Window parent, boolean modal, Product productToEdit, ProductDAO aDao) {
@@ -42,8 +43,6 @@ public class ProductDialog extends javax.swing.JDialog {
         txtPrice.setText(String.valueOf(productToEdit.getPrice()));
         txtQuantity.setText(String.valueOf(productToEdit.getQuantity()));
         txtId.setEditable(false);
-        // add a formatter to the ID text eld
-        validHelp.addTypeFormatter(txtId, "#0", Integer.class);
     }
 
     /**
@@ -259,8 +258,7 @@ public class ProductDialog extends javax.swing.JDialog {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         if (txtId.isEditable()) {
-            Integer id = (Integer) txtId.getValue();
-            if (dao.getById(id) == null) {
+            if (dao.getById((Integer) txtId.getValue()) == null) {
                 product.setId((Integer) txtId.getValue());
                 product.setName(txtName.getText());
                 product.setDescription(txtDescription.getText());
