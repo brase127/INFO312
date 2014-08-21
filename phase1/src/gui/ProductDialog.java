@@ -56,6 +56,8 @@ public class ProductDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnSave = new javax.swing.JButton();
@@ -65,7 +67,7 @@ public class ProductDialog extends javax.swing.JDialog {
         txtName = new javax.swing.JTextField();
         lblDescription = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtDescription = new javax.swing.JTextField();
+        txtDescription = new javax.swing.JTextArea();
         lblCategory = new javax.swing.JLabel();
         cmbCategory = new javax.swing.JComboBox();
         lblPrice = new javax.swing.JLabel();
@@ -73,6 +75,10 @@ public class ProductDialog extends javax.swing.JDialog {
         txtId = new javax.swing.JFormattedTextField();
         txtPrice = new javax.swing.JFormattedTextField();
         txtQuantity = new javax.swing.JFormattedTextField();
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setName("productDialog"); // NOI18N
@@ -119,7 +125,7 @@ public class ProductDialog extends javax.swing.JDialog {
         lblName.setText("Name:");
         lblName.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        txtName.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
+        txtName.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         txtName.setForeground(new java.awt.Color(67, 38, 127));
         txtName.setName("txtName"); // NOI18N
         txtName.addActionListener(new java.awt.event.ActionListener() {
@@ -134,15 +140,10 @@ public class ProductDialog extends javax.swing.JDialog {
         lblDescription.setText("Description:");
         lblDescription.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        txtDescription.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
-        txtDescription.setForeground(new java.awt.Color(67, 38, 127));
-        txtDescription.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtDescription.setColumns(20);
+        txtDescription.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        txtDescription.setRows(5);
         txtDescription.setName("txtDescription"); // NOI18N
-        txtDescription.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDescriptionActionPerformed(evt);
-            }
-        });
         jScrollPane1.setViewportView(txtDescription);
 
         lblCategory.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -170,7 +171,7 @@ public class ProductDialog extends javax.swing.JDialog {
         lblQuantity.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         txtId.setForeground(new java.awt.Color(67, 38, 127));
-        txtId.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
+        txtId.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         txtId.setName("txtId"); // NOI18N
 
         txtPrice.setForeground(new java.awt.Color(67, 38, 127));
@@ -200,11 +201,11 @@ public class ProductDialog extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtName)
-                            .addComponent(cmbCategory, 0, 360, Short.MAX_VALUE)
+                            .addComponent(cmbCategory, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtId)
                             .addComponent(txtPrice)
                             .addComponent(txtQuantity)
-                            .addComponent(jScrollPane1)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -227,7 +228,7 @@ public class ProductDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cmbCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -303,10 +304,6 @@ public class ProductDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
 
-    private void txtDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescriptionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDescriptionActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -318,13 +315,15 @@ public class ProductDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblCategory;
     private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPrice;
     private javax.swing.JLabel lblQuantity;
-    private javax.swing.JTextField txtDescription;
+    private javax.swing.JTextArea txtDescription;
     private javax.swing.JFormattedTextField txtId;
     private javax.swing.JTextField txtName;
     private javax.swing.JFormattedTextField txtPrice;
