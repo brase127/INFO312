@@ -21,7 +21,7 @@ public class Main {
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new MainMenuFrame(new ProductCollectionDAO()).setVisible(true);
+                new MainMenuFrame(new ProductJdbcDAO()).setVisible(true);
             }
         });
     }
