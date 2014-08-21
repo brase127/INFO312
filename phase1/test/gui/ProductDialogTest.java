@@ -46,6 +46,7 @@ public class ProductDialogTest {
         Collection<String> categories = new TreeSet<>();
         categories.add("Knitting");
         categories.add("Ninjitsu");
+        categories.add("Tools");
         dao = mock(ProductDAO.class);
         when(dao.getCategories()).thenReturn(categories);
     }
@@ -61,7 +62,7 @@ public class ProductDialogTest {
         ProductDialog dialog = new ProductDialog(null, true, hairbrush, dao);
         fest = new DialogFixture(dialog);
         fest.show();
-        fest.robot.settings().delayBetweenEvents(75);
+        fest.robot.settings().delayBetweenEvents(100);
 
         // ensure that the UI components contains hairbursh's details
         fest.textBox("txtId").requireText("9638");
@@ -72,9 +73,11 @@ public class ProductDialogTest {
         fest.textBox("txtQuantity").requireText("6543");
 
         // edit the name, price and description
-        fest.textBox("txtPrice").selectAll().enterText("26.70");
-        fest.textBox("txtName").selectAll().enterText("Round Barrel Hairbrush");
-        fest.textBox("txtDescription").selectAll().enterText("Large round barrel hairbrush for blow drying");
+        fest.textBox("txtName").enterText("").selectAll().enterText("Round Barrel Hairbrush");
+        fest.textBox("txtDescription").enterText("").selectAll().enterText("Large round barrel hairbrush for blow drying");
+        fest.comboBox("cmbCategory").enterText("").selectAllText().enterText("Tools");
+        fest.textBox("txtPrice").enterText("").selectAll().enterText("26.70");
+        fest.textBox("txtQuantity").enterText("").selectAll().enterText("1000");
 
         // click the save button
         fest.button("btnSave").click();
@@ -87,8 +90,10 @@ public class ProductDialogTest {
         Product edited = argument.getValue();
         // ensure that the changes were saved
         assertEquals("Ensure the name changed", "Round Barrel Hairbrush", edited.getName());
-        assertEquals("Ensure the price changed", new Double(26.70), edited.getPrice());
         assertEquals("Ensure the Description changed", "Large round barrel hairbrush for blow drying", edited.getDescription());
+        assertEquals("Ensure Categoy changed", "Tools", edited.getCategory());
+        assertEquals("Ensure the price changed", new Double(26.70), edited.getPrice());        
+        assertEquals("Ensure the quantity changed", new Integer(1000), edited.getQuantity());
     }
 
     @Test

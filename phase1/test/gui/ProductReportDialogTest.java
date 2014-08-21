@@ -60,7 +60,7 @@ public class ProductReportDialogTest {
         dao = mock(ProductDAO.class);
 // stub the getAll method to return the test students collection
         when(dao.getAll()).thenReturn(products);
-// stub the getById method to return the appropriate test student based on the passed ID
+// stub the getById method to return the appropriate test product based on the passed ID
         when(dao.getById(123456)).thenReturn(ball);
         when(dao.getById(456789)).thenReturn(doll);
 // create dialog passing mocked DAO
@@ -81,10 +81,10 @@ public class ProductReportDialogTest {
         ).getAll();
         SimpleListModel model
                 = (SimpleListModel) fest.list().component().getModel();
-// check that the model actually contains the students
-        assertTrue("Ensure list contain Jack", model.contains(ball));
-        assertTrue("Ensure list contain Jill", model.contains(doll));
-        assertTrue("Ensure list contains the correct number of students",
+// check that the model actually contains the products
+        assertTrue("Ensure list contain ball", model.contains(ball));
+        assertTrue("Ensure list contain doll", model.contains(doll));
+        assertTrue("Ensure list contains the correct number of products",
                 model.getSize() == products.size());
     }
     @Test
