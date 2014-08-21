@@ -61,7 +61,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
 
         jPanel1.setBackground(new java.awt.Color(67, 38, 127));
 
-        jLabel1.setFont(new java.awt.Font("Corbert", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("BernhardFashion BT", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("View Products");
@@ -190,7 +190,7 @@ public class ProductReportDialog extends javax.swing.JDialog {
                     .addComponent(lblCategoryFilter)
                     .addComponent(cmbCategories, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
