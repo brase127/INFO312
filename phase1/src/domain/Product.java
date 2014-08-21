@@ -22,23 +22,28 @@ public class Product implements Comparable<Product> {
     @Length(min = 3, max = 7,
             message = "ID must contain between 3 and 7 digits (inclusive).")
     private Integer id;
+    
     @NotNull(message = "Name must be provided.")
     @NotBlank(message = "Name must be provided.")
     @Length(min = 2, message = "Name must contain at least two characters.")
     private String name;
+    
     @NotNull(message = "Description must be provided.")
     @NotBlank(message = "Description must be provided.")
     @Length(min = 2, message = "Description must contain at least two characters.")
     private String description;
+    
     @NotNull(message = "Category must be provided.")
     @NotBlank(message = "Category must be provided.")
     @Length(min = 2, message = "Category must contain at least two characters.")
     private String category;
+    
     @NotNull(message = "Price must be provided.")
     @NotBlank(message = "Price must be provided.")
     @NotNegative(message = "Price must be a postive number.")
     @Length(min = 1, message = "Price must contain at least one digit.")
     private Double price;
+    
     @NotNull(message = "Quantity must be provided.")
     @NotBlank(message = "Quantity must be provided.")
     @NotNegative(message = "Quantity must be a postive number.")

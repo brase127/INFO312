@@ -41,8 +41,8 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(67, 38, 127));
 
-        btnAddProduct.setBackground(new java.awt.Color(153, 220, 255));
-        btnAddProduct.setFont(new java.awt.Font("Corbert", 0, 18)); // NOI18N
+        btnAddProduct.setBackground(new java.awt.Color(67, 38, 127));
+        btnAddProduct.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnAddProduct.setForeground(new java.awt.Color(255, 255, 255));
         btnAddProduct.setText("Add a New Product");
         btnAddProduct.setBorderPainted(false);
@@ -57,8 +57,8 @@ public class MainMenuFrame extends javax.swing.JFrame {
             }
         });
 
-        btnViewProducts.setBackground(new java.awt.Color(153, 220, 255));
-        btnViewProducts.setFont(new java.awt.Font("Corbert", 0, 18)); // NOI18N
+        btnViewProducts.setBackground(new java.awt.Color(67, 38, 127));
+        btnViewProducts.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnViewProducts.setForeground(new java.awt.Color(255, 255, 255));
         btnViewProducts.setText("View Products");
         btnViewProducts.setBorderPainted(false);
@@ -74,7 +74,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         });
 
         btnExit.setBackground(new java.awt.Color(153, 220, 255));
-        btnExit.setFont(new java.awt.Font("Corbert", 0, 14)); // NOI18N
+        btnExit.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
         btnExit.setBorderPainted(false);
@@ -89,7 +89,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
             }
         });
 
-        lblMainMenu1.setFont(new java.awt.Font("Corbert", 0, 36)); // NOI18N
+        lblMainMenu1.setFont(new java.awt.Font("SansSerif", 0, 36)); // NOI18N
         lblMainMenu1.setForeground(new java.awt.Color(255, 255, 255));
         lblMainMenu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMainMenu1.setText("Product Administration");
