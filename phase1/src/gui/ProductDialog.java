@@ -5,6 +5,7 @@
  */
 package gui;
 
+import dao.DAOException;
 import dao.ProductDAO;
 import domain.Product;
 import gui.helpers.SimpleListModel;
@@ -264,28 +265,33 @@ public class ProductDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        if (txtId.isEditable()) {
-            if (dao.getById((Integer) txtId.getValue()) == null) {
-                product.setId((Integer) txtId.getValue());
+        try {
+            if (txtId.isEditable()) {
+                if (dao.getById((Integer) txtId.getValue()) == null) {
+                    product.setId((Integer) txtId.getValue());
+                    product.setName(txtName.getText());
+                    product.setDescription(txtDescription.getText());
+                    product.setCategory((String) cmbCategory.getSelectedItem());
+                    product.setPrice((Double) txtPrice.getValue());
+                    product.setQuantity((Integer) txtQuantity.getValue());
+                } else {
+                    JOptionPane.showMessageDialog(this, "This ID already exists.");
+                }
+            } else {
                 product.setName(txtName.getText());
                 product.setDescription(txtDescription.getText());
                 product.setCategory((String) cmbCategory.getSelectedItem());
-                product.setPrice((Double) txtPrice.getValue());
-                product.setQuantity((Integer) txtQuantity.getValue());
-            } else {
-                JOptionPane.showMessageDialog(this, "This ID already exists.");
+                product.setPrice(Double.parseDouble(txtPrice.getText()));
+                product.setQuantity(Integer.parseInt(txtQuantity.getText()));
             }
-        } else {
-            product.setName(txtName.getText());
-            product.setDescription(txtDescription.getText());
-            product.setCategory((String) cmbCategory.getSelectedItem());
-            product.setPrice(Double.parseDouble(txtPrice.getText()));
-            product.setQuantity(Integer.parseInt(txtQuantity.getText()));
-        }
-        if (validHelp.isObjectValid(product)) {
-            dao.save(product);
-            System.out.println(product);
-            this.dispose();
+            if (validHelp.isObjectValid(product)) {
+                dao.save(product);
+                System.out.println(product);
+                this.dispose();
+            }
+        } catch (DAOException ex) {
+                    JOptionPane.showMessageDialog(this, ex.getMessage(),"Storage problem.", JOptionPane.ERROR_MESSAGE);
+
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
