@@ -38,9 +38,8 @@ public class ProductJdbcDAO implements ProductDAO {
             stmt.setInt(6, aProduct.getQuantity());
             // execute the statement
             stmt.executeUpdate();
-        } catch (SQLException ex) { // we are forced to catch SQLException
-            // don't let the SQLException leak from our DAO encapsulation
-            throw new RuntimeException(ex);
+        } catch (SQLException ex) { // don't let the SQLException leak from our DAO encapsulation
+            throw new DAOException(ex.getMessage(), ex);
         }
     }
 
@@ -60,7 +59,7 @@ public class ProductJdbcDAO implements ProductDAO {
             stmt.executeUpdate();
         } catch (SQLException ex) { // we are forced to catch SQLException
             // don't let the SQLException leak from our DAO encapsulation
-            throw new RuntimeException(ex);
+            throw new DAOException(ex.getMessage(), ex);
         }
     }
 
@@ -95,7 +94,7 @@ public class ProductJdbcDAO implements ProductDAO {
             }
             return products;
         } catch (SQLException ex) {
-            throw new RuntimeException(ex);
+            throw new DAOException(ex.getMessage(), ex);
         }
     }
 
@@ -125,7 +124,7 @@ public class ProductJdbcDAO implements ProductDAO {
             }
             return categories;
         } catch (SQLException ex) {
-            throw new RuntimeException(ex);
+            throw new DAOException(ex.getMessage(), ex);
         }
     }
 
@@ -156,7 +155,7 @@ public class ProductJdbcDAO implements ProductDAO {
             }
             return null;
         } catch (SQLException ex) {
-            throw new RuntimeException(ex);
+            throw new DAOException(ex.getMessage(), ex);
         }
     }
 
@@ -188,7 +187,7 @@ public class ProductJdbcDAO implements ProductDAO {
             }
             return products;
         } catch (SQLException ex) {
-            throw new RuntimeException(ex);
+            throw new DAOException(ex.getMessage(), ex);
         }
     }
 
