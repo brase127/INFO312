@@ -43,11 +43,11 @@ public class ProductDialogTest {
 
     @Before
     public void setUp() {
-        Collection<String> majors = new TreeSet<>();
-        majors.add("Knitting");
-        majors.add("Ninjitsu");
+        Collection<String> categories = new TreeSet<>();
+        categories.add("Knitting");
+        categories.add("Ninjitsu");
         dao = mock(ProductDAO.class);
-        when(dao.getCategories()).thenReturn(majors);
+        when(dao.getCategories()).thenReturn(categories);
     }
 
     @After

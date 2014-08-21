@@ -135,6 +135,7 @@ public class ProductDialog extends javax.swing.JDialog {
 
         txtDescription.setFont(new java.awt.Font("Corbert", 0, 11)); // NOI18N
         txtDescription.setForeground(new java.awt.Color(67, 38, 127));
+        txtDescription.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtDescription.setName("txtDescription"); // NOI18N
         txtDescription.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -10,8 +10,9 @@ package domain;
  * @author chike189
  */
 public class OrderItem {
-
+    
     private Integer quantityPurchased;
+    private Product aProduct;
 
     public OrderItem(Integer quantityPurchased) {
         this.quantityPurchased = quantityPurchased;
@@ -25,7 +26,7 @@ public class OrderItem {
         this.quantityPurchased = quantityPurchased;
     }
 
-    public double getItemTotal(Product aProduct) {
+    public double getItemTotal() {
         Double price = aProduct.getPrice();
         return price * quantityPurchased;
     }

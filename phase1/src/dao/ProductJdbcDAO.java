@@ -26,7 +26,7 @@ public class ProductJdbcDAO implements ProductDAO {
         String sql = "merge into products (id, name, description, category, price, quantity) values (?,?,?,?,?,?)";
         try (
                 // get connection to database
-                Connection dbCon = JdbcConnection.getConnection();
+                Connection dbCon = ShoppingConnection.getConnection();
                 // create the statement
                 PreparedStatement stmt = dbCon.prepareStatement(sql);) {
             // copy the data from the student domain object into the SQL parameters
@@ -49,7 +49,7 @@ public class ProductJdbcDAO implements ProductDAO {
 
         try (
                 // get connection to database
-                Connection dbCon = JdbcConnection.getConnection();
+                Connection dbCon = ShoppingConnection.getConnection();
                 // create the statement
                 PreparedStatement stmt = dbCon.prepareStatement(sql);) {
             // copy the data from the student domain object into the SQL parameters
@@ -68,7 +68,7 @@ public class ProductJdbcDAO implements ProductDAO {
         String sql = "select * from products order by id";
         try (
                 // get a connection to the database
-                Connection dbCon = JdbcConnection.getConnection();
+                Connection dbCon = ShoppingConnection.getConnection();
                 // create the statement
                 PreparedStatement stmt = dbCon.prepareStatement(sql);) {
 // execute the query
@@ -103,7 +103,7 @@ public class ProductJdbcDAO implements ProductDAO {
         String sql = "select category from products order by category";
         try (
                 // get a connection to the database
-                Connection dbCon = JdbcConnection.getConnection();
+                Connection dbCon = ShoppingConnection.getConnection();
                 // create the statement
                 PreparedStatement stmt = dbCon.prepareStatement(sql);) {
 // execute the query
@@ -133,7 +133,7 @@ public class ProductJdbcDAO implements ProductDAO {
         String sql = "select * from products where id = " + aId + ";";
         try (
                 // get a connection to the database
-                Connection dbCon = JdbcConnection.getConnection();
+                Connection dbCon = ShoppingConnection.getConnection();
                 // create the statement
                 PreparedStatement stmt = dbCon.prepareStatement(sql);) {
 // execute the query
@@ -164,7 +164,7 @@ public class ProductJdbcDAO implements ProductDAO {
         String sql = "select * from products where category = '" + aCategory + "' order by id;";
         try (
                 // get a connection to the database
-                Connection dbCon = JdbcConnection.getConnection();
+                Connection dbCon = ShoppingConnection.getConnection();
                 // create the statement
                 PreparedStatement stmt = dbCon.prepareStatement(sql);) {
 // execute the query

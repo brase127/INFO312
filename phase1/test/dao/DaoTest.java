@@ -106,7 +106,7 @@ public class DaoTest {
         Integer fakeId = 999999999;
         assertEquals("Making sure a non existant ID returns a null", dao.getById(fakeId), null);
     }
-
+    
     @Test
     public void testDaoGetCategories() {
         Collection<String> retrieved = dao.getCategories();
