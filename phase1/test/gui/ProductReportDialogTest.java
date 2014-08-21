@@ -49,16 +49,16 @@ public class ProductReportDialogTest {
 
     @Before
     public void setUp() {
-        // create some students for testing with
+        // create some products for testing with
         ball = new Product(123456, "Ball", "Round and bouncy", "Toy", 15.35, 1234);
         doll = new Product(456789, "Doll", "Small and pretty", "Antique", 25.35, 4567);
-// add the students to a collection for testing with
+// add the products to a collection for testing with
         products = new TreeSet<>();
         products.add(ball);
         products.add(doll);
 // create a mock for the DAO
         dao = mock(ProductDAO.class);
-// stub the getAll method to return the test students collection
+// stub the getAll method to return the test products collection
         when(dao.getAll()).thenReturn(products);
 // stub the getById method to return the appropriate test product based on the passed ID
         when(dao.getById(123456)).thenReturn(ball);
