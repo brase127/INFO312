@@ -17,11 +17,13 @@ public class Order {
 
     private Integer orderId;
     private String date;
+    private Customer customer;
+
     List<OrderItem> items = new ArrayList();
 
-    public Order(Integer orderId, String data) {
-        this.orderId = orderId;
+    public Order(Integer orderId, String date, Customer customer) {
         this.date = date;
+        this.customer = customer;
     }
 
     public Integer getOrderId() {
@@ -39,14 +41,32 @@ public class Order {
     public void setDate(String date) {
         this.date = date;
     }
-// GET HELP WITH THIS
 
-    public Integer getTotal() {
-        return null;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public Collection<OrderItem> addItem(OrderItem anOrderedItem) {
-        items.add(anOrderedItem);
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public List<OrderItem> getItems() {
         return items;
+    }
+
+    public void setItems(List<OrderItem> items) {
+        this.items = items;
+    }
+
+    public Double getTotal() {
+        double result = 0;
+        for (OrderItem item : items) {
+            result += item.getItemTotal();
+        }
+        return result;
+    }
+
+    public void addItem(OrderItem anOrderedItem) {
+        items.add(anOrderedItem);
     }
 }

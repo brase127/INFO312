@@ -13,9 +13,12 @@ public class OrderItem {
     
     private Integer quantityPurchased;
     private Product aProduct;
-
-    public OrderItem(Integer quantityPurchased) {
+    private Order anOrder;
+    
+    
+    public OrderItem(Integer quantityPurchased, Product aProduct) {
         this.quantityPurchased = quantityPurchased;
+        this.aProduct = aProduct;
     }
 
     public Integer getQuantityPurchased() {
@@ -25,6 +28,17 @@ public class OrderItem {
     public void setQuantityPurchased(Integer quantityPurchased) {
         this.quantityPurchased = quantityPurchased;
     }
+
+    public Product getaProduct() {
+        return aProduct;
+    }
+
+    public void setaProduct(Product aProduct) {
+        this.aProduct = aProduct;
+    }
+    
+
+    
 
     public double getItemTotal() {
         Double price = aProduct.getPrice();

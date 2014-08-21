@@ -32,7 +32,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lblMainMenu = new javax.swing.JLabel();
         btnAddProduct = new javax.swing.JButton();
         btnViewProducts = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
@@ -42,13 +41,8 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(67, 38, 127));
 
-        lblMainMenu.setFont(new java.awt.Font("Corbert", 0, 24)); // NOI18N
-        lblMainMenu.setForeground(new java.awt.Color(255, 255, 255));
-        lblMainMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMainMenu.setText("Administration");
-
         btnAddProduct.setBackground(new java.awt.Color(153, 220, 255));
-        btnAddProduct.setFont(new java.awt.Font("Corbert", 0, 14)); // NOI18N
+        btnAddProduct.setFont(new java.awt.Font("Corbert", 0, 18)); // NOI18N
         btnAddProduct.setForeground(new java.awt.Color(255, 255, 255));
         btnAddProduct.setText("Add a New Product");
         btnAddProduct.setBorderPainted(false);
@@ -64,7 +58,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         });
 
         btnViewProducts.setBackground(new java.awt.Color(153, 220, 255));
-        btnViewProducts.setFont(new java.awt.Font("Corbert", 0, 14)); // NOI18N
+        btnViewProducts.setFont(new java.awt.Font("Corbert", 0, 18)); // NOI18N
         btnViewProducts.setForeground(new java.awt.Color(255, 255, 255));
         btnViewProducts.setText("View Products");
         btnViewProducts.setBorderPainted(false);
@@ -95,11 +89,10 @@ public class MainMenuFrame extends javax.swing.JFrame {
             }
         });
 
-        lblMainMenu1.setFont(new java.awt.Font("Corbert", 0, 24)); // NOI18N
+        lblMainMenu1.setFont(new java.awt.Font("Corbert", 0, 48)); // NOI18N
         lblMainMenu1.setForeground(new java.awt.Color(255, 255, 255));
         lblMainMenu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMainMenu1.setText("Product");
-        lblMainMenu1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        lblMainMenu1.setText("Product Administration");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -114,10 +107,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.CENTER, jPanel1Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
-                .addComponent(lblMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(10, 10, 10))
-            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, jPanel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
                 .addComponent(lblMainMenu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(10, 10, 10))
         );
@@ -125,15 +114,13 @@ public class MainMenuFrame extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblMainMenu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblMainMenu1, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAddProduct, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAddProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnViewProducts, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnViewProducts, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -174,7 +161,6 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnViewProducts;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblMainMenu;
     private javax.swing.JLabel lblMainMenu1;
     // End of variables declaration//GEN-END:variables
 }
