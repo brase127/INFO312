@@ -64,7 +64,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtName" max="32767" attributes="0"/>
                               <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="cmbCategory" alignment="0" pref="204" max="32767" attributes="0"/>
+                              <Component id="cmbCategory" alignment="0" pref="265" max="32767" attributes="0"/>
                               <Component id="txtId" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtPrice" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtQuantity" alignment="0" max="32767" attributes="0"/>
