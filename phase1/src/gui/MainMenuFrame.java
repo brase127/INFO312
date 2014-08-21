@@ -42,7 +42,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(67, 38, 127));
 
         btnAddProduct.setBackground(new java.awt.Color(67, 38, 127));
-        btnAddProduct.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        btnAddProduct.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         btnAddProduct.setForeground(new java.awt.Color(255, 255, 255));
         btnAddProduct.setText("Add a New Product");
         btnAddProduct.setBorderPainted(false);
@@ -58,7 +58,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         });
 
         btnViewProducts.setBackground(new java.awt.Color(67, 38, 127));
-        btnViewProducts.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        btnViewProducts.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         btnViewProducts.setForeground(new java.awt.Color(255, 255, 255));
         btnViewProducts.setText("View Products");
         btnViewProducts.setBorderPainted(false);
