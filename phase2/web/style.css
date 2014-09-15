@@ -1,0 +1,20 @@
+@import url("forms.css");  /* import forms layout */
+
+/* add CSS to style your page here */
+body {
+    background-color: #5847bd;
+}
+h1 {
+    color: #a6dffc;
+    text-align: center;
+}
+
+fieldset{
+    background-color: #5847bd;
+    margin: auto;
+}
+
+table{
+    background-color: #5847bd;
+    margin: auto;
+}
