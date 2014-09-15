@@ -38,9 +38,9 @@
         message = request.getAttribute("javax.servlet.error.message").toString();
     }
 %>
-!
+
 <%=message%>
-!
+
 <form action="LogInServlet" method="post">
 
 </form>
