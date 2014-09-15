@@ -7,6 +7,7 @@ package servlets;
 
 import dao.CustomerJdbcDAO;
 import domain.Customer;
+import domain.Order;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
