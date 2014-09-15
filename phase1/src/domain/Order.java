@@ -25,6 +25,10 @@ public class Order {
         this.date = date;
         this.customer = customer;
     }
+    
+    public Order(Customer cust){
+        this.customer = cust;
+    }
 
     public Integer getOrderId() {
         return orderId;
