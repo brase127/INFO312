@@ -50,6 +50,7 @@ public class DaoTest {
         doll = new Product(dollId, "Doll", dollDescription, dollCategory, dollPrice, dollQuantity);
         dao.save(doll);
         dao.save(ball);
+        
     }
 
     @After

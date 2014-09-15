@@ -130,12 +130,15 @@ public class ProductJdbcDAO implements ProductDAO {
 
     @Override
     public Product getById(Integer aId) {
-        String sql = "select * from products where id = " + aId + ";";
+        String sql = "select * from products where id = (?);";
         try (
                 // get a connection to the database
                 Connection dbCon = ShoppingConnection.getConnection();
                 // create the statement
-                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+                PreparedStatement stmt = dbCon.prepareStatement(sql);){
+        
+                stmt.setInt(1, aId);
+        
 // execute the query
             ResultSet rs = stmt.executeQuery();
 
