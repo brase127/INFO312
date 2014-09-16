@@ -16,7 +16,7 @@
     <body>
         <h1>Create an Account</h1>
         <div>
-            <form action="/shopping/LoginServlet" method="post">
+            <form action="/shopping/CreateAccount" method="post">
                 <fieldset>
                     <legend>Account Details</legend>
                     <label>User Name:<input type="text" name="username"></label>
