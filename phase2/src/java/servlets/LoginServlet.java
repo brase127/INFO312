@@ -48,7 +48,17 @@ public class LoginServlet extends HttpServlet {
                 // also create and store an Order that will be used as a shopping cart
                 session.setAttribute("order", new Order(cust));
                 // go back to home page
-                response.sendRedirect(".");
+                //get the requested page from the session
+                String requestedPath = (String) session.getAttribute("requestedPath");
+                if (requestedPath != null) {
+                    //if it was set then remove it from the session
+                    session.removeAttribute("requestedPath");
+                    //and redirect to that page
+                    response.sendRedirect(requestedPath);
+                } else {
+                    //if not go to the home page
+                    response.sendRedirect("/shop");
+                }
             } else {
                 // no customer has those details so send a 401 error
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED,
