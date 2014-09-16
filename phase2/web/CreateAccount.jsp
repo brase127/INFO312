@@ -15,8 +15,7 @@
     </head>
 
     <body>
-        <h1>Create an Account</h1>
-        <div>
+                <div>
             <form action="/shopping/CreateAccount" method="post">
                 <fieldset>
                     <legend>Account Details</legend>

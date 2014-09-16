@@ -1,20 +1,58 @@
 @import url("forms.css");  /* import forms layout */
 
 /* add CSS to style your page here */
-body {
-    background-color: #ffffff;
-}
-h1 {
-    color: #000000;
-    text-align: center;
-}
-
 fieldset{
-    background-color: #ffffff;
+    background-color: #827f93;
     margin: auto;
 }
 
 table{
-    background-color: #ffffff;
+    background-color: #827f93;
     margin: auto;
 }
+
+
+html{
+    margin-left:35px;
+    height:103%;
+}
+
+body, p {
+    font-family:Ubuntu;
+    font-size:14px;
+    font-style: normal;
+    padding: 0px;
+    margin: 0px;
+    color:#454573;
+}
+
+body {
+    background-color:#827f93;   
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+
+a {
+    text-decoration:none;
+    color:#454573;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    transition: all 0.4s linear;}
+
+a:link, a:active, a:visited{
+    color: #454573;
+    text-decoration: none;
+    -webkit-transition: all 0.6s ease-out;-moz-transition: all 0.6s ease-out;-o-transition: all   0.6s ease-out;transition: all 0.6s ease-out;}
+
+a:hover{
+    color:#d4d4d4;
+}
+
+img:hover{opacity:1.0;-webkit-transition: all 0.6s ease-out;-moz-transition: all 0.6s ease-out;-o-transition: all   0.6s ease-out;transition: all 0.6s ease-out;cursor:crosshair;
+}
+
+button {
+    
+    
+}
+
