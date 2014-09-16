@@ -13,6 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Create Account</title>
     </head>
+
     <body>
         <h1>Create an Account</h1>
         <div>
@@ -22,10 +23,10 @@
                     <label>User Name:<input type="text" name="username"></label>
                     <label>Name:<input type="text" name="name"></label>
                     <label>Email:<input type="text" name="email"></label>
-                    <label>Address<input type="text" name="address"></label>
+                    <label>Address<input rows ="4" cols ="0" name="address"></label>
                     <label>Credit Card:<input type="text" name="creditCardDetails"></label>
                     <label>Password:<input type="password" name="password"></label>
-                    <button type="submit">Create Account</button>                    
+                    <button type="submit">Create Account</button>  
                 </fieldset>
             </form>
         </div>

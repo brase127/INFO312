@@ -19,8 +19,8 @@
 <%    // get the status code to see why the log in page was requested
     Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
     // default message to display to the user
-    String message = "Please log in to continue.";
-    // if the status code was 401 (UNAUTHORIZED) then extract the message
+    String message = "";
+    // if the status code was 422 (UNAUTHORIZED) then extract the message
     // from the request
     if (statusCode != null && statusCode == HttpServletResponse.SC_UNAUTHORIZED) {
         message = request.getAttribute("javax.servlet.error.message").toString();
@@ -38,6 +38,7 @@
                     <label>Password:<input type="password" name="password"></label>
                     <button type="submit">Login</button>
                     <%=message%>    
+                    <a href="/shopping/CreateAccount.jsp">Sign Up</a>
                 </fieldset>
             </form>
         </div>
