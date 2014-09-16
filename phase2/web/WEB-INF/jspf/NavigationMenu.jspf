@@ -1,3 +1,16 @@
-<%-- any content can be specified here e.g.: --%>
-<%@ page pageEncoding="UTF-8" %>
-<h2>Hello World!</h2>
+
+<%@page import="domain.Customer"%>
+<%
+        String name = "" ;
+//If the session variable is set, get the name and display it on the page
+        if (session.getAttribute("customer") != null) {
+            Customer customer = (Customer) session.getAttribute("customer");
+            name = customer.getName();
+        } 
+%>
+
+<%=name%>
+
+<a href="/shopping/index.jsp">Home Page</a>
+<a href="/shopping/CustomerLogin.jsp">Log In</a>
+<a href="/shopping/restricted/ViewProducts.jsp">View Products</a>
