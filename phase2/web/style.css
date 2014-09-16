@@ -2,19 +2,19 @@
 
 /* add CSS to style your page here */
 body {
-    background-color: #ff99cc;
+    background-color: #ffffff;
 }
 h1 {
-    color: #ffffff;
+    color: #000000;
     text-align: center;
 }
 
 fieldset{
-    background-color: #ff99cc;
+    background-color: #ffffff;
     margin: auto;
 }
 
 table{
-    background-color: #ff99cc;
+    background-color: #ffffff;
     margin: auto;
 }

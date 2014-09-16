@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
                     response.sendRedirect(requestedPath);
                 } else {
                     //if not go to the home page
-                    response.sendRedirect("/shop");
+                    response.sendRedirect("/shopping/restricted/ViewProducts.jsp");
                 }
             } else {
                 // no customer has those details so send a 401 error
