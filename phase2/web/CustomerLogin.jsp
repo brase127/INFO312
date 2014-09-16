@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="/shopping/style.css">
         <title>Customer Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
