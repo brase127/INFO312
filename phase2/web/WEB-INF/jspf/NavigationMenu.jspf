@@ -5,7 +5,7 @@
 //If the session variable is set, get the name and display it on the page
         if (session.getAttribute("customer") != null) {
             Customer customer = (Customer) session.getAttribute("customer");
-            name = customer.getName();
+            name = "Welcome " + customer.getName();
         } 
 %>
 
