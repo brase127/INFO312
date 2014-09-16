@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package servlets;
 
 import dao.CustomerJdbcDAO;
 import domain.Customer;
-import domain.Order;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -15,14 +15,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author chike189
  */
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "CreateAccount", urlPatterns = {"/CreateAccount"})
+public class CreateAccount extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,32 +37,19 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String username = request.getParameter("username");
+            String name = request.getParameter("name");
+            String email = request.getParameter("email");
+            String address = request.getParameter("address");
+            String creditCardDetails = request.getParameter("creditCardDetails");
             String password = request.getParameter("password");
-            Customer cust = new CustomerJdbcDAO().login(username, password);
-            // did DAO find a customer with those credentials?
-            if (cust != null) {
-                // if so store the customer in the session
-                HttpSession session = request.getSession();
-                session.setAttribute("customer", cust);
-                // also create and store an Order that will be used as a shopping cart
-                session.setAttribute("order", new Order(cust));
-                // go back to home page
-                //get the requested page from the session
-                String requestedPath = (String) session.getAttribute("requestedPath");
-                if (requestedPath != null) {
-                    //if it was set then remove it from the session
-                    session.removeAttribute("requestedPath");
-                    //and redirect to that page
-                    response.sendRedirect(requestedPath);
-                } else {
-                    //if not go to the home page
-                    response.sendRedirect("/shopping/");
-                }
-            } else {
-                // no customer has those details so send a 401 error
-                response.sendError(HttpServletResponse.SC_UNAUTHORIZED,
-                        "Log in failed. Try again.");
-            }
+            
+            Customer customer = new Customer (username, name, address, creditCardDetails, password, email);
+            
+            CustomerJdbcDAO dao = new CustomerJdbcDAO();
+            dao.save(customer);
+            
+            response.sendRedirect("/shopping/");
+            
         }
     }
 
