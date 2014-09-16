@@ -49,15 +49,15 @@ public class Product implements Comparable<Product> {
     @NotNegative(message = "Quantity must be a postive number.")
     
     @Length(min = 1, message = "Price must contain at least one digit.")
-    private Integer Quantity;
+    private Integer quantity;
 
-    public Product(Integer id, String name, String description, String category, Double price, Integer Quantity) {
+    public Product(Integer id, String name, String description, String category, Double price, Integer quantity) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.category = category;
         this.price = price;
-        this.Quantity = Quantity;
+        this.quantity = quantity;
     }
 
     public Product() {
@@ -104,16 +104,16 @@ public class Product implements Comparable<Product> {
     }
 
     public Integer getQuantity() {
-        return Quantity;
+        return quantity;
     }
 
     public void setQuantity(Integer Quantity) {
-        this.Quantity = Quantity;
+        this.quantity = Quantity;
     }
 
     @Override
     public String toString() {
-        return "ID: " + id + ", Name: " + name + ", Description: " + description + ", Category: " + category + ", Price: " + price + ", Quantity: " + Quantity;
+        return "ID: " + id + ", Name: " + name + ", Description: " + description + ", Category: " + category + ", Price: " + price + ", Quantity: " + quantity;
     }
 
     @Override
