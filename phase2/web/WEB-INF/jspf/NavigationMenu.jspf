@@ -14,3 +14,4 @@
 <a href="/shopping/index.jsp">Home Page</a>
 <a href="/shopping/CustomerLogin.jsp">Log In</a>
 <a href="/shopping/restricted/ViewProducts.jsp">View Products</a>
+<a href="/shopping/CustomerLogout">Logout</a>
