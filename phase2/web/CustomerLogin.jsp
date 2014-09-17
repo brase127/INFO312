@@ -10,7 +10,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="/shopping/style.css">
-        <title>Customer Login</title>
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>        <title>Customer Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
        <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>

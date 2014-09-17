@@ -8,9 +8,10 @@
 <!DOCTYPE html>
 <html>
     <link rel="stylesheet" type="text/css" href="/shopping/style.css">
-        <body>
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>        <body>
         <h1>Invalid Input</h1>
         <p><%=request.getAttribute("javax.servlet.error.message")%></p>
+        <p><%=request.getAttribute("message")%></p>
         <a href="javascript:history.back()">Back</a>
     </body>
 </html>

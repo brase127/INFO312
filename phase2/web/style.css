@@ -18,8 +18,7 @@ html{
 }
 
 body, p {
-    font-family:Ubuntu;
-    font-size:14px;
+    font-family: 'Shadows Into Light', cursive;
     font-style: normal;
     padding: 0px;
     margin: 0px;
@@ -28,7 +27,7 @@ body, p {
 
 body {
     background-color:#827f93;  
-    }
+}
 
 a {
     text-decoration:none;
@@ -49,8 +48,38 @@ a:hover{
 img:hover{opacity:1.0;-webkit-transition: all 0.6s ease-out;-moz-transition: all 0.6s ease-out;-o-transition: all   0.6s ease-out;transition: all 0.6s ease-out;cursor:crosshair;
 }
 
-button {
-    
-    
+h1{
+    text-transform: uppercase;
+    text-decoration:none;
+    font-family: 'Shadows Into Light', cursive;
+    font-style: normal;
+    padding: 0px;
+    margin: 0px;
+    color:#454573;    
 }
-
+h2{
+    text-decoration:none;
+    font-family: 'Shadows Into Light', cursive;
+    font-style: normal;
+    padding: 0px;
+    margin: 0px;
+    color:#454573;    
+}
+button{
+    background-color:transparent;
+    text-indent:0;
+    border:2px solid #454573;
+    color:#454573;
+    font-family: 'Shadows Into Light', cursive;
+    font-size:15px;
+    font-style:normal;
+    height:auto;
+    line-height:auto;
+    width:auto;
+    text-decoration:none;
+    text-align:center;
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all   0.6s ease-out;
+    transition: all 0.6s ease-out;
+}
