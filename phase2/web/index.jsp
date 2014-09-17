@@ -8,8 +8,6 @@
       <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
    </head>
    <body>
-      <h1>Home Page</h1>
-      
    </body>
 </html>
 
