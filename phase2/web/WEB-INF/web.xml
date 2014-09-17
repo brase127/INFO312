@@ -9,4 +9,16 @@
         <error-code>401</error-code>
         <location>/CustomerLogin.jsp</location>
     </error-page>
+    <error-page>
+        <error-code>422</error-code>
+        <location>/InvalidInputError.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/OtherError.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>405</error-code>
+        <location>/OtherError.jsp</location>
+    </error-page>
 </web-app>

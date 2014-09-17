@@ -13,9 +13,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Create Account</title>
     </head>
-
+    <%    // get the status code to see why the log in page was requested
+        Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
+        // default message to display to the user
+        String message = "";
+        // if the status code was 422 (UNAUTHORIZED) then extract the message
+        // from the request
+        if (statusCode != null && statusCode == HttpServletResponse.SC_UNAUTHORIZED) {
+            message = request.getAttribute("message").toString();
+        }
+    %>
     <body>
-                <div>
+        <div>
             <form action="/shopping/CreateAccount" method="post">
                 <fieldset>
                     <legend>Account Details</legend>
@@ -26,6 +35,7 @@
                     <label>Credit Card:<input type="text" name="creditCardDetails"></label>
                     <label>Password:<input type="password" name="password"></label>
                     <button type="submit">Create Account</button>  
+                    <%=message%>
                 </fieldset>
             </form>
         </div>
