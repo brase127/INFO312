@@ -20,7 +20,7 @@
         // if the status code was 422 (UNAUTHORIZED) then extract the message
         // from the request
         if (statusCode != null && statusCode == HttpServletResponse.SC_UNAUTHORIZED) {
-            message = request.getAttribute("message").toString();
+            message = request.getAttribute("javax.servlet.error.message").toString();
         }
     %>
     <body>

@@ -62,6 +62,7 @@ public class CreateAccount extends HttpServlet {
                 message.append(violation.getMessage()).append("\n");
             }
             request.setAttribute("message", message);
+            response.sendRedirect("/shopping/CreateAccount.jsp");
         }
     }
 
