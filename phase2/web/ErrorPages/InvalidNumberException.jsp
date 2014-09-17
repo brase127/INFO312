@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/shopping/style.css">
 <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>        <body>
         <h1>Invalid Number Exception</h1>
-        <p><%=request.getAttribute("javax.servlet.error.message")%></p>
+        <p>You entered an invalid number</p>
         <a href="javascript:history.back()">Back</a>
     </body>
 </html>
