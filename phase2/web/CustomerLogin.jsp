@@ -36,7 +36,7 @@
                     <legend>Login Details</legend>
                     <label>User Name:<input type="text" name="username"></label>
                     <label>Password:<input type="password" name="password"></label>
-                    <input type="image" src="Mandala.jpg" alt="Submit">
+                    <button type="submit">Login</button>
                     <%=message%>    
                     <a href="/shopping/CreateAccount.jsp">Don't have an account? Sign up here</a>
                 </fieldset>

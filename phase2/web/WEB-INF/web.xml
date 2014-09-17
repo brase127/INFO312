@@ -9,8 +9,4 @@
         <error-code>401</error-code>
         <location>/CustomerLogin.jsp</location>
     </error-page>
-    <error-page>
-        <error-code>422</error-code>
-        <location>/CreateCustomer.jsp</location>
-    </error-page>
 </web-app>

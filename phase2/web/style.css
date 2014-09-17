@@ -27,10 +27,8 @@ body, p {
 }
 
 body {
-    background-color:#827f93;   
-    background-attachment: fixed;
-    background-repeat: repeat;
-}
+    background-color:#827f93;  
+    }
 
 a {
     text-decoration:none;
