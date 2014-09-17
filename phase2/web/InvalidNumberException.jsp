@@ -1,0 +1,16 @@
+<%-- 
+    Document   : InvalidNumberException
+    Created on : 17/09/2014, 4:41:46 PM
+    Author     : Kendall Lauren Chin
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="/shopping/style.css">
+        <body>
+        <h1>Invalid Number Exception</h1>
+        <p><%=request.getAttribute("javax.servlet.error.message")%></p>
+        <a href="javascript:history.back()">Back</a>
+    </body>
+</html>
