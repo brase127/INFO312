@@ -8,7 +8,6 @@ package servlets;
 import dao.CustomerJdbcDAO;
 import domain.Customer;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -66,7 +65,7 @@ public class CreateAccount extends HttpServlet {
         }
     }
 
-}
+
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 /**
