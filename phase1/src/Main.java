@@ -1,5 +1,6 @@
 
 import dao.ProductCollectionDAO;
+import dao.ProductDAO;
 import dao.ProductJdbcDAO;
 import gui.MainMenuFrame;
 import java.awt.EventQueue;
