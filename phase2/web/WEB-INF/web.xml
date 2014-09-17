@@ -21,4 +21,8 @@
         <exception-type>java.lang.NumberFormatException</exception-type>
         <location>/ErrorPages/InvalidNumberException.jsp</location>
     </error-page>
+    <error-page>
+        <error-code>405</error-code>
+        <location>/ErrorPages/405Error.jsp</location>
+    </error-page>
 </web-app>
