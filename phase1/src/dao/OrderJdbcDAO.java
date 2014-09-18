@@ -60,6 +60,9 @@ public class OrderJdbcDAO {
             // write code here that saves the timestamp and username in the order table
             // using the insertOrderStmt prepared statement
             // ****
+            insertOrderStmt.setTimestamp(1, timestamp);
+            insertOrderStmt.setString(2, username);
+            
             // get the auto-generated order ID from the database
             ResultSet rs = insertOrderStmt.getGeneratedKeys();
 
@@ -78,15 +81,33 @@ public class OrderJdbcDAO {
             // write code here that iterates through the order items and saves
             // them using the insertOrderItemStmt prepared statement.
             // ****
+            for(OrderItem item : items){
+            insertOrderItemStmt.setInt(1, item.getQuantityPurchased());
+            
+            Product product = item.getaProduct();
+            Integer productId = product.getId();
+            insertOrderItemStmt.setInt(2, productId);
+            
+            Order orderNew = item.getAnOrder();
+            Integer orderNewId = orderNew.getOrderId();
+            insertOrderItemStmt.setInt(3, orderNewId);
+            
+            }
+            
             // -- update the product quantities --
             for (OrderItem item : items) {
 
                 Product product = item.getaProduct();
-
-                // *******************************************************************
+                Integer productId = product.getId();
+                Product originalProduct = new ProductJdbcDAO().getById(productId);
+                                // *******************************************************************
                 // write code here that updates the product quantity using the
                 // using the updateProductStmt prepared statement.
                 // *******************************************************************
+                Integer productQuantity = product.getQuantity();
+                Integer originalQuantity = originalProduct.getQuantity();
+                Integer newQuantity = originalQuantity - productQuantity;
+                updateProductStmt.setInt(1, newQuantity);
             }
 
             // -- commit and clean-up --

@@ -36,6 +36,16 @@ public class OrderItem {
     public void setaProduct(Product aProduct) {
         this.aProduct = aProduct;
     }
+
+    public Order getAnOrder() {
+        return anOrder;
+    }
+
+    public void setAnOrder(Order anOrder) {
+        this.anOrder = anOrder;
+    }
+
+
     
 
     
