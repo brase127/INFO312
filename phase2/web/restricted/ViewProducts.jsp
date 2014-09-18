@@ -32,6 +32,7 @@
                     <th>Category</th>
                     <th>Price</th>
                     <th>Quantity</th>
+                    <th> </th>
                 </tr>
             </thead>
             <tbody>
@@ -41,8 +42,9 @@
                     <td><%=product.getName()%></td>
                     <td><%=product.getDescription()%></td>
                     <td><%=product.getCategory()%></td>
-                    <td><%=product.getPrice()%></td>
+                    <td><%="$" + product.getPrice()%></td>
                     <td><%=product.getQuantity()%></td>
+                    <td><button type="submit">Buy</button></td>
                 </tr>
                 <% }%>
             </tbody>
