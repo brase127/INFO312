@@ -5,6 +5,9 @@
  */
 package servlets;
 
+import domain.Order;
+import domain.OrderItem;
+import domain.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,6 +36,16 @@ public class AddToOrderServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+                HttpSession session = request.getSession();
+                Order order = (Order) session.getAttribute("order");
+                
+                Integer quantity = Integer.parseInt(request.getParameter("quantity"));
+                Product product = (Product) session.getAttribute("product");
+                
+                OrderItem orderItem = new OrderItem(quantity, product);
+                
+                session.removeAttribute("product");
+
        response.sendRedirect("/shopping/Checkout.jsp");
     }
 
