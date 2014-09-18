@@ -44,7 +44,7 @@
                     <td><%=product.getCategory()%></td>
                     <td><%="$" + product.getPrice()%></td>
                     <td><%=product.getQuantity()%></td>
-                    <td><button type="submit">Buy</button></td>
+                    <td><button type="submit" name="productId" value="<%=product.getId()%>">Buy</button></td>
                 </tr>
                 <% }%>
             </tbody>
