@@ -31,17 +31,17 @@ public class OrderJdbcDAO {
         PreparedStatement updateProductStmt = null;
 
         try {
-            con = JdbcConnection.getConnection();
+            con = ShoppingConnection.getConnection();
 
             insertOrderStmt = con.prepareStatement(
-                    "**** SQL for saving an Order goes here",
+                    "insert into orders values (?, ?, ?)",
                     Statement.RETURN_GENERATED_KEYS);
 
             insertOrderItemStmt = con.prepareStatement(
-                    "**** SQL for saving an Order Item goes here");
+                    "insert into orderitems values (?, ?, ?)");
 
             updateProductStmt = con.prepareStatement(
-                    "**** SQL for updating product quantity goes here");
+                    "update Products set quantity='(?)' where quantity='(?)'");
 
             // since saving and order involves multiple statements across
             // multiple tables we need to control the transaction ourselves
@@ -60,9 +60,9 @@ public class OrderJdbcDAO {
             // write code here that saves the timestamp and username in the order table
             // using the insertOrderStmt prepared statement
             // ****
-            insertOrderStmt.setTimestamp(1, timestamp);
-            insertOrderStmt.setString(2, username);
-            
+            insertOrderStmt.setTimestamp(2, timestamp);
+            insertOrderStmt.setString(3, username);
+
             // get the auto-generated order ID from the database
             ResultSet rs = insertOrderStmt.getGeneratedKeys();
 
@@ -73,34 +73,34 @@ public class OrderJdbcDAO {
             } else {
                 throw new DAOException("Problem getting generated Order ID");
             }
-
+            insertOrderStmt.setInt(1, orderId);
             // -- save the order items --
             Collection<OrderItem> items = order.getItems();
 
-		// ****
+            // ****
             // write code here that iterates through the order items and saves
             // them using the insertOrderItemStmt prepared statement.
             // ****
-            for(OrderItem item : items){
-            insertOrderItemStmt.setInt(1, item.getQuantityPurchased());
-            
-            Product product = item.getaProduct();
-            Integer productId = product.getId();
-            insertOrderItemStmt.setInt(2, productId);
-            
-            Order orderNew = item.getAnOrder();
-            Integer orderNewId = orderNew.getOrderId();
-            insertOrderItemStmt.setInt(3, orderNewId);
-            
+            for (OrderItem item : items) {
+                insertOrderItemStmt.setInt(1, item.getQuantityPurchased());
+
+                Product product = item.getaProduct();
+                Integer productId = product.getId();
+                insertOrderItemStmt.setInt(2, productId);
+
+                Order orderNew = item.getAnOrder();
+                Integer orderNewId = orderNew.getOrderId();
+                insertOrderItemStmt.setInt(3, orderNewId);
+
             }
-            
+
             // -- update the product quantities --
             for (OrderItem item : items) {
 
                 Product product = item.getaProduct();
                 Integer productId = product.getId();
                 Product originalProduct = new ProductJdbcDAO().getById(productId);
-                                // *******************************************************************
+                // *******************************************************************
                 // write code here that updates the product quantity using the
                 // using the updateProductStmt prepared statement.
                 // *******************************************************************
@@ -108,6 +108,7 @@ public class OrderJdbcDAO {
                 Integer originalQuantity = originalProduct.getQuantity();
                 Integer newQuantity = originalQuantity - productQuantity;
                 updateProductStmt.setInt(1, newQuantity);
+                updateProductStmt.setInt(2, originalQuantity);
             }
 
             // -- commit and clean-up --

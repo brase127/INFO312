@@ -7,7 +7,6 @@ package domain;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -21,6 +20,9 @@ public class Order {
     private Customer customer;
 
     List<OrderItem> items = new ArrayList();
+
+   
+    
 
     public Order(Integer orderId, Timestamp date, Customer customer) {
         this.date = date;
