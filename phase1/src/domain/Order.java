@@ -5,6 +5,7 @@
  */
 package domain;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -16,12 +17,12 @@ import java.util.List;
 public class Order {
 
     private Integer orderId;
-    private String date;
+    private Timestamp date;
     private Customer customer;
 
     List<OrderItem> items = new ArrayList();
 
-    public Order(Integer orderId, String date, Customer customer) {
+    public Order(Integer orderId, Timestamp date, Customer customer) {
         this.date = date;
         this.customer = customer;
     }
@@ -38,11 +39,11 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public String getDate() {
+    public Timestamp getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
 
