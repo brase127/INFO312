@@ -11,7 +11,7 @@
       
    </head>
    <body>
-   <center><img src="/shopping/Logo.png" style="width:400px;height:400px"/></center>
+   <div id="logo"></div>
               <h1>Welcome to the Beauty Box</h1>
        <h2> We aim to provide you with the best products and tools to help you in your beauty journey.</h2>
    </body>

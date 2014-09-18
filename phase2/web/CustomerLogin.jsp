@@ -30,6 +30,7 @@
 
     
     <body>
+        <div id="logo"></div>
         <div>
             <form action="/shopping/LoginServlet" method="post">
                 <fieldset>

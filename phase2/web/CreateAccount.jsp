@@ -24,6 +24,7 @@
         }
     %>
     <body>
+        <div id="logo"></div>
         <div>
             <form action="/shopping/CreateAccount" method="post">
                 <fieldset>

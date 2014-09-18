@@ -15,6 +15,6 @@
         <title>View Products</title>
     </head>
     <body>
-       
+       <div id="logo"></div>
     </body>
 </html>
