@@ -8,7 +8,9 @@
 <!DOCTYPE html>
 <html>
     <link rel="stylesheet" type="text/css" href="/shopping/style.css">
-<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>        <body>Opps something went wrong!</p>
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+<body>
+    <p><%=request.getAttribute("javax.servlet.error.message")%></p>
         <a href="javascript:history.back()">Back</a>
     </body>
 </html>
