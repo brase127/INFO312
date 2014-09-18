@@ -22,6 +22,7 @@
         <title>Checkout</title>
     </head>
     <body>
+                <form action="/shopping/ConfirmOrderServlet" method="post">
         <h1>Checkout</h1>
         <p>You order currently consists of:</p>
         <%String message = "";%>
@@ -63,7 +64,7 @@
             </tbody>
         </table>
             <p>Total cost of order: <%=message%><p>
-                                <button type="submit" name="ConfirmOrder" value="<%=order%>">Confirm Order</button>
-                                
+                                <button type="submit">Confirm Order</button>
+                </form>           
     </body>
 </html>
