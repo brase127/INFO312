@@ -1,5 +1,7 @@
 
 <%@page import="domain.Customer"%>
+
+
 <%
     String name = "";
 //If the session variable is set, get the name and display it on the page
@@ -20,5 +22,5 @@
 <%
     }
 %>
-
+<p></p>
 
