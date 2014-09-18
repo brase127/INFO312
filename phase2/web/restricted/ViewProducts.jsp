@@ -19,6 +19,7 @@
         <title>View Products</title>
     </head>
     <body>
+        <form action="/shopping/BuyServlet" method="post">
         <div id="logo"></div>
         <h1>View Products</h1>
         <%            Collection<Product> products = new ProductJdbcDAO().getAll();
@@ -49,5 +50,6 @@
                 <% }%>
             </tbody>
         </table>
+            </form>
     </body>
 </html>
