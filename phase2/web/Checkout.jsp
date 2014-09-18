@@ -21,7 +21,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Checkout</title>
     </head>
-    <body>
+    <body><div id="logo"></div>
+        <div>
                 <form action="/shopping/ConfirmOrderServlet" method="post">
         <h1>Checkout</h1>
         <p>You order currently consists of:</p>

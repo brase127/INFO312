@@ -16,7 +16,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Quantity To Buy</title>
     </head>
-    <body>
+    <body><div id="logo"></div>
+        <div>
         <h1>How Many?</h1>
         <%            String productName = "";
             String quantity = "";
