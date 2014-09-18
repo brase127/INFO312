@@ -44,6 +44,8 @@ public class AddToOrderServlet extends HttpServlet {
                 
                 OrderItem orderItem = new OrderItem(quantity, product);
                 
+                order.addItem(orderItem);
+                
                 session.removeAttribute("product");
 
        response.sendRedirect("/shopping/Checkout.jsp");
