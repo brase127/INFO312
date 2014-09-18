@@ -14,7 +14,7 @@
         <location>/ErrorPages/InvalidInputError.jsp</location>
     </error-page>
     <error-page>
-        <exception-type>java.lang.Exception1</exception-type>
+        <exception-type>java.lang.Exception</exception-type>
         <location>/ErrorPages/OtherError.jsp</location>
     </error-page>
     <error-page>

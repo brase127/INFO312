@@ -4,6 +4,8 @@
     Author     : Kendall Lauren Chin
 --%>
 
+<%@page import="dao.ProductJdbcDAO"%>
+<%@page import="domain.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,6 +18,26 @@
     </head>
     <body>
         <h1>How Many?</h1>
+        <%            String productName = "";
+            String quantity = "";
+            Product product = (Product) session.getAttribute("product");
+
+            if (product != null) {
+                productName = product.getName();
+                quantity = String.valueOf(product.getQuantity());
+            }
+        %>
         
+        <p><%= "You selected: " + productName%></p>
+        <p><%= "Stock Available: " + quantity%></p>
+        
+        <form action="/shopping/AddToORderServlet" method="post">
+            <fieldset>
+                <legend>Quantity to buy</legend>
+                <label>Quantity<input type="text" name="quantity"></label>
+                <button type="submit" name="quantityToOrder" value="<%=request.getAttribute("quantity")%>">Add To Order</button>
+            </fieldset>
+        </form>>
+
     </body>
 </html>
