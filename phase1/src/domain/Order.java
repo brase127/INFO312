@@ -21,15 +21,12 @@ public class Order {
 
     List<OrderItem> items = new ArrayList();
 
-   
-    
-
     public Order(Integer orderId, Timestamp date, Customer customer) {
         this.date = date;
         this.customer = customer;
     }
-    
-    public Order(Customer cust){
+
+    public Order(Customer cust) {
         this.customer = cust;
     }
 
