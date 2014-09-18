@@ -31,7 +31,7 @@
         <p><%= "You selected: " + productName%></p>
         <p><%= "Stock Available: " + quantity%></p>
         
-        <form action="/shopping/AddToORderServlet" method="post">
+        <form action="/shopping/AddToOrderServlet" method="post">
             <fieldset>
                 <legend>Quantity to buy</legend>
                 <label>Quantity<input type="text" name="quantity"></label>
