@@ -22,7 +22,7 @@ import net.sf.oval.ConstraintViolation;
  * @author chike189
  */
 @WebServlet(name = "CreateAccount", urlPatterns = {"/CreateAccount"})
-public class CreateAccount extends HttpServlet {
+public class CreateNewAccount extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

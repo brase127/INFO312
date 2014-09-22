@@ -7,20 +7,28 @@
 //If the session variable is set, get the name and display it on the page
     if (session.getAttribute("customer") != null) {
         Customer customer = (Customer) session.getAttribute("customer");
-        name = "Welcome " + customer.getName() + "  ";
+        name = " " + customer.getName();
 %>
-<%=name%>
-<a href="/shopping/index.jsp">Home Page</a>
-<a href="/shopping/restricted/ViewProducts.jsp">View Products</a>
-<a href="/shopping/CustomerLogout">Logout</a>
+
+<div>
+    <p>Welcome<%=name%>!</p>
+</div>
+
+<div align = center>
+    <a href="/shopping/index.jsp">Home Page</a>
+    <a href="/shopping/restricted/ViewProducts.jsp">View Products</a>
+    <a href="/shopping/CustomerLogout">Logout</a>
+</div>
 <%
 } else {
 %>
-<a href="/shopping/index.jsp">Home Page</a>
-<a href="/shopping/CustomerLogin.jsp">Log In</a>
-<a href="/shopping/CreateAccount.jsp">Sign Up</a>
+<div align = center>
+    <a href="/shopping/index.jsp">Home Page</a>
+    <a href="/shopping/CustomerLogin.jsp">Log In</a>
+    <a href="/shopping/CreateAccount.jsp">Sign Up</a>
+</div>
 <%
     }
 %>
-<p></p>
+
 

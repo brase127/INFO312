@@ -26,7 +26,7 @@
     <body>
         <div id="logo"></div>
         <div>
-            <form action="/shopping/CreateAccount" method="post">
+            <form action="/shopping/CreateNewAccount" method="post">
                 <fieldset>
                     <legend>Account Details</legend>
                     <label>User Name:<input type="text" name="username"></label>

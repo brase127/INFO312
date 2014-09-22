@@ -23,49 +23,54 @@
     </head>
     <body><div id="logo"></div>
         <div>
-                <form action="/shopping/ConfirmOrderServlet" method="post">
-        <h1>Checkout</h1>
-        <p>You order currently consists of:</p>
-        <%String message = "";%>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Product Id</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <% 
-                Order order = (Order)session.getAttribute("order");
-                                
-                if(order != null){
-                        List<OrderItem> orderItems = order.getItems();
-                                
-                for (OrderItem orderItem:orderItems) {
-                    Product product = orderItem.getaProduct();
-                    Integer quantity = orderItem.getQuantityPurchased();
-                    Double price = product.getPrice();
-                    String productName = product.getName();
-                    Integer productId = product.getId();
-                    Double total = orderItem.getItemTotal();
-                    message = String.valueOf(total);
-        %>
-            <tbody>                              
-                <tr>
-                    <td><%=productId%></td>
-                    <td><%=productName%></td>
-                    <td><%="$"+ price%></td>
-                    <td><%=quantity%></td>
-                    <td><%="$" + total%></td>
+            <form action="/shopping/ConfirmOrderServlet" method="post">
+                <h1>Checkout</h1>
+                <p>You order currently consists of:</p>
+                <%Double orderTotal = 0.0;
+                %>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Product Id</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <%
+                        Order order = (Order) session.getAttribute("order");
 
-                </tr>
-                <%} }%>
-            </tbody>
-        </table>
-            <p>Total cost of order: <%=message%><p>
-                                <button type="submit">Confirm Order</button>
-                </form>           
+                        if (order != null) {
+                            List<OrderItem> orderItems = order.getItems();
+
+                            for (OrderItem orderItem : orderItems) {
+                                Product product = orderItem.getaProduct();
+                                Integer quantity = orderItem.getQuantityPurchased();
+                                Double price = product.getPrice();
+                                String productName = product.getName();
+                                Integer productId = product.getId();
+                                Double total = orderItem.getItemTotal();
+                                orderTotal += total;
+                    %>
+                    <tbody>                              
+                        <tr>
+                            <td><%=productId%></td>
+                            <td><%=productName%></td>
+                            <td><%="$" + price%></td>
+                            <td><%=quantity%></td>
+                            <td><%="$" + total%></td>
+
+                        </tr>
+                        <%}
+                                for (OrderItem orderItem : orderItems) {
+
+                                }
+                            }%>
+                    </tbody>
+                </table>
+                <p>Total cost of order: <%="$" + orderTotal%><p>
+                    <button type="submit">Confirm Order</button>
+            </form>           
     </body>
 </html>
