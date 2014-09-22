@@ -33,15 +33,11 @@ public class OrderJdbcDAO {
         try {
             con = ShoppingConnection.getConnection();
 
-            insertOrderStmt = con.prepareStatement(
-                    "insert into orders values (?, ?, ?)",
-                    Statement.RETURN_GENERATED_KEYS);
+            insertOrderStmt = con.prepareStatement("insert into Orders (DATE, CUSTOMER) values (?,?)", Statement.RETURN_GENERATED_KEYS);
 
-            insertOrderItemStmt = con.prepareStatement(
-                    "insert into orderitems values (?, ?, ?)");
+            insertOrderItemStmt = con.prepareStatement("insert into OrderItems (QUANTITY, ID, ORDERID) values (?,?,?)");
 
-            updateProductStmt = con.prepareStatement(
-                    "update Products set quantity='(?)' where quantity='(?)'");
+            updateProductStmt = con.prepareStatement("UPDATE Products SET QUANTITY = QUANTITY -? WHERE ID = ?");
 
             // since saving and order involves multiple statements across
             // multiple tables we need to control the transaction ourselves
@@ -50,35 +46,26 @@ public class OrderJdbcDAO {
             con.setAutoCommit(false);
 
             // -- save the order --
-            // convert the order's java.util.Date into a java.sql.Timestamp
-            Timestamp timestamp = new Timestamp(order.getDate().getTime());
+            // converts the order's java.util.Date into a java.sql.Timestamp
+                Timestamp timestamp = new Timestamp(order.getDate().getTime());
 
             // get the customer's username since it is the FK that links order and customer
             String username = order.getCustomer().getUsername();
 
             // ****
-            // write code here that saves the timestamp and username in the order table
+            // saves the timestamp and username in the order table
             // using the insertOrderStmt prepared statement
             // ****
-            insertOrderStmt.setTimestamp(2, timestamp);
-            insertOrderStmt.setString(3, username);
+            insertOrderStmt.setTimestamp(1, timestamp);
+            insertOrderStmt.setString(2, username);
+insertOrderStmt.executeUpdate();
 
-            // get the auto-generated order ID from the database
-            ResultSet rs = insertOrderStmt.getGeneratedKeys();
 
-            Integer orderId = null;
-
-            if (rs.next()) {
-                orderId = rs.getInt(1);
-            } else {
-                throw new DAOException("Problem getting generated Order ID");
-            }
-            insertOrderStmt.setInt(1, orderId);
             // -- save the order items --
             Collection<OrderItem> items = order.getItems();
 
             // ****
-            // write code here that iterates through the order items and saves
+            // iterates through the order items and saves
             // them using the insertOrderItemStmt prepared statement.
             // ****
             for (OrderItem item : items) {
@@ -93,23 +80,22 @@ public class OrderJdbcDAO {
                 insertOrderItemStmt.setInt(3, orderNewId);
 
             }
+            insertOrderItemStmt.executeUpdate();
 
             // -- update the product quantities --
             for (OrderItem item : items) {
 
                 Product product = item.getaProduct();
                 Integer productId = product.getId();
-                Product originalProduct = new ProductJdbcDAO().getById(productId);
+                
                 // *******************************************************************
-                // write code here that updates the product quantity using the
+                // updates the product quantity using the
                 // using the updateProductStmt prepared statement.
                 // *******************************************************************
                 Integer productQuantity = product.getQuantity();
-                Integer originalQuantity = originalProduct.getQuantity();
-                Integer newQuantity = originalQuantity - productQuantity;
-                updateProductStmt.setInt(1, newQuantity);
-                updateProductStmt.setInt(2, originalQuantity);
+                updateProductStmt.setInt(1, productQuantity);
             }
+            updateProductStmt.executeUpdate();
 
             // -- commit and clean-up --
             // commit the transaction
