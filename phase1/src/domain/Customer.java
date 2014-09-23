@@ -15,33 +15,33 @@ import net.sf.oval.constraint.NotNull;
  * @author chike189
  */
 public class Customer {
-    
+
     @NotNull(message = "Username must be provided.")
     @NotBlank(message = "Username must be provided.")
     @Length(min = 3, max = 10,
-            message = "ID must contain between 3 and 10 digits (inclusive).")
+            message = "Customer must contain between 3 and 10 digits (inclusive).")
     private String username;
-    
+
     @NotNull(message = "Name must be provided.")
     @NotBlank(message = "Name must be provided.")
     @Length(min = 2, message = "Name must contain at least two characters.")
     private String name;
-    
+
     @NotNull(message = "Address must be provided.")
     @NotBlank(message = "Address must be provided.")
     @Length(min = 2, message = "Address must contain at least two characters.")
     private String address;
-    
+
     @NotNull(message = "Credit card details must be provided.")
     @NotBlank(message = "Credit card details must be provided.")
     @Length(min = 2, message = "Credit card details must contain at least two characters.")
     private String creditCardDetails;
-    
+
     @NotNull(message = "Password must be provided.")
     @NotBlank(message = "Password must be provided.")
     @Length(min = 7, message = "Password must contain at least seven characters.")
     private String password;
-    
+
     @NotNull(message = "Email must be provided.")
     @NotBlank(message = "Email must be provided.")
     @Length(min = 5, message = "Email must contain at least five characters.")

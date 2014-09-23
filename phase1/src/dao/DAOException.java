@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package dao;
 
 /**
@@ -13,14 +12,16 @@ package dao;
 public class DAOException extends RuntimeException {
 
     /**
-     * Creates a new instance of <code>DAOException</code> without detail message.
+     * Creates a new instance of <code>DAOException</code> without detail
+     * message.
      */
     public DAOException(String msg, Exception cause) {
         super(msg, cause);
     }
 
     /**
-     * Constructs an instance of <code>DAOException</code> with the specified detail message.
+     * Constructs an instance of <code>DAOException</code> with the specified
+     * detail message.
      *
      * @param msg the detail message.
      */
