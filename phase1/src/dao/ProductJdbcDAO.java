@@ -135,10 +135,10 @@ public class ProductJdbcDAO implements ProductDAO {
                 // get a connection to the database
                 Connection dbCon = ShoppingConnection.getConnection();
                 // create the statement
-                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
-
-            stmt.setInt(1, aId);
-
+                PreparedStatement stmt = dbCon.prepareStatement(sql);){
+        
+                stmt.setInt(1, aId);
+        
 // execute the query
             ResultSet rs = stmt.executeQuery();
 

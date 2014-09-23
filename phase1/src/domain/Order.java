@@ -29,7 +29,7 @@ public class Order {
     public Order(Customer cust) {
         this.customer = cust;
         this.date = new Date();
-    }
+            }
 
     public Integer getOrderId() {
         return orderId;

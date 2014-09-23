@@ -60,8 +60,8 @@ public class CustomerJdbcDAO {
             throw new DAOException(ex.getMessage(), ex);
         }
     }
-
-    public Customer login(String aUsername, String aPassword) {
+    
+    public Customer login(String aUsername, String aPassword){
         String sql = "select * from customers where username = (?) and password = (?)";
         try (
                 // get connection to database
@@ -72,7 +72,8 @@ public class CustomerJdbcDAO {
             stmt.setString(1, aUsername);
             stmt.setString(2, aPassword);
 
-            // execute the query
+
+        // execute the query
             ResultSet rs = stmt.executeQuery();
 
             // iterate through the query results

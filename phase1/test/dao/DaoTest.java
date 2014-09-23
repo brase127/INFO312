@@ -50,7 +50,7 @@ public class DaoTest {
         doll = new Product(dollId, "Doll", dollDescription, dollCategory, dollPrice, dollQuantity);
         dao.save(doll);
         dao.save(ball);
-
+        
     }
 
     @After
@@ -107,7 +107,7 @@ public class DaoTest {
         Integer fakeId = 999999999;
         assertEquals("Making sure a non existant ID returns a null", dao.getById(fakeId), null);
     }
-
+    
     @Test
     public void testDaoGetCategories() {
         Collection<String> retrieved = dao.getCategories();

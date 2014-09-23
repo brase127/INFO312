@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package dao;
 
 import dao.CustomerJdbcDAO;
@@ -22,9 +23,8 @@ import static org.junit.Assert.*;
  * @author chike189
  */
 public class CustomerDAOTest {
-
     private CustomerJdbcDAO dao = new CustomerJdbcDAO();
-
+    
     private String aUsername = "abcd1234";
     private String aName = "abcd";
     private String aAddress = "1234 Abcd Street";
@@ -32,7 +32,7 @@ public class CustomerDAOTest {
     private String aPassword = "ABCD1234ABCD";
     private String aEmail = "ABCD@gmail.com";
     private Customer a;
-
+    
     private String bUsername = "efgh5678";
     private String bName = "efgh";
     private String bAddress = "5678 Efgh Street";
@@ -40,18 +40,18 @@ public class CustomerDAOTest {
     private String bPassword = "5678EFGH5678";
     private String bEmail = "EFGH@gmail.com";
     private Customer b;
-
+    
     public CustomerDAOTest() {
     }
-
+    
     @BeforeClass
     public static void setUpClass() {
     }
-
+    
     @AfterClass
     public static void tearDownClass() {
     }
-
+    
     @Before
     public void setUp() {
         a = new Customer(aUsername, aName, aAddress, aCreditCardDetails, aPassword, aEmail);
@@ -59,7 +59,7 @@ public class CustomerDAOTest {
         dao.save(a);
         dao.save(b);
     }
-
+    
     @After
     public void tearDown() {
         dao.delete(a);
@@ -77,5 +77,5 @@ public class CustomerDAOTest {
         retrieved = dao.login("ijkl9101", "IJKLMNOP");
         assertNull("Customer should no longer exist", retrieved);
     }
-
+    
 }

@@ -69,11 +69,10 @@ public class ProductReportDialogTest {
 
     @After
     public void tearDown() {
-        fest.cleanUp();
+                fest.cleanUp();
 
     }
-
-    @Test
+@Test
     public void testReportView() {
         fest = new DialogFixture(dialog);
         fest.show();
@@ -88,7 +87,6 @@ public class ProductReportDialogTest {
         assertTrue("Ensure list contains the correct number of products",
                 model.getSize() == products.size());
     }
-
     @Test
     public void testReportDelete() {
         fest = new DialogFixture(dialog);
@@ -126,7 +124,7 @@ public class ProductReportDialogTest {
 // ensure that the correct product was deleted
         assertEquals("Deleted product should be doll", doll, deletedStudent);
     }
-
+    
     @Test
     public void testReportSearch() {
 // use FEST to control the dialog
@@ -166,4 +164,4 @@ public class ProductReportDialogTest {
 // (make sure the ID text eld has Doll's ID in it)
         assertEquals("The ID text held has Doll's ID in it", doll.getId(), new Integer("456789"));
     }
-}
+ }
