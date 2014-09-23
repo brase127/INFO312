@@ -44,7 +44,7 @@ public class BuyServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("product", product);
 
-        response.sendRedirect("/shopping/QuantityToBuy.jsp");
+        response.sendRedirect("/shopping/restricted/QuantityToBuy.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

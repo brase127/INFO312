@@ -45,7 +45,7 @@ public class ConfirmOrderServlet extends HttpServlet {
         Customer cust = (Customer) session.getAttribute("customer");
         session.setAttribute("order", new Order(cust));
         
-        response.sendRedirect("/shopping/Thanks.jsp");
+        response.sendRedirect("/shopping/restricted/Thanks.jsp");
 
     }
 
