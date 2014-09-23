@@ -100,13 +100,13 @@ public class OrderJdbcDAO {
                 // updates the product quantity using the
                 // using the updateProductStmt prepared statement.
                 // *******************************************************************
-                Integer productQuantity = product.getQuantity();
+                Integer productQuantity = item.getQuantityPurchased();
                 updateProductStmt.setInt(1, productQuantity);
-                updateProductStmt.setInt(2, productQuantity);
+                updateProductStmt.setInt(2, productId);
 
-            }
+            
             updateProductStmt.executeUpdate();
-
+            }
             // -- commit and clean-up --
             // commit the transaction
             con.commit();
