@@ -12,6 +12,9 @@
 <body>
     <h1>Fucking Error</h1>
     <p><%=request.getAttribute("javax.servlet.error.message")%></p>
+    <br>
+        <br>
+        <br>
         <a href="javascript:history.back()">Back</a>
     </body>
 </html>

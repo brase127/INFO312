@@ -21,7 +21,7 @@ import net.sf.oval.ConstraintViolation;
  *
  * @author chike189
  */
-@WebServlet(name = "CreateAccount", urlPatterns = {"/CreateAccount"})
+@WebServlet(name = "CreateNewAccount", urlPatterns = {"/CreateNewAccount"})
 public class CreateNewAccount extends HttpServlet {
 
     /**
@@ -54,15 +54,14 @@ public class CreateNewAccount extends HttpServlet {
         // were there any violations?
         if (violations.isEmpty()) {
             dao.save(customer);
-            response.sendRedirect("/shopping/");
+            response.sendRedirect("/shopping/CustomerLogin.jsp");
         } else {
             StringBuilder message = new StringBuilder();
             // loop through the violations extracting the message for each
             for (ConstraintViolation violation : violations) {
-                message.append(violation.getMessage()).append("\n");
+                message.append(violation.getMessage()).append("<br>");
             }
-            request.setAttribute("message", message);
-            response.sendRedirect("/shopping/CreateAccount.jsp");
+            response.sendError(422, message.toString());
         }
     }
 
