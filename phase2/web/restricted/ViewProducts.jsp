@@ -40,12 +40,12 @@
                     <% for (Product product : products) {%>
                     <tr>
                         <td><%=product.getId()%></td>
-                        <td><%=product.getName()%></td>
+                        <td><button type="submit" name="productId" value="<%=product.getId()%>"><%=product.getName()%></button></td>
                         <td><%=product.getDescription()%></td>
                         <td><%=product.getCategory()%></td>
                         <td><%="$" + product.getPrice()%></td>
                         <td><%=product.getQuantity()%></td>
-                        <td><button type="submit" name="productId" value="<%=product.getId()%>">Buy</button></td>
+                        <td><button type="submit" name="productId" value="<%=product.getId()%>">buy</button></td>
                     </tr>
                     <% }%>
                 </tbody>

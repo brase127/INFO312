@@ -18,7 +18,7 @@
     </head>
     <body><div id="logo"></div>
         <div>
-            <h1>How Many?</h1>
+
             <%            String productName = "";
                 String quantity = "";
                 Product product = (Product) session.getAttribute("product");
@@ -28,13 +28,15 @@
                     quantity = String.valueOf(product.getQuantity());
                 }
             %>
-
-            <p><%= "You selected: " + productName%></p>
-            <p><%= "Stock Available: " + quantity%></p>
+            <h1><%= "You selected: " + productName%></h1>
+            <div align="center">
+                
+            </div>
 
             <form action="/shopping/AddToOrderServlet" method="post">
                 <fieldset>
                     <legend>Quantity to buy</legend>
+                    <p><%= "Stock Available: " + quantity%></p>
                     <label>Quantity<input type="text" name="quantity"></label>
                     <button type="submit" name="quantityToOrder" value="<%=request.getAttribute("quantity")%>">Add To Order</button>
                 </fieldset>
