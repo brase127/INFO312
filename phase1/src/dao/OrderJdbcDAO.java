@@ -47,7 +47,7 @@ public class OrderJdbcDAO {
 
             // -- save the order --
             // converts the order's java.util.Date into a java.sql.Timestamp
-                Timestamp timestamp = new Timestamp(order.getDate().getTime());
+            Timestamp timestamp = new Timestamp(order.getDate().getTime());
 
             // get the customer's username since it is the FK that links order and customer
             String username = order.getCustomer().getUsername();
@@ -58,8 +58,18 @@ public class OrderJdbcDAO {
             // ****
             insertOrderStmt.setTimestamp(1, timestamp);
             insertOrderStmt.setString(2, username);
-insertOrderStmt.executeUpdate();
+            insertOrderStmt.executeUpdate();
 
+// get the auto-generated order ID from the database
+            ResultSet rs = insertOrderStmt.getGeneratedKeys();
+
+            Integer orderId = null;
+
+            if (rs.next()) {
+                orderId = rs.getInt(1);
+            } else {
+                throw new DAOException("Problem getting generated Order ID");
+            }
 
             // -- save the order items --
             Collection<OrderItem> items = order.getItems();
@@ -75,9 +85,7 @@ insertOrderStmt.executeUpdate();
                 Integer productId = product.getId();
                 insertOrderItemStmt.setInt(2, productId);
 
-                Order orderNew = item.getAnOrder();
-                Integer orderNewId = orderNew.getOrderId();
-                insertOrderItemStmt.setInt(3, orderNewId);
+                insertOrderItemStmt.setInt(3, orderId);
 
             }
             insertOrderItemStmt.executeUpdate();
@@ -87,13 +95,15 @@ insertOrderStmt.executeUpdate();
 
                 Product product = item.getaProduct();
                 Integer productId = product.getId();
-                
+
                 // *******************************************************************
                 // updates the product quantity using the
                 // using the updateProductStmt prepared statement.
                 // *******************************************************************
                 Integer productQuantity = product.getQuantity();
                 updateProductStmt.setInt(1, productQuantity);
+                updateProductStmt.setInt(2, productQuantity);
+
             }
             updateProductStmt.executeUpdate();
 

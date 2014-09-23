@@ -19,7 +19,6 @@ public class Order {
     private Integer orderId;
     private Date date;
     private Customer customer;
-
     List<OrderItem> items = new ArrayList();
 
     public Order(Integer orderId, Date date, Customer customer) {
@@ -29,7 +28,8 @@ public class Order {
 
     public Order(Customer cust) {
         this.customer = cust;
-    }
+        this.date = new Date();
+            }
 
     public Integer getOrderId() {
         return orderId;
