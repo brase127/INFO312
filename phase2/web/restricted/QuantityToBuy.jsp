@@ -17,8 +17,6 @@
         <title>Quantity To Buy</title>
     </head>
     <body>
-
-
         <%            String productName = "";
             String quantity = "";
             Product product = (Product) session.getAttribute("product");
@@ -44,8 +42,8 @@
             <form action="/shopping/AddToOrderServlet" method="post">
                 <fieldset>
                     <legend>Quantity to buy</legend>
-                    <p>Stock Available: <%=quantity%>
-                    <p>Price: $<%=price%></p>
+                    Stock Available: <%=quantity%><br>
+                    Price: $<%=price%>
                     <label>Quantity<input type="text" name="quantity"></label>
                     <button type="submit" name="quantityToOrder" value="<%=request.getAttribute("quantity")%>">Add To Order</button>
                 </fieldset>

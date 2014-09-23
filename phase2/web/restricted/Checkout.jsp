@@ -70,7 +70,7 @@
                                 }%>
                         </tbody>
                     </table>
-                    <p>Total cost of order: <%="$" + orderTotal%><p>
+                    Total cost of order: <%="$" + orderTotal%>
                         <button type="submit">Confirm Order</button>
                         <a href="/shopping/restricted/ViewProducts.jsp"> or click here to continue shopping!</a>
                 </fieldset>

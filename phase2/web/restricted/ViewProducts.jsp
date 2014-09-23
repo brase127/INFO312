@@ -33,7 +33,6 @@
                 <a href="/shopping/restricted/ViewProducts.jsp?category=<%=cat%>" id="category" value="<%=cat%>"><%="| " + cat%></a>
                 <%
                         request.setAttribute("category", cat);
-
                     }
                 %>
                 <br>
