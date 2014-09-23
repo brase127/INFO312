@@ -24,11 +24,13 @@
             String quantity = "";
             Product product = (Product) session.getAttribute("product");
             String description = "";
+            Double price = null;
 
             if (product != null) {
                 productName = product.getName();
                 quantity = String.valueOf(product.getQuantity());
                 description = product.getDescription();
+                price = product.getPrice();
             }
         %>
         
@@ -42,7 +44,8 @@
         <form action="/shopping/AddToOrderServlet" method="post">
             <fieldset>
                 <legend>Quantity to buy</legend>
-                <p><%= "Stock Available: " + quantity%></p>
+                <p>Stock Available: <%=quantity%></p>
+                <p>Price: $<%=price%></p>
                 <label>Quantity<input type="text" name="quantity"></label>
                 <button type="submit" name="quantityToOrder" value="<%=request.getAttribute("quantity")%>">Add To Order</button>
             </fieldset>

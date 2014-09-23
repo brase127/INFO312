@@ -17,7 +17,7 @@ table, th, td{
     
 }
 td{
-    font-size: 20px;
+    font-size: 15px;
     text-align: left;
     vertical-align: bottom;
     padding-left: 7px;
@@ -25,7 +25,7 @@ td{
 }
 th{
     color: #454573;
-    font-size: 22px;
+    font-size: 20px;
     text-align: left;
     vertical-align: bottom;
     padding-left: 7px;
@@ -38,7 +38,7 @@ html{
 }
 
 body, p {
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Shadows Into Light', cursive;
     font-style: normal;
     padding: 0px;

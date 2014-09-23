@@ -17,6 +17,7 @@
 <div align = center>
     <a href="/shopping/index.jsp">Home Page</a>
     <a href="/shopping/restricted/ViewProducts.jsp">View Products</a>
+    <a href="/shopping/restricted/Checkout.jsp">Checkout</a>
     <a href="/shopping/CustomerLogout">Logout</a>
 </div>
 <%

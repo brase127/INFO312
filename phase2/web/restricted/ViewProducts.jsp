@@ -26,16 +26,21 @@
                 ProductJdbcDAO dao = new ProductJdbcDAO();
             %>
             <div id="categories" align= "center" id="categories">
-                Categories: <a href="/shopping/restricted/ViewProducts.jsp?category=all">all
-                </a>
+                Categories: <a href="/shopping/restricted/ViewProducts.jsp?category=all">all</a>
                 <% Collection<String> categories = dao.getCategories();
 
                     for (String cat : categories) {%>
-                <a href="/shopping/restricted/ViewProducts.jsp?category=<%=cat%>"><%=cat%></a>
-                <% } %>
+                <a href="/shopping/restricted/ViewProducts.jsp?category=<%=cat%>" id="category" value="<%=cat%>"><%=cat%></a>
+                <% 
+                request.setAttribute("category", cat);
+                
+                    }
+                %>
                 <br>
                 <br>
             </div>
+                
+                                
             <table border="1">
                 <thead>
                     <tr>
@@ -49,7 +54,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% for (Product product : products) {%>
+                    <%
+                for (Product product : products) {
+                    String category = request.getParameter("category");
+                    if (category == null || product.getCategory().equals(category) || category.equals("all")) {
+                    %>
                     <tr>
                         <td><%=product.getId()%></td>
                         <td><button type="submit" name="productId" value="<%=product.getId()%>"><%=product.getName()%></button></td>
@@ -59,7 +68,9 @@
                         <td><%=product.getQuantity()%></td>
                         <td><button type="submit" name="productId" value="<%=product.getId()%>">Buy</button></td>
                     </tr>
-                    <% }%>
+                    
+                    <% }}%>
+                    
                 </tbody>
             </table>
         </form>

@@ -71,6 +71,7 @@
                 </table>
                 <p>Total cost of order: <%="$" + orderTotal%><p>
                     <button type="submit">Confirm Order</button>
+                <a href="/shopping/ViewProducts.jsp"> or click here to continue shopping!</a>
             </form>           
     </body>
 </html>
