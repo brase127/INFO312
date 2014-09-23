@@ -104,8 +104,7 @@ public class OrderJdbcDAO {
                 updateProductStmt.setInt(1, productQuantity);
                 updateProductStmt.setInt(2, productId);
 
-            
-            updateProductStmt.executeUpdate();
+                updateProductStmt.executeUpdate();
             }
             // -- commit and clean-up --
             // commit the transaction

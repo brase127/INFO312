@@ -92,7 +92,7 @@ public class ProductDialogTest {
         assertEquals("Ensure the name changed", "Round Barrel Hairbrush", edited.getName());
         assertEquals("Ensure the Description changed", "Large round barrel hairbrush for blow drying", edited.getDescription());
         assertEquals("Ensure Categoy changed", "Tools", edited.getCategory());
-        assertEquals("Ensure the price changed", new Double(26.70), edited.getPrice());        
+        assertEquals("Ensure the price changed", new Double(26.70), edited.getPrice());
         assertEquals("Ensure the quantity changed", new Integer(1000), edited.getQuantity());
     }
 

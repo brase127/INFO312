@@ -6,17 +6,17 @@ import org.h2.jdbcx.JdbcConnectionPool;
 
 public class ShoppingConnection {
 
-   private static final String url = "jdbc:h2:tcp://localhost/shopping";
-   private static final String username = "sa";
-   private static final String password = "";
+    private static final String url = "jdbc:h2:tcp://localhost/shopping";
+    private static final String username = "sa";
+    private static final String password = "";
 
-   private static final JdbcConnectionPool pool = JdbcConnectionPool.create(url, username, password);
+    private static final JdbcConnectionPool pool = JdbcConnectionPool.create(url, username, password);
 
-   public static Connection getConnection() {
-      try {
-         return pool.getConnection();
-      } catch (SQLException ex) {
-         throw new RuntimeException(ex);
-      }
-   }
+    public static Connection getConnection() {
+        try {
+            return pool.getConnection();
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
 }

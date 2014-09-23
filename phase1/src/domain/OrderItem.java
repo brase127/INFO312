@@ -10,12 +10,11 @@ package domain;
  * @author chike189
  */
 public class OrderItem {
-    
+
     private Integer quantityPurchased;
     private Product aProduct;
     private Order anOrder;
-    
-    
+
     public OrderItem(Integer quantityPurchased, Product aProduct) {
         this.quantityPurchased = quantityPurchased;
         this.aProduct = aProduct;
@@ -44,11 +43,6 @@ public class OrderItem {
     public void setAnOrder(Order anOrder) {
         this.anOrder = anOrder;
     }
-
-
-    
-
-    
 
     public double getItemTotal() {
         Double price = aProduct.getPrice();
