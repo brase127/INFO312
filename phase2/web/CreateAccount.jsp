@@ -19,7 +19,7 @@
         <h1>Create Account</h1>
         <div id="form">
             <form action="/shopping/CreateNewAccount" method="post">
-                
+
                 <fieldset>
                     <legend>Account Details</legend>
                     <label>User Name:<input type="text" name="username"></label>

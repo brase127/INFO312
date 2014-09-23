@@ -6,15 +6,14 @@ fieldset{
     margin: auto;
 }
 table{
-        border-collapse: collapse; 
-        width: auto;
-        height: auto;
+    border-collapse: collapse;
+    width: auto;
+    height: auto;
 }
 table, th, td{
     background-color: #aeb3e7;
     margin-left: 275px;
     border: 2px solid #454573;
-    
 }
 td{
     font-size: 15px;
@@ -31,7 +30,6 @@ th{
     padding-left: 7px;
     padding-right: 7px;
 }
-
 html{
     margin-left:0px;
     height:103%;
@@ -40,14 +38,14 @@ html{
 }
 p{
     margin-left: 275px;
-     font-size: 15px;
+    font-size: 15px;
     font-family: 'Shadows Into Light', cursive;
     font-style: normal;
     padding-left: 0px;
     color:#454573;
 }
 body {
-     background-color:#aeb3e7;
+    background-color:#aeb3e7;
     font-size: 15px;
     font-family: 'Shadows Into Light', cursive;
     font-style: normal;
@@ -55,28 +53,31 @@ body {
     margin-left: 0px;
     color:#454573;
 }
-
-
-
 a {
     text-decoration:none;
     color:#454573;
     -webkit-transition: all 0.4s linear;
     -moz-transition: all 0.4s linear;
-    transition: all 0.4s linear;}
-
+    transition: all 0.4s linear;
+}
 a:link, a:active, a:visited{
     color: #454573;
     text-decoration: none;
-    -webkit-transition: all 0.6s ease-out;-moz-transition: all 0.6s ease-out;-o-transition: all   0.6s ease-out;transition: all 0.6s ease-out;}
-
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all   0.6s ease-out;
+    transition: all 0.6s ease-out;}
 a:hover{
     color:#d4d4d4;
 }
-
-img:hover{opacity:1.0;-webkit-transition: all 0.6s ease-out;-moz-transition: all 0.6s ease-out;-o-transition: all   0.6s ease-out;transition: all 0.6s ease-out;cursor:crosshair;
+img:hover{
+    opacity:1.0;
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all   0.6s ease-out;
+    transition: all 0.6s ease-out;
+    cursor:crosshair;
 }
-
 h1{
     text-align: center;
     text-transform: uppercase;
@@ -85,7 +86,7 @@ h1{
     font-style: normal;
     padding: 0px;
     margin-left: 275px;
-    color:#454573;    
+    color:#454573;
 }
 h2{
     text-align: center;
@@ -94,19 +95,17 @@ h2{
     font-style: normal;
     padding: 0px;
     margin-left: 275px;
-    color:#454573;    
+    color:#454573;
 }
 button{
     background-color:transparent;
     text-indent:0;
     border:2px solid #454573;
     color:#454573;
-    
     font-family: 'Shadows Into Light', cursive;
     font-size:15px;
     font-style:normal;
     height:auto;
-    line-height:auto;
     width: 100%;
     text-decoration:none;
     text-align:  center;
@@ -125,7 +124,6 @@ button{
     padding-top: 300px;
     padding-top: 300px;
 }
-
 #categories{
     font-size: 30px;
     font-family: 'Shadows Into Light', cursive;
@@ -133,7 +131,6 @@ button{
     padding: 0px;
     margin-left: 275px;
     color:#454573;
-    
 }
 #navigationPane{
     font-size: 20px;
@@ -149,15 +146,12 @@ button{
 #welcome{
     font-size: 20px;
     font-family: 'Shadows Into Light', cursive;
-   
 }
 #form{
     margin-left: 275px;
 }
-
 #t{
-    
     margin-top: 10px;
-        margin-left: auto;
-        margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }

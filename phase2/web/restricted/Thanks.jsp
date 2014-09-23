@@ -15,9 +15,9 @@
         <title>Thank you for shopping with us</title>
     </head>
     <body>
-        
+
         <div>
-        <h1>Thank you for shopping with us</h1>
-        <p>You should receive your order within 7 working days unless notified.</p>
+            <h1>Thank you for shopping with us</h1>
+            <p>You should receive your order within 7 working days unless notified.</p>
     </body>
 </html>

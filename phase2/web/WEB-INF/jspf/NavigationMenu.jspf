@@ -11,26 +11,26 @@
 %>
 
 <div id="navigationPane">
-<div id="welcome">Welcome<%=name%>!</div>
-<div id="logo"></div>    
-<div>
-    <a href="/shopping/index.jsp">Home Page</a><br>
-    <a href="/shopping/restricted/ViewProducts.jsp">View Products</a><br>
-    <a href="/shopping/restricted/Checkout.jsp">Shopping Cart</a><br>
-    <a href="/shopping/CustomerLogout">Logout</a><br>
-</div>
+    <div id="welcome">Welcome<%=name%>!</div>
+    <div id="logo"></div>    
+    <div>
+        <a href="/shopping/index.jsp">Home Page</a><br>
+        <a href="/shopping/restricted/ViewProducts.jsp">View Products</a><br>
+        <a href="/shopping/restricted/Checkout.jsp">Shopping Cart</a><br>
+        <a href="/shopping/CustomerLogout">Logout</a><br>
+    </div>
 </div>
 <%
 } else {
 %>
 <div id="navigationPane">
-<div id="welcome">Welcome<%=name%>!</div>
-<div id="logo"></div>
-<div >
-    <a href="/shopping/index.jsp">Home Page</a><br>
-    <a href="/shopping/CustomerLogin.jsp">Log In</a><br>
-    <a href="/shopping/CreateAccount.jsp">Sign Up</a><br>
-</div>
+    <div id="welcome">Welcome<%=name%>!</div>
+    <div id="logo"></div>
+    <div >
+        <a href="/shopping/index.jsp">Home Page</a><br>
+        <a href="/shopping/CustomerLogin.jsp">Log In</a><br>
+        <a href="/shopping/CreateAccount.jsp">Sign Up</a><br>
+    </div>
 </div>
 <%
     }

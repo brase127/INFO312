@@ -20,7 +20,7 @@
     </head>
     <body>
         <form action="/shopping/BuyServlet" method="post">
-            
+
             <h1>View Products</h1>
             <%                Collection<Product> products = new ProductJdbcDAO().getAll();
                 ProductJdbcDAO dao = new ProductJdbcDAO();
@@ -31,16 +31,16 @@
 
                     for (String cat : categories) {%>
                 <a href="/shopping/restricted/ViewProducts.jsp?category=<%=cat%>" id="category" value="<%=cat%>"><%="| " + cat%></a>
-                <% 
-                request.setAttribute("category", cat);
-                
+                <%
+                        request.setAttribute("category", cat);
+
                     }
                 %>
                 <br>
                 <br>
             </div>
-                
-                                
+
+
             <table border="1">
                 <thead>
                     <tr>
@@ -55,10 +55,10 @@
                 </thead>
                 <tbody>
                     <%
-                for (Product product : products) {
-                    String category = request.getParameter("category");
-                    if (category == null || product.getCategory().equals(category) || category.equals("all")) {
-                        Integer quantity = product.getQuantity();
+                        for (Product product : products) {
+                            String category = request.getParameter("category");
+                            if (category == null || product.getCategory().equals(category) || category.equals("all")) {
+                                Integer quantity = product.getQuantity();
                     %>
                     <tr>
                         <td><%=product.getId()%></td>
@@ -66,16 +66,17 @@
                         <td><%=product.getDescription()%></td>
                         <td><%=product.getCategory()%></td>
                         <td><%="$" + product.getPrice()%></td>
-                        <%if (quantity ==0){%>
+                        <%if (quantity == 0) {%>
                         <td>Sold out!</td>
                         <%} else {%>
                         <td><%=product.getQuantity()%></td>
                         <%}%>
                         <td><button type="submit" name="productId" value="<%=product.getId()%>">Buy</button></td>
                     </tr>
-                    
-                    <% }}%>
-                    
+
+                    <% }
+                        }%>
+
                 </tbody>
             </table>
         </form>

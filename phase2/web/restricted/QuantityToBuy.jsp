@@ -17,10 +17,9 @@
         <title>Quantity To Buy</title>
     </head>
     <body>
-        
-        
-        <%            
-        String productName = "";
+
+
+        <%            String productName = "";
             String quantity = "";
             Product product = (Product) session.getAttribute("product");
             String description = "";
@@ -33,24 +32,24 @@
                 price = product.getPrice();
             }
         %>
-        
+
         <h1><%= "You selected: " + productName%></h1>
         <div id="form">
-        <div align="center">
-        <%=description%>
-        <br>
-        <br
-            >
-        </div>
-        <form action="/shopping/AddToOrderServlet" method="post">
-            <fieldset>
-                <legend>Quantity to buy</legend>
-                <p>Stock Available: <%=quantity%>
-                <p>Price: $<%=price%></p>
-                <label>Quantity<input type="text" name="quantity"></label>
-                <button type="submit" name="quantityToOrder" value="<%=request.getAttribute("quantity")%>">Add To Order</button>
-            </fieldset>
-        </form>
+            <div align="center">
+                <%=description%>
+                <br>
+                <br
+                    >
+            </div>
+            <form action="/shopping/AddToOrderServlet" method="post">
+                <fieldset>
+                    <legend>Quantity to buy</legend>
+                    <p>Stock Available: <%=quantity%>
+                    <p>Price: $<%=price%></p>
+                    <label>Quantity<input type="text" name="quantity"></label>
+                    <button type="submit" name="quantityToOrder" value="<%=request.getAttribute("quantity")%>">Add To Order</button>
+                </fieldset>
+            </form>
         </div>>
     </body>
 </html>
