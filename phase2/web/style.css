@@ -6,15 +6,15 @@ fieldset{
     margin: auto;
 }
 table{
-    border-collapse: collapse; 
-    width: auto;
-    height: auto;
+        border-collapse: collapse; 
+        width: auto;
+        height: auto;
 }
 table, th, td{
     background-color: #aeb3e7;
     margin: auto;
     border: 2px solid #454573;
-
+    
 }
 td{
     font-size: 20px;
@@ -115,4 +115,14 @@ button{
     margin-right: auto;
     padding-top: 300px;
     padding-top: 300px;
+}
+
+#categories{
+    font-size: 30px;
+    font-family: 'Shadows Into Light', cursive;
+    font-style: normal;
+    padding: 0px;
+    margin: 0px;
+    color:#454573;
+    
 }

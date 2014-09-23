@@ -22,8 +22,20 @@
         <form action="/shopping/BuyServlet" method="post">
             <div id="logo"></div>
             <h1>View Products</h1>
-            <%            Collection<Product> products = new ProductJdbcDAO().getAll();
+            <%                Collection<Product> products = new ProductJdbcDAO().getAll();
+                ProductJdbcDAO dao = new ProductJdbcDAO();
             %>
+            <div id="categories" align= "center" id="categories">
+                Categories: <a href="/shopping/restricted/ViewProducts.jsp?category=all">all
+                </a>
+                <% Collection<String> categories = dao.getCategories();
+
+                    for (String cat : categories) {%>
+                <a href="/shopping/restricted/ViewProducts.jsp?category=<%=cat%>"><%=cat%></a>
+                <% } %>
+                <br>
+                <br>
+            </div>
             <table border="1">
                 <thead>
                     <tr>
@@ -45,7 +57,7 @@
                         <td><%=product.getCategory()%></td>
                         <td><%="$" + product.getPrice()%></td>
                         <td><%=product.getQuantity()%></td>
-                        <td><button type="submit" name="productId" value="<%=product.getId()%>">buy</button></td>
+                        <td><button type="submit" name="productId" value="<%=product.getId()%>">Buy</button></td>
                     </tr>
                     <% }%>
                 </tbody>

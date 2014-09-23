@@ -28,7 +28,7 @@ Author:  Mark George <mgeorge@infoscience.otago.ac.nz>
 */
 
 fieldset {
-    width: 30em;      /* effective width of field set */
+    width: 25em;      /* effective width of field set */
     padding: 10px;    /* padding to space the components from the fieldset border */
     padding-top: 0px; /* IE counts the top of the legend as the top of the fieldset meaning backgound color also covers the legend.  padding-top makes this effect worse so set it to 0. */
     border-color:#454573;
@@ -47,7 +47,7 @@ fieldset label {
 }
 
 fieldset input, fieldset textarea, fieldset select {
-    width: 50em;       /* width of the form components */
+    width: 23em;       /* width of the form components */
     margin-left: 5px;   /* add some spacing between the label and the component */
 }
 

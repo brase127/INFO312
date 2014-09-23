@@ -8,11 +8,11 @@
 <!DOCTYPE html>
 <html>
     <link rel="stylesheet" type="text/css" href="/shopping/style.css">
-    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-    <body>
-        <h1>Fucking Error</h1>
-        <p><%=request.getAttribute("javax.servlet.error.message")%></p>
-        <br>
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+<body>
+    <h1>Fucking Error</h1>
+    <p><%=request.getAttribute("javax.servlet.error.message")%></p>
+    <br>
         <br>
         <br>
         <a href="javascript:history.back()">Back</a>

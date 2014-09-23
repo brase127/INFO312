@@ -5,6 +5,7 @@ package servlets;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -32,10 +33,10 @@ public class CustomerLogout extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        request.getSession().invalidate();
-        response.sendRedirect("/shopping");
-
+           
+            request.getSession().invalidate();
+            response.sendRedirect("/shopping");
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

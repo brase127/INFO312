@@ -18,28 +18,35 @@
     </head>
     <body><div id="logo"></div>
         <div>
+        
+        <%            
+        String productName = "";
+            String quantity = "";
+            Product product = (Product) session.getAttribute("product");
+            String description = "";
 
-            <%            String productName = "";
-                String quantity = "";
-                Product product = (Product) session.getAttribute("product");
+            if (product != null) {
+                productName = product.getName();
+                quantity = String.valueOf(product.getQuantity());
+                description = product.getDescription();
+            }
+        %>
+        
+        <h1><%= "You selected: " + productName%></h1>
+        <div align="center">
+        <%=description%>
+        <br>
+        <br
+            >
+        </div>
+        <form action="/shopping/AddToOrderServlet" method="post">
+            <fieldset>
+                <legend>Quantity to buy</legend>
+                <p><%= "Stock Available: " + quantity%></p>
+                <label>Quantity<input type="text" name="quantity"></label>
+                <button type="submit" name="quantityToOrder" value="<%=request.getAttribute("quantity")%>">Add To Order</button>
+            </fieldset>
+        </form>
 
-                if (product != null) {
-                    productName = product.getName();
-                    quantity = String.valueOf(product.getQuantity());
-                }
-            %>
-            <h1><%= "You selected: " + productName%></h1>
-            <div align="center">
-                
-            </div>
-
-            <form action="/shopping/AddToOrderServlet" method="post">
-                <fieldset>
-                    <legend>Quantity to buy</legend>
-                    <p><%= "Stock Available: " + quantity%></p>
-                    <label>Quantity<input type="text" name="quantity"></label>
-                    <button type="submit" name="quantityToOrder" value="<%=request.getAttribute("quantity")%>">Add To Order</button>
-                </fieldset>
-            </form>
     </body>
 </html>

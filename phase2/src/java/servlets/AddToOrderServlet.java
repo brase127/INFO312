@@ -35,20 +35,20 @@ public class AddToOrderServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+                HttpSession session = request.getSession();
+                Order order = (Order) session.getAttribute("order");
+                
+                Integer quantity = Integer.parseInt(request.getParameter("quantity"));
+                Product product = (Product) session.getAttribute("product");
+                
+                OrderItem orderItem = new OrderItem(quantity, product);
+                
+                order.addItem(orderItem);
+                
+                session.removeAttribute("product");
 
-        HttpSession session = request.getSession();
-        Order order = (Order) session.getAttribute("order");
-
-        Integer quantity = Integer.parseInt(request.getParameter("quantity"));
-        Product product = (Product) session.getAttribute("product");
-
-        OrderItem orderItem = new OrderItem(quantity, product);
-
-        order.addItem(orderItem);
-
-        session.removeAttribute("product");
-
-        response.sendRedirect("/shopping/restricted/Checkout.jsp");
+       response.sendRedirect("/shopping/restricted/Checkout.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

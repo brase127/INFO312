@@ -38,9 +38,9 @@ public class BuyServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String productIdString = request.getParameter("productId");
-        Integer productId = Integer.parseInt(productIdString);
+        Integer productId = Integer.parseInt(productIdString);        
         Product product = new ProductJdbcDAO().getById(productId);
-
+        
         HttpSession session = request.getSession();
         session.setAttribute("product", product);
 

@@ -36,33 +36,33 @@ public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        Customer cust = new CustomerJdbcDAO().login(username, password);
-        // did DAO find a customer with those credentials?
-        if (cust != null) {
-            // if so store the customer in the session
-            HttpSession session = request.getSession();
-            session.setAttribute("customer", cust);
-            // also create and store an Order that will be used as a shopping cart
-            session.setAttribute("order", new Order(cust));
-            // go back to home page
-            //get the requested page from the session
-            String requestedPath = (String) session.getAttribute("requestedPath");
-            if (requestedPath != null) {
-                //if it was set then remove it from the session
-                session.removeAttribute("requestedPath");
-                //and redirect to that page
-                response.sendRedirect(requestedPath);
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            Customer cust = new CustomerJdbcDAO().login(username, password);
+            // did DAO find a customer with those credentials?
+            if (cust != null) {
+                // if so store the customer in the session
+                HttpSession session = request.getSession();
+                session.setAttribute("customer", cust);
+                // also create and store an Order that will be used as a shopping cart
+                session.setAttribute("order", new Order(cust));
+                // go back to home page
+                //get the requested page from the session
+                String requestedPath = (String) session.getAttribute("requestedPath");
+                if (requestedPath != null) {
+                    //if it was set then remove it from the session
+                    session.removeAttribute("requestedPath");
+                    //and redirect to that page
+                    response.sendRedirect(requestedPath);
+                } else {
+                    //if not go to the home page
+                    response.sendRedirect("/shopping/");
+                }
             } else {
-                //if not go to the home page
-                response.sendRedirect("/shopping/");
+                // no customer has those details so send a 401 error
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED,
+                        "Log in failed. Try again.");
             }
-        } else {
-            // no customer has those details so send a 401 error
-            response.sendError(HttpServletResponse.SC_UNAUTHORIZED,
-                    "Log in failed. Try again.");
-        }
 
     }
 
