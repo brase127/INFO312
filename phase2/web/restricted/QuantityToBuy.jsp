@@ -16,8 +16,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Quantity To Buy</title>
     </head>
-    <body><div id="logo"></div>
-        <div>
+    <body>
+        
         
         <%            
         String productName = "";
@@ -35,6 +35,7 @@
         %>
         
         <h1><%= "You selected: " + productName%></h1>
+        <div id="form">
         <div align="center">
         <%=description%>
         <br>
@@ -44,12 +45,12 @@
         <form action="/shopping/AddToOrderServlet" method="post">
             <fieldset>
                 <legend>Quantity to buy</legend>
-                <p>Stock Available: <%=quantity%></p>
+                <p>Stock Available: <%=quantity%>
                 <p>Price: $<%=price%></p>
                 <label>Quantity<input type="text" name="quantity"></label>
                 <button type="submit" name="quantityToOrder" value="<%=request.getAttribute("quantity")%>">Add To Order</button>
             </fieldset>
         </form>
-
+        </div>>
     </body>
 </html>

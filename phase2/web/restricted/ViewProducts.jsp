@@ -20,17 +20,17 @@
     </head>
     <body>
         <form action="/shopping/BuyServlet" method="post">
-            <div id="logo"></div>
+            
             <h1>View Products</h1>
             <%                Collection<Product> products = new ProductJdbcDAO().getAll();
                 ProductJdbcDAO dao = new ProductJdbcDAO();
             %>
             <div id="categories" align= "center" id="categories">
-                Categories: <a href="/shopping/restricted/ViewProducts.jsp?category=all">all</a>
+                Categories: <a href="/shopping/restricted/ViewProducts.jsp?category=all">All</a>
                 <% Collection<String> categories = dao.getCategories();
 
                     for (String cat : categories) {%>
-                <a href="/shopping/restricted/ViewProducts.jsp?category=<%=cat%>" id="category" value="<%=cat%>"><%=cat%></a>
+                <a href="/shopping/restricted/ViewProducts.jsp?category=<%=cat%>" id="category" value="<%=cat%>"><%="| " + cat%></a>
                 <% 
                 request.setAttribute("category", cat);
                 
@@ -58,6 +58,7 @@
                 for (Product product : products) {
                     String category = request.getParameter("category");
                     if (category == null || product.getCategory().equals(category) || category.equals("all")) {
+                        Integer quantity = product.getQuantity();
                     %>
                     <tr>
                         <td><%=product.getId()%></td>
@@ -65,7 +66,11 @@
                         <td><%=product.getDescription()%></td>
                         <td><%=product.getCategory()%></td>
                         <td><%="$" + product.getPrice()%></td>
+                        <%if (quantity ==0){%>
+                        <td>Sold out!</td>
+                        <%} else {%>
                         <td><%=product.getQuantity()%></td>
+                        <%}%>
                         <td><button type="submit" name="productId" value="<%=product.getId()%>">Buy</button></td>
                     </tr>
                     

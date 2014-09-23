@@ -12,7 +12,7 @@ table{
 }
 table, th, td{
     background-color: #aeb3e7;
-    margin: auto;
+    margin-left: 275px;
     border: 2px solid #454573;
     
 }
@@ -33,22 +33,30 @@ th{
 }
 
 html{
-    margin-left:35px;
+    margin-left:0px;
     height:103%;
+    padding:0px;
+    margin: 0px;
 }
-
-body, p {
+p{
+    margin-left: 275px;
+     font-size: 15px;
+    font-family: 'Shadows Into Light', cursive;
+    font-style: normal;
+    padding-left: 0px;
+    color:#454573;
+}
+body {
+     background-color:#aeb3e7;
     font-size: 15px;
     font-family: 'Shadows Into Light', cursive;
     font-style: normal;
-    padding: 0px;
-    margin: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
     color:#454573;
 }
 
-body {
-    background-color:#aeb3e7;  
-}
+
 
 a {
     text-decoration:none;
@@ -76,7 +84,7 @@ h1{
     font-family: 'Shadows Into Light', cursive;
     font-style: normal;
     padding: 0px;
-    margin: 0px;
+    margin-left: 275px;
     color:#454573;    
 }
 h2{
@@ -85,7 +93,7 @@ h2{
     font-family: 'Shadows Into Light', cursive;
     font-style: normal;
     padding: 0px;
-    margin: 0px;
+    margin-left: 275px;
     color:#454573;    
 }
 button{
@@ -93,14 +101,15 @@ button{
     text-indent:0;
     border:2px solid #454573;
     color:#454573;
+    
     font-family: 'Shadows Into Light', cursive;
     font-size:15px;
     font-style:normal;
     height:auto;
     line-height:auto;
-    width:auto;
+    width: 100%;
     text-decoration:none;
-    text-align:center;
+    text-align:  center;
     -webkit-transition: all 0.6s ease-out;
     -moz-transition: all 0.6s ease-out;
     -o-transition: all   0.6s ease-out;
@@ -109,7 +118,7 @@ button{
 #logo{
     background-image: url("Logo.png");
     background-repeat:no-repeat ;
-    background-size: 300px, 300px;
+    background-size: 250px, 250px;
     background-position: center;
     margin-left: auto;
     margin-right: auto;
@@ -122,7 +131,33 @@ button{
     font-family: 'Shadows Into Light', cursive;
     font-style: normal;
     padding: 0px;
-    margin: 0px;
+    margin-left: 275px;
     color:#454573;
     
+}
+#navigationPane{
+    font-size: 20px;
+    font-family: 'Shadows Into Light', cursive;
+    background-color: #ccccff;
+    height: 100em;
+    width:  250px;
+    float:left;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: fixed;
+}
+#welcome{
+    font-size: 20px;
+    font-family: 'Shadows Into Light', cursive;
+   
+}
+#form{
+    margin-left: 275px;
+}
+
+#t{
+    
+    margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
 }

@@ -21,57 +21,60 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Checkout</title>
     </head>
-    <body><div id="logo"></div>
-        <div>
-            <form action="/shopping/ConfirmOrderServlet" method="post">
-                <h1>Checkout</h1>
-                <p>You order currently consists of:</p>
-                <%Double orderTotal = 0.0;
-                %>
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>Product Id</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <%
-                        Order order = (Order) session.getAttribute("order");
+    <body>
+        <form action="/shopping/ConfirmOrderServlet" method="post">
+            <h1>Shopping Cart</h1>             
+            <h2 align="center">You order currently consists of:</h2>
+            <%Double orderTotal = 0.0;
+            %>
+            <div id="form">
+                <fieldset>
+                    <table id="t" border="1">
+                        <thead>
+                            <tr>
+                                <th>Product Id</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <%
+                            Order order = (Order) session.getAttribute("order");
 
-                        if (order != null) {
-                            List<OrderItem> orderItems = order.getItems();
+                            if (order != null) {
+                                List<OrderItem> orderItems = order.getItems();
 
-                            for (OrderItem orderItem : orderItems) {
-                                Product product = orderItem.getaProduct();
-                                Integer quantity = orderItem.getQuantityPurchased();
-                                Double price = product.getPrice();
-                                String productName = product.getName();
-                                Integer productId = product.getId();
-                                Double total = orderItem.getItemTotal();
-                                orderTotal += total;
-                    %>
-                    <tbody>                              
-                        <tr>
-                            <td><%=productId%></td>
-                            <td><%=productName%></td>
-                            <td><%="$" + price%></td>
-                            <td><%=quantity%></td>
-                            <td><%="$" + total%></td>
-
-                        </tr>
-                        <%}
                                 for (OrderItem orderItem : orderItems) {
+                                    Product product = orderItem.getaProduct();
+                                    Integer quantity = orderItem.getQuantityPurchased();
+                                    Double price = product.getPrice();
+                                    String productName = product.getName();
+                                    Integer productId = product.getId();
+                                    Double total = orderItem.getItemTotal();
+                                    orderTotal += total;
+                        %>
+                        <tbody>                              
+                            <tr>
+                                <td><%=productId%></td>
+                                <td><%=productName%></td>
+                                <td><%="$" + price%></td>
+                                <td><%=quantity%></td>
+                                <td><%="$" + total%></td>
 
-                                }
-                            }%>
-                    </tbody>
-                </table>
-                <p>Total cost of order: <%="$" + orderTotal%><p>
-                    <button type="submit">Confirm Order</button>
-                <a href="/shopping/ViewProducts.jsp"> or click here to continue shopping!</a>
-            </form>           
+                            </tr>
+                            <%}
+                                    for (OrderItem orderItem : orderItems) {
+
+                                    }
+                                }%>
+                        </tbody>
+                    </table>
+                    <p>Total cost of order: <%="$" + orderTotal%><p>
+                        <button type="submit">Confirm Order</button>
+                        <a href="/shopping/restricted/ViewProducts.jsp"> or click here to continue shopping!</a>
+                </fieldset>
+            </div>>
+        </form>      
     </body>
 </html>

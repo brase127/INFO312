@@ -10,23 +10,27 @@
         name = " " + customer.getName();
 %>
 
+<div id="navigationPane">
+<div id="welcome">Welcome<%=name%>!</div>
+<div id="logo"></div>    
 <div>
-    <p>Welcome<%=name%>!</p>
+    <a href="/shopping/index.jsp">Home Page</a><br>
+    <a href="/shopping/restricted/ViewProducts.jsp">View Products</a><br>
+    <a href="/shopping/restricted/Checkout.jsp">Shopping Cart</a><br>
+    <a href="/shopping/CustomerLogout">Logout</a><br>
 </div>
-
-<div align = center>
-    <a href="/shopping/index.jsp">Home Page</a>
-    <a href="/shopping/restricted/ViewProducts.jsp">View Products</a>
-    <a href="/shopping/restricted/Checkout.jsp">Checkout</a>
-    <a href="/shopping/CustomerLogout">Logout</a>
 </div>
 <%
 } else {
 %>
-<div align = center>
-    <a href="/shopping/index.jsp">Home Page</a>
-    <a href="/shopping/CustomerLogin.jsp">Log In</a>
-    <a href="/shopping/CreateAccount.jsp">Sign Up</a>
+<div id="navigationPane">
+<div id="welcome">Welcome<%=name%>!</div>
+<div id="logo"></div>
+<div >
+    <a href="/shopping/index.jsp">Home Page</a><br>
+    <a href="/shopping/CustomerLogin.jsp">Log In</a><br>
+    <a href="/shopping/CreateAccount.jsp">Sign Up</a><br>
+</div>
 </div>
 <%
     }

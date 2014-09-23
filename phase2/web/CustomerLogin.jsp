@@ -14,6 +14,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
        <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
+       <title>Login</title>
     </head>
     
 <%    // get the status code to see why the log in page was requested
@@ -30,9 +31,10 @@
 
     
     <body>
-        <div id="logo"></div>
-        <div>
+        <h1>Log In</h1>
+        <div id="form">
             <form action="/shopping/LoginServlet" method="post">
+                
                 <fieldset>
                     <legend>Login Details</legend>
                     <label>User Name:<input type="text" name="username"></label>
