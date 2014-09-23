@@ -6,15 +6,15 @@ fieldset{
     margin: auto;
 }
 table{
-        border-collapse: collapse; 
-        width: auto;
-        height: auto;
+    border-collapse: collapse; 
+    width: auto;
+    height: auto;
 }
 table, th, td{
     background-color: #aeb3e7;
     margin: auto;
     border: 2px solid #454573;
-    
+
 }
 td{
     font-size: 20px;

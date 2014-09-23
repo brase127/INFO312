@@ -41,10 +41,9 @@ public class ConfirmOrderServlet extends HttpServlet {
         OrderJdbcDAO dao = new OrderJdbcDAO();
         dao.save(order);
 
-        
         Customer cust = (Customer) session.getAttribute("customer");
         session.setAttribute("order", new Order(cust));
-        
+
         response.sendRedirect("/shopping/restricted/Thanks.jsp");
 
     }

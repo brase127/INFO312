@@ -10,25 +10,25 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="/shopping/style.css">
-<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>        <title>Customer Login</title>
+        <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>        <title>Customer Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-       <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
+        <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
     </head>
-    
-<%    // get the status code to see why the log in page was requested
-    Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
-    // default message to display to the user
-    String message = "";
-    // if the status code was 422 (UNAUTHORIZED) then extract the message
-    // from the request
-    if (statusCode != null && statusCode == HttpServletResponse.SC_UNAUTHORIZED) {
-        message = request.getAttribute("javax.servlet.error.message").toString();
-    }
-%>
+
+    <%    // get the status code to see why the log in page was requested
+        Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
+        // default message to display to the user
+        String message = "";
+        // if the status code was 422 (UNAUTHORIZED) then extract the message
+        // from the request
+        if (statusCode != null && statusCode == HttpServletResponse.SC_UNAUTHORIZED) {
+            message = request.getAttribute("javax.servlet.error.message").toString();
+        }
+    %>
 
 
-    
+
     <body>
         <div id="logo"></div>
         <div>

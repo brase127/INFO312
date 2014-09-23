@@ -20,36 +20,36 @@
     </head>
     <body>
         <form action="/shopping/BuyServlet" method="post">
-        <div id="logo"></div>
-        <h1>View Products</h1>
-        <%            Collection<Product> products = new ProductJdbcDAO().getAll();
-        %>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Product Id</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th> </th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for (Product product : products) {%>
-                <tr>
-                    <td><%=product.getId()%></td>
-                    <td><%=product.getName()%></td>
-                    <td><%=product.getDescription()%></td>
-                    <td><%=product.getCategory()%></td>
-                    <td><%="$" + product.getPrice()%></td>
-                    <td><%=product.getQuantity()%></td>
-                    <td><button type="submit" name="productId" value="<%=product.getId()%>">Buy</button></td>
-                </tr>
-                <% }%>
-            </tbody>
-        </table>
-            </form>
+            <div id="logo"></div>
+            <h1>View Products</h1>
+            <%            Collection<Product> products = new ProductJdbcDAO().getAll();
+            %>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Product Id</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (Product product : products) {%>
+                    <tr>
+                        <td><%=product.getId()%></td>
+                        <td><%=product.getName()%></td>
+                        <td><%=product.getDescription()%></td>
+                        <td><%=product.getCategory()%></td>
+                        <td><%="$" + product.getPrice()%></td>
+                        <td><%=product.getQuantity()%></td>
+                        <td><button type="submit" name="productId" value="<%=product.getId()%>">Buy</button></td>
+                    </tr>
+                    <% }%>
+                </tbody>
+            </table>
+        </form>
     </body>
 </html>

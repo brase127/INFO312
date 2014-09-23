@@ -9,8 +9,8 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="/shopping/style.css">
-<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>    
-<%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
+        <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>    
+        <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Create Account</title>
     </head>
