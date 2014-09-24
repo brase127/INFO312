@@ -67,6 +67,7 @@ public class OrderJdbcDAO {
 
             if (rs.next()) {
                 orderId = rs.getInt(1);
+                order.setOrderId(orderId);
             } else {
                 throw new DAOException("Problem getting generated Order ID");
             }
