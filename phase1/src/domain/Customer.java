@@ -146,4 +146,9 @@ public class Customer {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Customer{" + "username=" + username + ", name=" + name + ", address=" + address + ", creditCardDetails=" + creditCardDetails + ", password=" + password + ", email=" + email + '}';
+    }
+
 }

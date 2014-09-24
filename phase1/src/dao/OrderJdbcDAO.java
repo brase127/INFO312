@@ -104,6 +104,7 @@ public class OrderJdbcDAO {
                 updateProductStmt.setInt(1, productQuantity);
                 updateProductStmt.setInt(2, productId);
 
+                
                 updateProductStmt.executeUpdate();
             }
             // -- commit and clean-up --
@@ -133,3 +134,4 @@ public class OrderJdbcDAO {
         }
     }
 }
+

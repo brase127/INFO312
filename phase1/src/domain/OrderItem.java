@@ -48,4 +48,10 @@ public class OrderItem {
         Double price = aProduct.getPrice();
         return price * quantityPurchased;
     }
+
+    @Override
+    public String toString() {
+        return "OrderItem{" + "quantityPurchased=" + quantityPurchased + ", aProduct=" + aProduct + ", anOrder=" + anOrder + '}';
+    }
+    
 }

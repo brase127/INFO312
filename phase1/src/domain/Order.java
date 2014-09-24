@@ -5,7 +5,6 @@
  */
 package domain;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -74,4 +73,11 @@ public class Order {
     public void addItem(OrderItem anOrderedItem) {
         items.add(anOrderedItem);
     }
+
+    @Override
+    public String toString() {
+        return "Order{" + "orderId=" + orderId + ", date=" + date + ", customer=" + customer + ", items=" + items + '}';
+    }
+    
 }
+
