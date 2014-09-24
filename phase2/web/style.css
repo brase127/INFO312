@@ -1,6 +1,7 @@
 @import url("forms.css");  /* import forms layout */
 
 /* add CSS to style your page here */
+
 fieldset{
     background-color: #aeb3e7;
     margin: auto;
@@ -12,7 +13,7 @@ table{
 }
 table, th, td{
     background-color: #aeb3e7;
-    margin-left: 275px;
+    margin-left: 0px;
     border: 2px solid #454573;
 }
 td{
@@ -85,7 +86,6 @@ h1{
     font-family: 'Shadows Into Light', cursive;
     font-style: normal;
     padding: 0px;
-    margin-left: 275px;
     color:#454573;
 }
 h2{
@@ -94,7 +94,6 @@ h2{
     font-family: 'Shadows Into Light', cursive;
     font-style: normal;
     padding: 0px;
-    margin-left: 275px;
     color:#454573;
 }
 button{
@@ -132,7 +131,6 @@ button{
     font-family: 'Shadows Into Light', cursive;
     font-style: normal;
     padding: 0px;
-    margin-left: 275px;
     color:#454573;
     }
     #categories:hover{
@@ -142,21 +140,19 @@ button{
     font-size: 20px;
     font-family: 'Shadows Into Light', cursive;
     background-color: #ccccff;
-    height: 100em;
-    width:  250px;
-    float:left;
+    height: 100%;
+    width:  250px;    
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 0px;
     position: fixed;
 }
+
 #welcome{
     font-size: 20px;
     font-family: 'Shadows Into Light', cursive;
 }
-#form{
-    margin-left: 275px;
-}
+
 #t{
     margin-top: 10px;
     margin-left: auto;

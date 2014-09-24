@@ -65,7 +65,7 @@
                         <td><%=product.getDescription()%></td>
                         <td><%=product.getCategory()%></td>
                         <td><%="$" + product.getPrice()%></td>
-                        <%if (quantity == 0) {%>
+                        <%if (quantity <= 0) {%>
                         <td>Sold out!</td>
                         <%} else {%>
                         <td><%=product.getQuantity()%></td>
