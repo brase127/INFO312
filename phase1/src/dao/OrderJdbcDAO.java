@@ -134,5 +134,36 @@ public class OrderJdbcDAO {
             throw new DAOException(ex.getMessage(), ex);
         }
     }
+    
+    public void orderItemsRemove(Order order){
+            
+
+        String sql = "merge into OrderItems (QUANTITY, ID, ORDERID) values (?,?,?)";
+        try (
+                // get connection to database
+                Connection dbCon = ShoppingConnection.getConnection();
+                // create the statement
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+            // copy the data from the student domain object into the SQL parameters
+            Collection<OrderItem> items = order.getItems();
+            Integer orderId = order.getOrderId();
+            // ****
+            // iterates through the order items and saves
+            // them using the insertOrderItemStmt prepared statement.
+            // ****
+            for (OrderItem item : items) {
+                stmt.setInt(1, item.getQuantityPurchased());
+
+                Product product = item.getaProduct();
+                Integer productId = product.getId();
+                stmt.setInt(2, productId);
+                stmt.setInt(3, orderId);
+
+            }
+            stmt.executeUpdate();
+        } catch (SQLException ex) { // don't let the SQLException leak from our DAO encapsulation
+            throw new DAOException(ex.getMessage(), ex);
+        }
+    }
 }
 
