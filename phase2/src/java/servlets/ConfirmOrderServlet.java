@@ -8,14 +8,22 @@ package servlets;
 import dao.OrderJdbcDAO;
 import domain.Customer;
 import domain.Order;
+import domain.OrderItem;
+import domain.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.apache.commons.mail.Email;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
 
 /**
  *
@@ -32,9 +40,10 @@ public class ConfirmOrderServlet extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws org.apache.commons.mail.EmailException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, EmailException {
 
         HttpSession session = request.getSession();
         Order order = (Order) session.getAttribute("order");
@@ -42,13 +51,35 @@ public class ConfirmOrderServlet extends HttpServlet {
         dao.save(order);
 
         Customer cust = (Customer) session.getAttribute("customer");
+        
+        List<OrderItem> orderItems = order.getItems();
+        
+                String customerHeader = "Dear " + cust.getName() + "\n" + "\n";
+        String confirm = "This is a confirmation of your order " + order.getOrderId() + ", processed " + order.getDate() + ".\n\n\n";
+        String items = "";
+        for (OrderItem orderitems : orderItems) {
+            Product product = orderitems.getaProduct();
+            items += "\t\t" + product.getName() + ", $" + product.getPrice() + ", quantity: " + orderitems.getQuantityPurchased() + ", total: " + orderitems.getItemTotal() + ".\n";
+        }
+        String orderEmail = "\tYour order contains: \n" + items + "\n";
+        String total = "\tOrder total: $" + String.valueOf(order.getTotal()) + "\n\n\n";
+        String goodbye = "If you have any questions contact us or send an email to BeautyBox@gmail.com \n" + "Beauty Box Crew!";
+        String message = customerHeader + confirm + orderEmail + total + goodbye;
+
+        Email email = new SimpleEmail();
+        email.setHostName("localhost");
+        email.setSmtpPort(2525);
+        email.setFrom("KendallChin712@gmail.com");
+        email.setSubject("TestMail");
+        email.setMsg(message);
+        email.addTo(cust.getEmail());
+        email.send();
+    
         session.setAttribute("order", new Order(cust));
-
         response.sendRedirect("/shopping/restricted/Thanks.jsp");
-
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -60,7 +91,11 @@ public class ConfirmOrderServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (EmailException ex) {
+            Logger.getLogger(ConfirmOrderServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -74,7 +109,11 @@ public class ConfirmOrderServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (EmailException ex) {
+            Logger.getLogger(ConfirmOrderServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
