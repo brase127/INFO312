@@ -11,15 +11,16 @@
     <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>       
     <body>
         <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
-              <h1>Invalid Input</h1>
-                <form>
-                    <fieldset
-        <p><%=request.getAttribute("javax.servlet.error.message")%></p>
-        <br>
-        <br>
-        <br>
-        <a href="javascript:history.back()">Back</a>
-                    </fieldset>
-        </form>
+        <h1>Invalid Input</h1>
+        <div id="form">
+            <fieldset>
+                <%=request.getAttribute("javax.servlet.error.message")%>
+                <br>
+                <br>
+                <br>
+                <a href="javascript:history.back()">Back</a>
+            </fieldset>>
+        </div>  
+
     </body>
 </html>

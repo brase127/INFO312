@@ -12,14 +12,14 @@
     <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
     <body>
         <h1>Error</h1>
-        <form>
+        <div id="form">
             <fieldset>
-        <%=request.getAttribute("javax.servlet.error.message")%>
-        <br>
-        <br>
-        <br>
-        <a href="javascript:history.back()">Back</a>
-        </fieldset
-        </form>
+                <%=request.getAttribute("javax.servlet.error.message")%>
+                <br>
+                <br>
+                <br>
+                <a href="javascript:history.back()">Back</a>
+            </fieldset>>
+        </div> 
     </body>
 </html>

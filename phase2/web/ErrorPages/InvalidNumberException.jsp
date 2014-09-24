@@ -12,13 +12,14 @@
     <body>
         <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
         <h1>Invalid Number Exception</h1>
-        <form><fieldset>
-        <p><%=request.getAttribute("javax.servlet.error.message")%></p>
-        <br>
-        <br>
-        <br>
-        <a href="javascript:history.back()">Back</a>
-            </fieldset>
-        </form>
+        <div id="form">
+            <fieldset>
+                <%=request.getAttribute("javax.servlet.error.message")%>
+                <br>
+                <br>
+                <br>
+                <a href="javascript:history.back()">Back</a>
+            </fieldset>>
+        </div> 
     </body>
 </html>

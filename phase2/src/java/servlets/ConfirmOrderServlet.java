@@ -5,20 +5,12 @@
  */
 package servlets;
 
-import dao.DAOException;
 import dao.OrderJdbcDAO;
-import dao.ShoppingConnection;
 import domain.Customer;
 import domain.Order;
 import domain.OrderItem;
 import domain.Product;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -62,22 +54,22 @@ public class ConfirmOrderServlet extends HttpServlet {
         List<OrderItem> orderItems = order.getItems();
 
         String customerHeader = "Dear " + cust.getName() + "\n" + "\n";
-        String confirm = "This is a confirmation of your order " + order.getOrderId() + ", processed " + order.getDate() + ".\n\n\n";
+        String confirm = "This is a confirmation of your order #" + order.getOrderId() + ", processed " + order.getDate() + ".\n\n\n";
         String items = "\tYour order contains: \n";
         for (OrderItem orderitems : orderItems) {
             Product product = orderitems.getaProduct();
-            items += "\t\t" + product.getName() + ", $" + product.getPrice() + ", quantity: " + orderitems.getQuantityPurchased() + ", total: " + orderitems.getItemTotal() + ".\n";
+            items += "\t\t" + product.getName() + ", $" + product.getPrice() + ", quantity: " + orderitems.getQuantityPurchased() + ", total: $" + orderitems.getItemTotal() + ".\n";
         }
         
         String total = "\n\tOrder total: $" + String.valueOf(order.getTotal()) + "\n\n\n";
         String goodbye = "If you have any questions contact us or send an email to BeautyBox@gmail.com \n" + "Beauty Box Crew!";
         String message = customerHeader + confirm + items + total + goodbye;
-
+String subject = "Beauty Box Order #" +order.getOrderId()+" Confirmation";
         Email email = new SimpleEmail();
         email.setHostName("localhost");
         email.setSmtpPort(2525);
-        email.setFrom("KendallChin712@gmail.com");
-        email.setSubject("TestMail");
+        email.setFrom("BeautyBox@gmail.com");
+        email.setSubject(subject);
         email.setMsg(message);
         email.addTo(cust.getEmail());
         email.send();

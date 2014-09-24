@@ -74,7 +74,7 @@
                         <button type="submit">Confirm Order</button>
                         <a href="/shopping/restricted/ViewProducts.jsp"> or click here to continue shopping!</a>
                 </fieldset>
-            </div>>
+            </div>
         </form>      
     </body>
 </html>
