@@ -78,6 +78,9 @@ public class Order {
     public String toString() {
         return "Order{" + "orderId=" + orderId + ", date=" + date + ", customer=" + customer + ", items=" + items + '}';
     }
-    
-}
 
+    public void removeItem(OrderItem orderItem) {
+        items.remove(orderItem);
+    }
+
+}

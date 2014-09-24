@@ -47,7 +47,6 @@ public class Product implements Comparable<Product> {
     @NotNull(message = "Quantity must be provided.")
     @NotBlank(message = "Quantity must be provided.")
     @NotNegative(message = "Quantity must be a postive number.")
-
     @Length(min = 1, message = "Price must contain at least one digit.")
     private Integer quantity;
 
