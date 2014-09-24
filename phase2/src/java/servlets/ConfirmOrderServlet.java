@@ -5,13 +5,20 @@
  */
 package servlets;
 
+import dao.DAOException;
 import dao.OrderJdbcDAO;
+import dao.ShoppingConnection;
 import domain.Customer;
 import domain.Order;
 import domain.OrderItem;
 import domain.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,20 +58,20 @@ public class ConfirmOrderServlet extends HttpServlet {
         dao.save(order);
 
         Customer cust = (Customer) session.getAttribute("customer");
-        
+
         List<OrderItem> orderItems = order.getItems();
-        
-                String customerHeader = "Dear " + cust.getName() + "\n" + "\n";
+
+        String customerHeader = "Dear " + cust.getName() + "\n" + "\n";
         String confirm = "This is a confirmation of your order " + order.getOrderId() + ", processed " + order.getDate() + ".\n\n\n";
-        String items = "";
+        String items = "\tYour order contains: \n";
         for (OrderItem orderitems : orderItems) {
             Product product = orderitems.getaProduct();
             items += "\t\t" + product.getName() + ", $" + product.getPrice() + ", quantity: " + orderitems.getQuantityPurchased() + ", total: " + orderitems.getItemTotal() + ".\n";
         }
-        String orderEmail = "\tYour order contains: \n" + items + "\n";
-        String total = "\tOrder total: $" + String.valueOf(order.getTotal()) + "\n\n\n";
+        
+        String total = "\n\tOrder total: $" + String.valueOf(order.getTotal()) + "\n\n\n";
         String goodbye = "If you have any questions contact us or send an email to BeautyBox@gmail.com \n" + "Beauty Box Crew!";
-        String message = customerHeader + confirm + orderEmail + total + goodbye;
+        String message = customerHeader + confirm + items + total + goodbye;
 
         Email email = new SimpleEmail();
         email.setHostName("localhost");
@@ -74,7 +81,7 @@ public class ConfirmOrderServlet extends HttpServlet {
         email.setMsg(message);
         email.addTo(cust.getEmail());
         email.send();
-    
+
         session.setAttribute("order", new Order(cust));
         response.sendRedirect("/shopping/restricted/Thanks.jsp");
     }
