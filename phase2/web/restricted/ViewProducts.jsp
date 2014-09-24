@@ -39,13 +39,12 @@
                 <br>
             </div>
 
-
+<div align="center">
             <table border="1">
                 <thead>
                     <tr>
                         <th>Product Id</th>
                         <th>Name</th>
-                        <th>Description</th>
                         <th>Category</th>
                         <th>Price</th>
                         <th>Quantity</th>
@@ -62,7 +61,6 @@
                     <tr>
                         <td><%=product.getId()%></td>
                         <td><button type="submit" name="productId" value="<%=product.getId()%>"><%=product.getName()%></button></td>
-                        <td><%=product.getDescription()%></td>
                         <td><%=product.getCategory()%></td>
                         <td><%="$" + product.getPrice()%></td>
                         <%if (quantity <= 0) {%>
@@ -78,6 +76,7 @@
 
                 </tbody>
             </table>
+</div>>
         </form>
     </body>
 </html>

@@ -33,15 +33,10 @@
 
         <h1><%= "You selected: " + productName%></h1>
         <div id="form">
-            <div align="center">
-                <%=description%>
-                <br>
-                <br
-                    >
-            </div>
-            <form action="/shopping/AddToOrderServlet" method="post">
+                        <form action="/shopping/AddToOrderServlet" method="post">
                 <fieldset>
                     <legend>Quantity to buy</legend>
+                    <%=description%><br>
                     Stock Available: <%=quantity%><br>
                     Price: $<%=price%>
                     <label>Quantity<input type="text" name="quantity"></label>
