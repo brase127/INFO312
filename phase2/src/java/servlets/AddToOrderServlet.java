@@ -48,7 +48,7 @@ public class AddToOrderServlet extends HttpServlet {
 
         session.removeAttribute("product");
 
-        response.sendRedirect("/shopping/restricted/Checkout.jsp");
+        response.sendRedirect("/shopping/restricted/ViewProducts.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

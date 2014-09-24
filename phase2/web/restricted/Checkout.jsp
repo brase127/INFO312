@@ -22,61 +22,61 @@
         <title>Checkout</title>
     </head>
     <body>
-        <form action="/shopping/ConfirmOrderServlet" method="post">
-            <h1>Shopping Cart</h1>             
-            <h2 align="center">You order currently consists of:</h2>
-            <%Double orderTotal = 0.0;
-            %>
-            <div id="form">
-                <fieldset>
-                    <table id="t" border="1">
-                        <thead>
-                            <tr>
-                                <th>Product Id</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
-                                <th> </th>
-                            </tr>
-                        </thead>
-                        <%
-                            Order order = (Order) session.getAttribute("order");
 
-                            if (order != null) {
-                                List<OrderItem> orderItems = order.getItems();
+        <h1>Shopping Cart</h1>             
+        <h2 align="center">You order currently consists of:</h2>
+        <%Double orderTotal = 0.0;
+        %>
+        <div id="form">
+            <fieldset>
+                <table id="t" border="1">
+                    <thead>
+                        <tr>
+                            <th>Product Id</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <%
+                        Order order = (Order) session.getAttribute("order");
 
-                                for (OrderItem orderItem : orderItems) {
-                                    Product product = orderItem.getaProduct();
-                                    Integer quantity = orderItem.getQuantityPurchased();
-                                    Double price = product.getPrice();
-                                    String productName = product.getName();
-                                    Integer productId = product.getId();
-                                    Double total = orderItem.getItemTotal();
-                                    orderTotal += total;
-                        %>
-                        <tbody>                              
-                            <tr>
-                                <td><%=productId%></td>
-                                <td><%=productName%></td>
-                                <td><%="$" + price%></td>
-                                <td><%=quantity%></td>
-                                <td><%="$" + total%></td>
-                                <td><button type="submit" name="orderItem" value="<%=product.getId()%>">Remove</button></td>
+                        if (order != null) {
+                            List<OrderItem> orderItems = order.getItems();
 
-                            </tr>
-                            <%}
-                                    for (OrderItem orderItem : orderItems) {
-
-                                    }
-                                }%>
-                        </tbody>
-                    </table>
-                    Total cost of order: <%="$" + orderTotal%>
-                        <button type="submit">Confirm Order</button>
-                        <a href="/shopping/restricted/ViewProducts.jsp"> or click here to continue shopping!</a>
-                </fieldset>
-            </div>
-        </form>      
-    </body>
+                            for (OrderItem orderItem : orderItems) {
+                                Product product = orderItem.getaProduct();
+                                Integer quantity = orderItem.getQuantityPurchased();
+                                Double price = product.getPrice();
+                                String productName = product.getName();
+                                Integer productId = product.getId();
+                                Double total = orderItem.getItemTotal();
+                                orderTotal += total;
+                    %>
+                    <tbody>                              
+                        <tr>
+                            <td><%=productId%></td>
+                            <td><%=productName%></td>
+                            <td><%="$" + price%></td>
+                            <td><%=quantity%></td>
+                            <td><%="$" + total%></td>
+                    <form action="/shopping/RemoveFromOrderServlet" method="post">
+                        <td><button type="submit" name="orderItem" value="<%=product.getId()%>">Remove</button></td>
+                    </form>
+                    </tr>
+                    <%}
+                          
+                        }%>
+                    </tbody>
+                </table>
+                <br>Total cost of order: <%="$" + orderTotal%>
+                <form action="/shopping/ConfirmOrderServlet" method="post">    
+                    <button type="submit">Confirm Order</button>
+                    <a href="/shopping/restricted/ViewProducts.jsp"> or click here to continue shopping!</a>
+            </fieldset>
+        </div>
+    </form>      
+</body>
 </html>

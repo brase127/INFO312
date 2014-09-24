@@ -5,11 +5,18 @@
  */
 package servlets;
 
+import dao.DAOException;
+import dao.OrderJdbcDAO;
+import dao.ShoppingConnection;
 import domain.Order;
 import domain.OrderItem;
 import domain.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Collection;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,12 +42,13 @@ public class RemoveFromOrderServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         HttpSession session = request.getSession();
         Order order = (Order) session.getAttribute("order");
         OrderItem orderItem = (OrderItem) request.getAttribute("orderId");
-        order.removeItem(orderItem);
-        
+                order.removeItem(orderItem);
+        OrderJdbcDAO dao = new OrderJdbcDAO();
+        dao.orderItemsRemove(order);
         response.sendRedirect("/shopping/restricted/Checkout.jsp");
     }
 
