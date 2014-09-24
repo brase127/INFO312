@@ -48,7 +48,7 @@ fieldset label {
 }
 
 fieldset input, fieldset textarea, fieldset select {
-    width: 22em;       /* width of the form components */
+    width: 80%;       /* width of the form components */
     margin-left: 5px;   /* add some spacing between the label and the component */
 }
 

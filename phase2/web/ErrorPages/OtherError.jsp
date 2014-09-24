@@ -9,12 +9,17 @@
 <html>
     <link rel="stylesheet" type="text/css" href="/shopping/style.css">
     <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
     <body>
-        <h1>Fucking Error</h1>
-        <p><%=request.getAttribute("javax.servlet.error.message")%></p>
+        <h1>Error</h1>
+        <form>
+            <fieldset>
+        <%=request.getAttribute("javax.servlet.error.message")%>
         <br>
         <br>
         <br>
         <a href="javascript:history.back()">Back</a>
+        </fieldset
+        </form>
     </body>
 </html>
