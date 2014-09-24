@@ -26,11 +26,11 @@
                 ProductJdbcDAO dao = new ProductJdbcDAO();
             %>
             <div id="categories" align= "center" id="categories">
-                Categories: <a href="/shopping/restricted/ViewProducts.jsp?category=all">All</a>
+                Categories: <a href="/shopping/restricted/ViewProducts.jsp?category=all">All</a> 
                 <% Collection<String> categories = dao.getCategories();
 
                     for (String cat : categories) {%>
-                <a href="/shopping/restricted/ViewProducts.jsp?category=<%=cat%>" id="category" value="<%=cat%>"><%="| " + cat%></a>
+                | <a href="/shopping/restricted/ViewProducts.jsp?category=<%=cat%>" id="category" value="<%=cat%>"><%=cat%></a>
                 <%
                         request.setAttribute("category", cat);
                     }

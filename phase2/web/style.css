@@ -1,25 +1,27 @@
 @import url("forms.css");  /* import forms layout */
 
 /* add CSS to style your page here */
-
+h1, h2, #categories, table, #form{
+    margin-left: 300px;
+    padding: auto;
+}
 fieldset{
     background-color: #aeb3e7;
-    margin: auto;
-}
+        }
 table{
     border-collapse: collapse;
-    width: auto;
+    width: 75%;
     height: auto;
+    
 }
 table, th, td{
     background-color: #aeb3e7;
-    margin-left: 0px;
     border: 2px solid #454573;
 }
 td{
     font-size: 15px;
     text-align: left;
-    vertical-align: bottom;
+    vertical-align: middle;
     padding-left: 7px;
     padding-right: 7px;
 }
@@ -27,7 +29,7 @@ th{
     color: #454573;
     font-size: 20px;
     text-align: left;
-    vertical-align: bottom;
+    vertical-align: middle;
     padding-left: 7px;
     padding-right: 7px;
 }
@@ -78,7 +80,7 @@ img:hover{
     -o-transition: all   0.6s ease-out;
     transition: all 0.6s ease-out;
     cursor:crosshair;
-    }
+}
 h1{
     text-align: center;
     text-transform: uppercase;
@@ -112,30 +114,33 @@ button{
     -moz-transition: all 0.6s ease-out;
     -o-transition: all   0.6s ease-out;
     transition: all 0.6s ease-out;
-    }
-    button:hover{
-        color: #ccccff;
-    }
+}
+button:hover{
+    color: #ccccff;
+}
 #logo{
     background-image: url("Logo.png");
     background-repeat:no-repeat ;
     background-size: 250px, 250px;
-    background-position: center;
+    background-position: center;    
     margin-left: auto;
     margin-right: auto;
     padding-top: 300px;
     padding-top: 300px;
+        text-indent:-9999px;    
+        display:block;
 }
+
 #categories{
     font-size: 30px;
     font-family: 'Shadows Into Light', cursive;
     font-style: normal;
     padding: 0px;
     color:#454573;
-    }
-    #categories:hover{
-        colour: #ccccff
-    }
+}
+#categories:hover{
+    colour: #ccccff
+}
 #navigationPane{
     font-size: 20px;
     font-family: 'Shadows Into Light', cursive;
