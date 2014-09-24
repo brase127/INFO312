@@ -37,6 +37,7 @@
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
+                                <th> </th>
                             </tr>
                         </thead>
                         <%
@@ -61,6 +62,7 @@
                                 <td><%="$" + price%></td>
                                 <td><%=quantity%></td>
                                 <td><%="$" + total%></td>
+                                <td><button type="submit" name="orderItem" value="<%=product.getId()%>">Remove</button></td>
 
                             </tr>
                             <%}
