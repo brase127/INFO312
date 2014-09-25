@@ -31,7 +31,7 @@
             }
         %>
 
-        <h1><%= "You selected: " + productName%></h1>
+        <h1><%=productName%></h1>
         <div id="form">
             <form action="/shopping/AddToOrderServlet" method="post">
                 <fieldset>
