@@ -58,7 +58,7 @@ public class ProductDialogTest {
 
     @Test
     public void testEdit() {
-        Product hairbrush = new Product(9638, "Hairbrush", "round barrel", "Accessories", 15.65, 6543);
+        Product hairbrush = new Product(9638, "Hairbrush", "round barrel", "Accessories", 15.65, 6543, "asfd");
         ProductDialog dialog = new ProductDialog(null, true, hairbrush, dao);
         fest = new DialogFixture(dialog);
         fest.show();

@@ -23,7 +23,7 @@ public class ProductJdbcDAO implements ProductDAO {
 
     @Override
     public void save(Product aProduct) {
-        String sql = "merge into products (id, name, description, category, price, quantity) values (?,?,?,?,?,?)";
+        String sql = "merge into products (id, name, description, category, price, quantity, photo) values (?,?,?,?,?,?,?)";
         try (
                 // get connection to database
                 Connection dbCon = ShoppingConnection.getConnection();
@@ -36,6 +36,7 @@ public class ProductJdbcDAO implements ProductDAO {
             stmt.setString(4, aProduct.getCategory());
             stmt.setDouble(5, aProduct.getPrice());
             stmt.setInt(6, aProduct.getQuantity());
+            stmt.setString(7, aProduct.getPhoto());
             // execute the statement
             stmt.executeUpdate();
         } catch (SQLException ex) { // don't let the SQLException leak from our DAO encapsulation
@@ -87,8 +88,9 @@ public class ProductJdbcDAO implements ProductDAO {
                 String category = rs.getString("category");
                 Double price = rs.getDouble("price");
                 Integer quantity = rs.getInt("quantity");
+                String photo = rs.getString("photo");
 // use the data to create a student object
-                Product s = new Product(id, name, description, category, price, quantity);
+                Product s = new Product(id, name, description, category, price, quantity, photo);
 // and put it in the collection
                 products.add(s);
             }
@@ -151,8 +153,9 @@ public class ProductJdbcDAO implements ProductDAO {
                 String category = rs.getString("category");
                 Double price = rs.getDouble("price");
                 Integer quantity = rs.getInt("quantity");
+                String photo = rs.getString("photo");
 // use the data to create a student object
-                Product s = new Product(id, name, description, category, price, quantity);
+                Product s = new Product(id, name, description, category, price, quantity, photo);
 // and put it in the collection
                 return s;
             }
@@ -183,8 +186,9 @@ public class ProductJdbcDAO implements ProductDAO {
                 String category = rs.getString("category");
                 Double price = rs.getDouble("price");
                 Integer quantity = rs.getInt("quantity");
+                String photo = rs.getString("photo");
 // use the data to create a student object
-                Product s = new Product(id, name, description, category, price, quantity);
+                Product s = new Product(id, name, description, category, price, quantity, photo);
 // and put it in the collection
                 products.add(s);
             }

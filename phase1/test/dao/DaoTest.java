@@ -24,6 +24,7 @@ public class DaoTest {
     private String ballCategory = "Toy";
     private Double ballPrice = 5.20;
     private int ballQuantity = 1000;
+    private String ballPhoto = "3gsdfs";
     private Product ball;
 
     private int dollId = 4567;
@@ -31,6 +32,7 @@ public class DaoTest {
     private String dollCategory = "Antique";
     private Double dollPrice = 35.80;
     private int dollQuantity = 2000;
+    private String dollPhoto = "sdadfasf";
     private Product doll;
 
     public DaoTest() {
@@ -46,8 +48,8 @@ public class DaoTest {
 
     @Before
     public void setUp() {
-        ball = new Product(ballId, "Ball", ballDescription, ballCategory, ballPrice, ballQuantity);
-        doll = new Product(dollId, "Doll", dollDescription, dollCategory, dollPrice, dollQuantity);
+        ball = new Product(ballId, "Ball", ballDescription, ballCategory, ballPrice, ballQuantity, ballPhoto);
+        doll = new Product(dollId, "Doll", dollDescription, dollCategory, dollPrice, dollQuantity, dollPhoto);
         dao.save(doll);
         dao.save(ball);
 
@@ -61,7 +63,7 @@ public class DaoTest {
 
     @Test
     public void testDaoSaveAndDelete() {
-        Product Lipstick = new Product(7891, "Lipstick", "Red, matte", "Makeup", 40.50, 6054);
+        Product Lipstick = new Product(7891, "Lipstick", "Red, matte", "Makeup", 40.50, 6054, "weffd");
         dao.save(Lipstick);
         Product retrieved = dao.getById(7891);
         assertEquals("Retrieved student should be the same as the saved one",
@@ -84,6 +86,7 @@ public class DaoTest {
                 assertEquals(doll.getDescription(), s.getDescription());
                 assertEquals(doll.getPrice(), s.getPrice());
                 assertEquals(doll.getQuantity(), s.getQuantity());
+                assertEquals(doll.getPhoto(), s.getPhoto());
             }
         }
     }
@@ -102,6 +105,7 @@ public class DaoTest {
                 assertEquals(doll.getDescription(), s.getDescription());
                 assertEquals(doll.getPrice(), s.getPrice());
                 assertEquals(doll.getQuantity(), s.getQuantity());
+                assertEquals(doll.getPhoto(), s.getPhoto());
             }
         }
         Integer fakeId = 999999999;
@@ -130,6 +134,7 @@ public class DaoTest {
                 assertEquals(doll.getDescription(), s.getDescription());
                 assertEquals(doll.getPrice(), s.getPrice());
                 assertEquals(doll.getQuantity(), s.getQuantity());
+                assertEquals(doll.getPhoto(), s.getPhoto());
             }
         }
         String fakeCategory = "Clothing";
@@ -149,5 +154,6 @@ public class DaoTest {
         assertEquals(p.getDescription(), s.getDescription());
         assertEquals(p.getPrice(), s.getPrice());
         assertEquals(p.getQuantity(), s.getQuantity());
+        assertEquals(p.getPhoto(), s.getQuantity());
     }
 }

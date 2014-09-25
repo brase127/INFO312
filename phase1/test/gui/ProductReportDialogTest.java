@@ -50,8 +50,8 @@ public class ProductReportDialogTest {
     @Before
     public void setUp() {
         // create some products for testing with
-        ball = new Product(123456, "Ball", "Round and bouncy", "Toy", 15.35, 1234);
-        doll = new Product(456789, "Doll", "Small and pretty", "Antique", 25.35, 4567);
+        ball = new Product(123456, "Ball", "Round and bouncy", "Toy", 15.35, 1234, "dsf");
+        doll = new Product(456789, "Doll", "Small and pretty", "Antique", 25.35, 4567, "sdfsd");
 // add the products to a collection for testing with
         products = new TreeSet<>();
         products.add(ball);
