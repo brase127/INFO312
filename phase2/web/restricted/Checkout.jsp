@@ -4,6 +4,7 @@
     Author     : Kendall Lauren Chin
 --%>
 
+<%@page import="java.awt.SystemColor.window"%>
 <%@page import="domain.Product"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Collections"%>
@@ -24,9 +25,22 @@
     <body>
 
         <h1>Shopping Cart</h1>             
-        <h2 align="center">You order currently consists of:</h2>
-        <%Double orderTotal = 0.0;
+
+        <%            Double orderTotal = 0.0;
+            Order order = (Order) session.getAttribute("order");
+
+            List<OrderItem> orderItems = order.getItems();
+            if (orderItems.isEmpty()) {
         %>
+        <h2 align="center">Your shopping cart is empty!</h2>
+        <div id="form" align="center">
+            <a href="/shopping/restricted/ViewProducts.jsp">Click here to continue shopping!</a>
+
+        </div>
+        <%
+        } else {
+        %>
+        <h2 align="center">Your order currently consists of:</h2>
         <div id="form">
             <fieldset>
                 <table id="t" border="1">
@@ -40,20 +54,17 @@
                             <th> </th>
                         </tr>
                     </thead>
+
+
                     <%
-                        Order order = (Order) session.getAttribute("order");
-
-                        if (order != null) {
-                            List<OrderItem> orderItems = order.getItems();
-
-                            for (OrderItem orderItem : orderItems) {
-                                Product product = orderItem.getaProduct();
-                                Integer quantity = orderItem.getQuantityPurchased();
-                                Double price = product.getPrice();
-                                String productName = product.getName();
-                                Integer productId = product.getId();
-                                Double total = orderItem.getItemTotal();
-                                orderTotal += total;
+                        for (OrderItem orderItem : orderItems) {
+                            Product product = orderItem.getaProduct();
+                            Integer quantity = orderItem.getQuantityPurchased();
+                            Double price = product.getPrice();
+                            String productName = product.getName();
+                            Integer productId = product.getId();
+                            Double total = orderItem.getItemTotal();
+                            orderTotal += total;
                     %>
                     <tbody>                              
                         <tr>
@@ -67,8 +78,7 @@
                     </form>
                     </tr>
                     <%}
-                          
-                        }%>
+                    %>
                     </tbody>
                 </table>
                 <br>Total cost of order: <%="$" + orderTotal%>
@@ -76,11 +86,13 @@
                     <button type="submit">Confirm Order</button> 
                 </form>
                 <form action="/shopping/RemoveOrderServlet" method="post">    
-                    <button type="submit">Cancel Order</button> 
+                    <button type="submit">Cancel Order</button>
+                   
                 </form>
-                    <a href="/shopping/restricted/ViewProducts.jsp"> or click here to continue shopping!</a>
+                <a href="/shopping/restricted/ViewProducts.jsp">Click here to continue shopping!</a>
             </fieldset>
-        </div>
-    </form>      
-</body>
+        </div> 
+        <%
+            }%>
+    </body>
 </html>
