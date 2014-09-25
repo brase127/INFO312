@@ -31,9 +31,9 @@
             }
         %>
 
-        <h1><%=productName%></h1>
+        <h1><%= "You selected: " + productName%></h1>
         <div id="form">
-            <form action="/shopping/AddToOrderServlet" method="post">
+                        <form action="/shopping/AddToOrderServlet" method="post">
                 <fieldset>
                     <legend>Quantity to buy</legend>
                     <%=description%><br>

@@ -43,7 +43,7 @@ public class RemoveFromOrderServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
         HttpSession session = request.getSession();
         Order order = (Order) session.getAttribute("order");
         OrderItem orderItem = (OrderItem) session.getAttribute("orderItem");

@@ -22,18 +22,18 @@
         <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script>
-            function confirmCancel() {
-                if (confirm("Are you sure you want to cancel your order?")) {
-                    window.location = "/shopping/RemoveOrderServlet";
-                } else {
+            function confirmCancel(){
+                if(confirm("Are you sure you want to cancel your order?")){
+                    window.location="/shopping/RemoveOrderServlet";
+                } else{
                     return false;
                 }
                 return true;
             }
-            function confirmRemoveItem() {
-                if (confirm("Are you sure you want to remove this from your order?")) {
-                    window.location = "/shopping/RemoveFromOrderServlet";
-                } else {
+            function confirmRemoveItem(){
+                if(confirm("Are you sure you want to remove this from your order?")){
+                    window.location="/shopping/RemoveFromOrderServlet";
+                } else{
                     return false;
                 }
                 return true;
@@ -92,21 +92,21 @@
                             <td><%="$" + price%></td>
                             <td><%=quantity%></td>
                             <td><%="$" + total%></td>
-
-                            <td><button type="submit" onclick="confirmRemoveItem()()"name="orderId" value="<%=product.getId()%>">Remove</button></td>
-                        </tr>
-                        <%}
-                        %>
+                    
+                            <td><button type="submit" onclick="confirmCancel()"name="orderId" value="<%=product.getId()%>">Remove</button></td>
+                                        </tr>
+                    <%}
+                    %>
                     </tbody>
                 </table>
                 <br>Total cost of order: <%="$" + orderTotal%>
                 <form action="/shopping/ConfirmOrderServlet" method="post">    
                     <button type="submit">Confirm Order</button> 
                 </form>
-
-                <button type="submit" onclick="confirmCancel()()">Cancel Order</button>
-
-
+                    
+                    <button type="submit" onclick="confirmDecision()">Cancel Order</button>
+                   
+                
                 <a href="/shopping/restricted/ViewProducts.jsp">Click here to continue shopping!</a>
             </fieldset>
         </div> 

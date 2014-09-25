@@ -5,17 +5,13 @@ package servlets;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import domain.Order;
-import domain.OrderItem;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import sun.security.pkcs11.wrapper.Functions;
 
 /**
@@ -36,14 +32,9 @@ public class CustomerLogout extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        Order order = (Order) session.getAttribute("order");
-            List<OrderItem> items = order.getItems();
-            if (!items.isEmpty()) {
-                request.getSession().invalidate();
+
+        request.getSession().invalidate();
         response.sendRedirect("/shopping");
-            }
-        
 
     }
 
@@ -85,6 +76,5 @@ public class CustomerLogout extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 
 }
