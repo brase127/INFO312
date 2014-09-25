@@ -83,4 +83,8 @@ public class Order {
         items.remove(orderItem);
     }
 
+    public boolean isEmpty() {
+        return items.isEmpty();
+    }
+
 }
