@@ -77,6 +77,8 @@ public class ProductDialog extends javax.swing.JDialog {
         txtId = new javax.swing.JFormattedTextField();
         txtPrice = new javax.swing.JFormattedTextField();
         txtQuantity = new javax.swing.JFormattedTextField();
+        lblPhoto = new javax.swing.JLabel();
+        txtPhoto = new javax.swing.JFormattedTextField();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -184,6 +186,16 @@ public class ProductDialog extends javax.swing.JDialog {
         txtQuantity.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
         txtQuantity.setName("txtQuantity"); // NOI18N
 
+        lblPhoto.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        lblPhoto.setForeground(new java.awt.Color(255, 255, 255));
+        lblPhoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPhoto.setText("Photo:");
+        lblPhoto.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        txtPhoto.setForeground(new java.awt.Color(67, 38, 127));
+        txtPhoto.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
+        txtPhoto.setName("txtQuantity"); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -192,8 +204,9 @@ public class ProductDialog extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblPhoto)
                             .addComponent(lblDescription)
                             .addComponent(lblCategory)
                             .addComponent(lblPrice)
@@ -207,11 +220,12 @@ public class ProductDialog extends javax.swing.JDialog {
                             .addComponent(txtId)
                             .addComponent(txtPrice)
                             .addComponent(txtQuantity)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtPhoto, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -230,7 +244,7 @@ public class ProductDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cmbCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -246,11 +260,14 @@ public class ProductDialog extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lblDescription)
                         .addGap(104, 104, 104)))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPhoto))
+                .addGap(2, 2, 2)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -277,6 +294,7 @@ public class ProductDialog extends javax.swing.JDialog {
                     product.setCategory((String) cmbCategory.getSelectedItem());
                     product.setPrice((Double) txtPrice.getValue());
                     product.setQuantity((Integer) txtQuantity.getValue());
+                    product.setPhoto(txtPhoto.getText());
                 } else {
                     JOptionPane.showMessageDialog(this, "This ID already exists.");
                 }
@@ -286,6 +304,7 @@ public class ProductDialog extends javax.swing.JDialog {
                 product.setCategory((String) cmbCategory.getSelectedItem());
                 product.setPrice(Double.parseDouble(txtPrice.getText()));
                 product.setQuantity(Integer.parseInt(txtQuantity.getText()));
+                product.setPhoto(txtPhoto.getText());
             }
             if (validHelp.isObjectValid(product)) {
                 dao.save(product);
@@ -322,11 +341,13 @@ public class ProductDialog extends javax.swing.JDialog {
     private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPhoto;
     private javax.swing.JLabel lblPrice;
     private javax.swing.JLabel lblQuantity;
     private javax.swing.JTextArea txtDescription;
     private javax.swing.JFormattedTextField txtId;
     private javax.swing.JTextField txtName;
+    private javax.swing.JFormattedTextField txtPhoto;
     private javax.swing.JFormattedTextField txtPrice;
     private javax.swing.JFormattedTextField txtQuantity;
     // End of variables declaration//GEN-END:variables
