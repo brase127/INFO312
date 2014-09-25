@@ -26,7 +26,7 @@
 <div id="navigationPane">
     <div id="welcome">Welcome<%=name%>!</div>
     <a href="/shopping/index.jsp" id="logo">home</a>
-        
+
     <div >
         <a href="/shopping/index.jsp">Home Page</a><br>
         <a href="/shopping/CustomerLogin.jsp">Log In</a><br>

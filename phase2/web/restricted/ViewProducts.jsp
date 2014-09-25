@@ -39,44 +39,44 @@
                 <br>
             </div>
 
-<div align="center">
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Product Id</th>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th> </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <%
-                        for (Product product : products) {
-                            String category = request.getParameter("category");
-                            if (category == null || product.getCategory().equals(category) || category.equals("all")) {
-                                Integer quantity = product.getQuantity();
-                    %>
-                    <tr>
-                        <td><%=product.getId()%></td>
-                        <td><button type="submit" name="productId" value="<%=product.getId()%>"><%=product.getName()%></button></td>
-                        <td><%=product.getCategory()%></td>
-                        <td><%="$" + product.getPrice()%></td>
-                        <%if (quantity <= 0) {%>
-                        <td>Sold out!</td>
-                        <%} else {%>
-                        <td><%=product.getQuantity()%></td>
-                        <%}%>
-                        <td><button type="submit" name="productId" value="<%=product.getId()%>">Buy</button></td>
-                    </tr>
+            <div align="center">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Product Id</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                            for (Product product : products) {
+                                String category = request.getParameter("category");
+                                if (category == null || product.getCategory().equals(category) || category.equals("all")) {
+                                    Integer quantity = product.getQuantity();
+                        %>
+                        <tr>
+                            <td><%=product.getId()%></td>
+                            <td><button type="submit" name="productId" value="<%=product.getId()%>"><%=product.getName()%></button></td>
+                            <td><%=product.getCategory()%></td>
+                            <td><%="$" + product.getPrice()%></td>
+                            <%if (quantity <= 0) {%>
+                            <td>Sold out!</td>
+                            <%} else {%>
+                            <td><%=product.getQuantity()%></td>
+                            <%}%>
+                            <td><button type="submit" name="productId" value="<%=product.getId()%>">Buy</button></td>
+                        </tr>
 
-                    <% }
+                        <% }
                         }%>
 
-                </tbody>
-            </table>
-</div>>
+                    </tbody>
+                </table>
+            </div>>
         </form>
     </body>
 </html>
