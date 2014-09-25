@@ -1,7 +1,22 @@
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.List"%>
+<%@page import="domain.OrderItem"%>
+<%@page import="domain.OrderItem"%>
+<%@page import="domain.Order"%>
 <%@page import="domain.Customer"%>
 
-
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+<script>
+    function confirmLogout() {
+        if (confirm("You still have items in your shopping cart, are you sure you want to logout?")) {
+            window.location = "/shopping/CustomerLogout";
+        } else {
+            return false;
+        }
+        return true;
+    }
+</script>
 <%
     String name = "";
 //If the session variable is set, get the name and display it on the page
@@ -12,16 +27,25 @@
 
 <div id="navigationPane">
     <div id="welcome">Welcome<%=name%>!</div>
-    <div id="logo"></div>    
+    <div id="logo"></div>
     <div>
         <a href="/shopping/index.jsp">Home Page</a><br>
         <a href="/shopping/restricted/ViewProducts.jsp">View Products</a><br>
         <a href="/shopping/restricted/Checkout.jsp">Shopping Cart</a><br>
+        <%Order order = (Order) session.getAttribute("order");
+            List<OrderItem> items = order.getItems();
+            if (items.isEmpty()) {
+        %>
         <a href="/shopping/CustomerLogout">Logout</a><br>
+        <%} else {
+        %>
+        <a onclick="confirmLogout()">Logout</a>
+        <%
+                            }%>
+
     </div>
 </div>
-<%
-} else {
+<%} else {
 %>
 <div id="navigationPane">
     <div id="welcome">Welcome<%=name%>!</div>
