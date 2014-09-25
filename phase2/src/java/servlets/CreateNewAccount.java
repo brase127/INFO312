@@ -42,7 +42,7 @@ public class CreateNewAccount extends HttpServlet {
         String address = request.getParameter("address");
         String creditCardDetails = request.getParameter("creditCardDetails");
         String password = request.getParameter("password");
-
+        
         Customer customer = new Customer(username, name, address, creditCardDetails, password, email);
 
         CustomerJdbcDAO dao = new CustomerJdbcDAO();
