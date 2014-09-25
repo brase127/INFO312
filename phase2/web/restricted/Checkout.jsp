@@ -63,7 +63,7 @@
                             <td><%=quantity%></td>
                             <td><%="$" + total%></td>
                     <form action="/shopping/RemoveFromOrderServlet" method="post">
-                        <td><button type="submit" name="orderItem" value="<%=product.getId()%>">Remove</button></td>
+                        <td><button type="submit" name="orderId" value="<%=product.getId()%>">Remove</button></td>
                     </form>
                     </tr>
                     <%}
@@ -73,7 +73,11 @@
                 </table>
                 <br>Total cost of order: <%="$" + orderTotal%>
                 <form action="/shopping/ConfirmOrderServlet" method="post">    
-                    <button type="submit">Confirm Order</button>
+                    <button type="submit">Confirm Order</button> 
+                </form>
+                <form action="/shopping/RemoveOrderServlet" method="post">    
+                    <button type="submit">Cancel Order</button> 
+                </form>
                     <a href="/shopping/restricted/ViewProducts.jsp"> or click here to continue shopping!</a>
             </fieldset>
         </div>

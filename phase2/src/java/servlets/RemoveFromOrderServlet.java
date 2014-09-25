@@ -17,6 +17,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Collection;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,13 +43,12 @@ public class RemoveFromOrderServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
         HttpSession session = request.getSession();
         Order order = (Order) session.getAttribute("order");
-        OrderItem orderItem = (OrderItem) request.getAttribute("orderId");
-                order.removeItem(orderItem);
-        OrderJdbcDAO dao = new OrderJdbcDAO();
-        dao.orderItemsRemove(order);
+        OrderItem orderItem = (OrderItem) session.getAttribute("orderItem");
+        order.removeItem(orderItem);
+        session.setAttribute("order", order);
         response.sendRedirect("/shopping/restricted/Checkout.jsp");
     }
 

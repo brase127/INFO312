@@ -43,7 +43,7 @@ public class AddToOrderServlet extends HttpServlet {
         Product product = (Product) session.getAttribute("product");
 
         OrderItem orderItem = new OrderItem(quantity, product);
-
+        session.setAttribute("orderItem", orderItem);
         order.addItem(orderItem);
 
         session.removeAttribute("product");
