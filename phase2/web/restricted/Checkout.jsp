@@ -4,7 +4,7 @@
     Author     : Kendall Lauren Chin
 --%>
 
-<%@page import="java.awt.SystemColor.window"%>
+
 <%@page import="domain.Product"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Collections"%>
@@ -14,12 +14,31 @@
 <%@page import="java.util.Collection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="/shopping/style.css">
         <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
         <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script>
+            function confirmCancel(){
+                if(confirm("Are you sure you want to cancel your order?")){
+                    window.location="/shopping/RemoveOrderServlet";
+                } else{
+                    return false;
+                }
+                return true;
+            }
+            function confirmRemoveItem(){
+                if(confirm("Are you sure you want to remove this from your order?")){
+                    window.location="/shopping/RemoveFromOrderServlet";
+                } else{
+                    return false;
+                }
+                return true;
+            }
+        </script>
         <title>Checkout</title>
     </head>
     <body>
@@ -73,10 +92,9 @@
                             <td><%="$" + price%></td>
                             <td><%=quantity%></td>
                             <td><%="$" + total%></td>
-                    <form action="/shopping/RemoveFromOrderServlet" method="post">
-                        <td><button type="submit" name="orderId" value="<%=product.getId()%>">Remove</button></td>
-                    </form>
-                    </tr>
+                    
+                            <td><button type="submit" onclick="confirmCancel()"name="orderId" value="<%=product.getId()%>">Remove</button></td>
+                                        </tr>
                     <%}
                     %>
                     </tbody>
@@ -85,10 +103,10 @@
                 <form action="/shopping/ConfirmOrderServlet" method="post">    
                     <button type="submit">Confirm Order</button> 
                 </form>
-                <form action="/shopping/RemoveOrderServlet" method="post">    
-                    <button type="submit">Cancel Order</button>
+                    
+                    <button type="submit" onclick="confirmDecision()">Cancel Order</button>
                    
-                </form>
+                
                 <a href="/shopping/restricted/ViewProducts.jsp">Click here to continue shopping!</a>
             </fieldset>
         </div> 
