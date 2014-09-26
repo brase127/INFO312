@@ -63,7 +63,7 @@ public class Order {
     }
 
     public Double getTotal() {
-        double result = 0;
+        double result = 0.00;
         for (OrderItem item : items) {
             result += item.getItemTotal();
         }
