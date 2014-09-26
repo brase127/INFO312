@@ -35,19 +35,20 @@
 
         <h1><%= "You selected: " + productName%></h1>
         <div id="form">
-            <div>
-                <img src="hi.jpg" height="250" width="250" alt="/shopping/<%=photo%>">
-            </div>
+            <img align="center" src="/shopping/<%=photo%>" height="250" width="250" alt="No photo available">
+            <form action="/shopping/AddToOrderServlet" method="post">
                 <fieldset>
+
                     <legend>Quantity to buy</legend>
                     <%=description%><br>
                     Stock Available: <%=quantity%><br>
                     Price: $<%=price%>
                     <label>Quantity<input type="text" name="quantity"></label>
-                    <form action="/shopping/AddToOrderServlet" method="post">
+
                     <button type="submit" name="quantityToOrder" value="<%=request.getAttribute("quantity")%>">Add To Order</button>
                 </fieldset>
             </form>
+
         </div>
     </body>
 </html>

@@ -54,7 +54,9 @@ public class ConfirmOrderServlet extends HttpServlet {
         List<OrderItem> orderItems = order.getItems();
 
         String customerHeader = "Dear " + cust.getName() + "\n" + "\n";
+        
         String confirm = "This is a confirmation of your order #" + order.getOrderId() + ", processed " + order.getDate() + ".\n\n\n";
+        
         String items = "\tYour order contains: \n";
         for (OrderItem orderitems : orderItems) {
             Product product = orderitems.getaProduct();
@@ -62,9 +64,14 @@ public class ConfirmOrderServlet extends HttpServlet {
         }
         
         String total = "\n\tOrder total: $" + String.valueOf(order.getTotal()) + "\n\n\n";
+        
         String goodbye = "If you have any questions contact us or send an email to BeautyBox@gmail.com \n" + "Beauty Box Crew!";
+        
         String message = customerHeader + confirm + items + total + goodbye;
-String subject = "Beauty Box Order #" +order.getOrderId()+" Confirmation";
+
+        String subject = "Beauty Box Order #" +order.getOrderId()+" Confirmation";
+        
+        
         Email email = new SimpleEmail();
         email.setHostName("localhost");
         email.setSmtpPort(2525);

@@ -93,7 +93,7 @@
                             <td><%=quantity%></td>
                             <td><%="$" + total%></td>
                     
-                            <td><button type="submit" onclick="confirmCancel()"name="orderId" value="<%=product.getId()%>">Remove</button></td>
+                            <td><button type="submit" onclick="confirmRemoveItem()()"name="orderId" value="<%=product.getId()%>">Remove</button></td>
                                         </tr>
                     <%}
                     %>
@@ -103,10 +103,9 @@
                 <form action="/shopping/ConfirmOrderServlet" method="post">    
                     <button type="submit">Confirm Order</button> 
                 </form>
-                    
-                    <button type="submit" onclick="confirmDecision()">Cancel Order</button>
-                   
                 
+                <button type="submit" onclick="confirmCancel()()">Cancel Order</button>
+                                 
                 <a href="/shopping/restricted/ViewProducts.jsp">Click here to continue shopping!</a>
             </fieldset>
         </div> 
