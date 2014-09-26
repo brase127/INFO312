@@ -11,13 +11,10 @@
     <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
     <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
     <body>
-        <h1>Error</h1>
+        <h1>Opps something went wrong!</h1>
         <div id="form">
             <fieldset>
-                <%=request.getAttribute("javax.servlet.error.message")%>
-                <br>
-                <br>
-                <br>
+                
                 <a href="javascript:history.back()">Back</a>
             </fieldset>>
         </div> 

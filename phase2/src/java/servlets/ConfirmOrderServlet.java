@@ -63,7 +63,7 @@ public class ConfirmOrderServlet extends HttpServlet {
             items += "\t\t" + product.getName() + ", $" + product.getPrice() + ", quantity: " + orderitems.getQuantityPurchased() + ", total: $" + orderitems.getItemTotal() + ".\n";
         }
         
-        String total = "\n\tOrder total: $" + String.valueOf(order.getTotal()) + "\n\n\n";
+        String total = "\n\tOrder total: $" + order.getTotal() + "\n\n\n";
         
         String goodbye = "If you have any questions contact us or send an email to BeautyBox@gmail.com \n" + "Beauty Box Crew!";
         

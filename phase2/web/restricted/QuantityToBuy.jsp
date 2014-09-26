@@ -35,7 +35,11 @@
 
         <h1><%= "You selected: " + productName%></h1>
         <div id="form">
-            <img align="center" src="/shopping/<%=photo%>" height="250" width="250" alt="No photo available">
+            
+                
+            <center><img src="/shopping/<%=photo%>" height="200" width="200" alt="No photo available"></center>
+                
+                    
             <form action="/shopping/AddToOrderServlet" method="post">
                 <fieldset>
 

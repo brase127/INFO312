@@ -41,6 +41,10 @@ public class AddToOrderServlet extends HttpServlet {
 
         Integer quantity = Integer.parseInt(request.getParameter("quantity"));
         Product product = (Product) session.getAttribute("product");
+        
+        Integer productQuantity = product.getQuantity();
+        
+        if(productQuantity >= quantity){
 
         OrderItem orderItem = new OrderItem(quantity, product);
         session.setAttribute("orderItem", orderItem);
@@ -49,6 +53,10 @@ public class AddToOrderServlet extends HttpServlet {
         session.removeAttribute("product");
 
         response.sendRedirect("/shopping/restricted/ViewProducts.jsp");
+        
+        } else {
+            response.sendRedirect("/shopping/ErrorPages/QuantityError.jsp");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
