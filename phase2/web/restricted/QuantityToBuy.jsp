@@ -22,27 +22,32 @@
             Product product = (Product) session.getAttribute("product");
             String description = "";
             Double price = null;
+            String photo = "";
 
             if (product != null) {
                 productName = product.getName();
                 quantity = String.valueOf(product.getQuantity());
                 description = product.getDescription();
                 price = product.getPrice();
+                photo = product.getPhoto();
             }
         %>
 
         <h1><%= "You selected: " + productName%></h1>
         <div id="form">
-                        <form action="/shopping/AddToOrderServlet" method="post">
+            <div>
+                <img src="hi.jpg" height="250" width="250" alt="/shopping/<%=photo%>">
+            </div>
                 <fieldset>
                     <legend>Quantity to buy</legend>
                     <%=description%><br>
                     Stock Available: <%=quantity%><br>
                     Price: $<%=price%>
                     <label>Quantity<input type="text" name="quantity"></label>
+                    <form action="/shopping/AddToOrderServlet" method="post">
                     <button type="submit" name="quantityToOrder" value="<%=request.getAttribute("quantity")%>">Add To Order</button>
                 </fieldset>
             </form>
-        </div>>
+        </div>
     </body>
 </html>
