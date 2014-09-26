@@ -4,6 +4,7 @@
     Author     : Kendall Lauren Chin
 --%>
 
+<%@page import="java.text.NumberFormat"%>
 <%@page import="dao.ProductJdbcDAO"%>
 <%@page import="domain.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,14 +22,15 @@
             String quantity = "";
             Product product = (Product) session.getAttribute("product");
             String description = "";
-            Double price = null;
+            String fPrice = null;
             String photo = "";
+NumberFormat formatter = NumberFormat.getCurrencyInstance();
 
             if (product != null) {
                 productName = product.getName();
                 quantity = String.valueOf(product.getQuantity());
                 description = product.getDescription();
-                price = product.getPrice();
+                            fPrice = formatter.format(product.getPrice());
                 photo = product.getPhoto();
             }
         %>
@@ -46,7 +48,7 @@
                     <legend>Quantity to buy</legend>
                     <%=description%><br>
                     Stock Available: <%=quantity%><br>
-                    Price: $<%=price%>
+                    Price: <%=fPrice%>
                     <label>Quantity<input type="text" name="quantity"></label>
 
                     <button type="submit" name="quantityToOrder" value="<%=request.getAttribute("quantity")%>">Add To Order</button>

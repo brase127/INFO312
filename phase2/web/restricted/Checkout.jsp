@@ -5,6 +5,7 @@
 --%>
 
 
+<%@page import="java.text.NumberFormat"%>
 <%@page import="domain.Product"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Collections"%>
@@ -45,7 +46,15 @@
 
         <h1>Shopping Cart</h1>             
 
-        <%            Double orderTotal = 0.0;
+        
+        <%            
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+
+        String fOrderTotal = "";
+        String fTotal = "";
+        Double orderTotal = 0.0;
+
+        
             Order order = (Order) session.getAttribute("order");
 
             List<OrderItem> orderItems = order.getItems();
@@ -83,7 +92,9 @@
                             String productName = product.getName();
                             Integer productId = product.getId();
                             Double total = orderItem.getItemTotal();
+                            fTotal = formatter.format(orderItem.getItemTotal());
                             orderTotal += total;
+                            fOrderTotal = formatter.format(orderTotal);
                     %>
                     <tbody>                              
                         <tr>
@@ -91,7 +102,7 @@
                             <td><%=productName%></td>
                             <td><%="$" + price%></td>
                             <td><%=quantity%></td>
-                            <td><%="$" + total%></td>
+                            <td><%=fTotal%></td>
                     
                             <td><button type="submit" onclick="confirmRemoveItem()()"name="orderId" value="<%=product.getId()%>">Remove</button></td>
                                         </tr>
@@ -99,7 +110,7 @@
                     %>
                     </tbody>
                 </table>
-                <br>Total cost of order: <%="$" + orderTotal%>
+                    <br>Total cost of order: <%= fOrderTotal%>
                 <form action="/shopping/ConfirmOrderServlet" method="post">    
                     <button type="submit">Confirm Order</button> 
                 </form>

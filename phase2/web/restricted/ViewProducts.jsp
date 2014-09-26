@@ -4,6 +4,7 @@
     Author     : chike189
 --%>
 
+<%@page import="java.text.NumberFormat"%>
 <%@page import="java.util.Collection"%>
 <%@page import="domain.Product"%>
 <%@page import="dao.ProductJdbcDAO"%>
@@ -26,11 +27,12 @@
                 ProductJdbcDAO dao = new ProductJdbcDAO();
             %>
             <div id="categories" align= "center" id="categories">
-                Categories: <a href="/shopping/restricted/ViewProducts.jsp?category=all">All</a> 
+                <a> Categories: </a>
+                    <a href="/shopping/restricted/ViewProducts.jsp?category=all">All</a> 
                 <% Collection<String> categories = dao.getCategories();
 
                     for (String cat : categories) {%>
-                | <a href="/shopping/restricted/ViewProducts.jsp?category=<%=cat%>" id="category" value="<%=cat%>"><%=cat%></a>
+                 <a href="/shopping/restricted/ViewProducts.jsp?category=<%=cat%>" id="category" value="<%=cat%>"><%=cat%></a>
                 <%
                         request.setAttribute("category", cat);
                     }
@@ -43,7 +45,7 @@
             <table border="1">
                 <thead>
                     <tr>
-                        <th>Product Id</th>
+                        <th></th>
                         <th>Name</th>
                         <th>Category</th>
                         <th>Price</th>
@@ -54,21 +56,28 @@
                 <tbody>
                     <%
                         for (Product product : products) {
+                            
+                            NumberFormat formatter = NumberFormat.getCurrencyInstance();
+                            String fPrice = formatter.format(product.getPrice());
+                            
                             String category = request.getParameter("category");
                             if (category == null || product.getCategory().equals(category) || category.equals("all")) {
                                 Integer quantity = product.getQuantity();
                     %>
                     <tr>
-                        <td><%=product.getId()%></td>
+                        <td><img src="/shopping/<%=product.getPhoto()%>" height="80" width="80" alt="No photo available"></td>
                         <td><button type="submit" name="productId" value="<%=product.getId()%>"><%=product.getName()%></button></td>
                         <td><%=product.getCategory()%></td>
-                        <td><%="$" + product.getPrice()%></td>
+                        <td><%=fPrice%></td>
                         <%if (quantity <= 0) {%>
                         <td>Sold out!</td>
+                        <td> </td>
                         <%} else {%>
                         <td><%=product.getQuantity()%></td>
-                        <%}%>
+                        
                         <td><button type="submit" name="productId" value="<%=product.getId()%>">Buy</button></td>
+                    <%}%>
+                    
                     </tr>
 
                     <% }
