@@ -1,5 +1,5 @@
 
-import domain.*;
+import dao.Member;
 import java.util.*;
 
 /*

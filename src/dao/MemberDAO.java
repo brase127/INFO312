@@ -4,16 +4,18 @@
  */
 package dao;
 
+import java.util.Map;
+
 /**
  *
  * @author jillianmirandilla
  */
 public interface MemberDAO {
-    public void save();
+    public void add(String id, Member member);
     
-    public void delete ();
+    public void delete (String id);
     
-    public void update();
+    public void edit(String id, Member memver);
     
-    public void modify();
+    public Map getMembers();
 }
