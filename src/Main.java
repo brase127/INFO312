@@ -1,5 +1,6 @@
 
 import dao.Member;
+import dao.MembersCollectionDAO;
 import java.util.*;
 
 /*
@@ -12,8 +13,11 @@ import java.util.*;
  * @author jillianmirandilla
  */
 public class Main {
+    
+    public static MembersCollectionDAO mdao = new MembersCollectionDAO();
     /* Test of MemberDAO and Member -- Not finished yet*/
     public static void main(String[] args){
+        
         Member member1;
         member1 = new Member(
          "43535",
@@ -31,6 +35,8 @@ public class Main {
          "American",
          "paid", "none");
         
+        mdao.add(member1.getMemberID(), member1);
+        
         Member member2 = new Member(
          "45467",
          "Ms",
@@ -46,86 +52,21 @@ public class Main {
          10,
          "American Chinese",
          "paid", "none");
-        
-         Member member3 = new Member(
-         "44543",
-         "Mr",
-         "James",
-         "Evans",
-         "Student",
-         "4 Abbey Road",
-         null,
-         "554-4534",
-         null,
-         "0204534523",
-         "jevans@gmail.com",
-         15,
-         "American Chinese",
-         "paid", "none");
-         
-         Member member4 = new Member(
-         "43463",
-         "Mrs",
-         "Elizabeth",
-         "Evans",
-         "Accountant",
-         "4 Abbey Road",
-         null,
-         "554-4534",
-         "342-4352",
-         "0204534523",
-         "elizabethevans@gmail.com",
-         33,
-         "Chinese",
-         "paid", "none");
-        
-         
-         Member member5 = new Member(
-         "654656",
-         "Mr",
-         "DJ",
-         "Crawford",
-         "Doctor",
-         "71 Carrol St",
-         null,
-         "554-4534",
-         "342-4352",
-         "0204534523",
-         "djpadilla@gmail.com",
-         50,
-         "Chinese",
-         "paid", "none");
-         
-         Member member6 = new Member(
-         "654656",
-         "Mr",
-         "Billy",
-         "Crawford",
-         "Dancer",
-         "71 Carrol St",
-         null,
-         "554-4534",
-         "342-4352",
-         "0204534523",
-         "billycrawford@gmail.com",
-         22,
-         "Chinese",
-         "paid", "none");
+
+        mdao.add(member2.getMemberID(), member2);
         
         member1.setChildren(member2);
-        member1.setChildren(member3);
-        member1.setPartner(member4);
         
-        member4.setPartner(member1);
+        member2.setPartner(member1);
         
         //System.out.println(member1.getChildren());
         String children = "";
-        for(Member c : member4.getChildren()){
+        for(Member c : member1.getChildren()){
             children += c.getFirstName() + ", ";
         }
         
         System.out.println(children);
-        System.out.println(member4.getPartner().getFirstName());
+        System.out.println(member2.getPartner().getFirstName());
         
     }
     

@@ -51,6 +51,10 @@ public class Member {
     public Member(){
     
     }
+    
+    public String getMemberID() {
+        return memberID;
+    }
 
     public String getTitle() {
         return title;
