@@ -13,7 +13,7 @@ import java.util.TreeMap;
  *
  * @author brase127
  */
-public class MembersCollectionDAO implements MemberDAO{
+public class MembeabcdrsCollectionDAO implements MemberDAO{
     
     Map<String, Member> memberCollection = new TreeMap<>();
 
