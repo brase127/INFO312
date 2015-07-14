@@ -65,9 +65,7 @@ public class Main {
             children += c.getFirstName() + ", ";
         }
         
-        System.out.println(children);
-        System.out.println(member2.getPartner().getFirstName());
-        
+        System.out.println(mdao);        
     }
     
 }
